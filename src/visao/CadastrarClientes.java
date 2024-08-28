@@ -7,12 +7,10 @@ package visao;
 
 import Controller.ClienteController;
 import Modelo.ModeloCliente;
-import com.formdev.flatlaf.FlatDarkLaf;
-import com.formdev.flatlaf.FlatIntelliJLaf;
 import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
-import javax.swing.UIManager;
+
 
 
 public class CadastrarClientes extends javax.swing.JFrame {
