@@ -86,8 +86,8 @@ public class CriarOrdemServico extends javax.swing.JPanel {
         jLabel17 = new javax.swing.JLabel();
         txtData = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
-        dataSaida = new com.toedter.calendar.JDateChooser();
         jLabel10 = new javax.swing.JLabel();
+        dataSaida = new com.toedter.calendar.JDateChooser();
         jLabel13 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         txtServico = new javax.swing.JTextArea();
@@ -101,17 +101,6 @@ public class CriarOrdemServico extends javax.swing.JPanel {
         btnAdicionar = new javax.swing.JButton();
         cboProdutos = new componentes.UJComboBox();
         txtPreco = new javax.swing.JTextField();
-        painelBorderr19 = new utilitarios.PainelBorderr1();
-        painelBorderr20 = new utilitarios.PainelBorderr1();
-        jTextField5 = new javax.swing.JTextField();
-        jLabel16 = new javax.swing.JLabel();
-        jButton9 = new javax.swing.JButton();
-        jButton10 = new javax.swing.JButton();
-        jButton11 = new javax.swing.JButton();
-        txtCodigo = new utilitarios.JTextFieldBorder();
-        jLabel18 = new javax.swing.JLabel();
-        txtIdCliente = new utilitarios.JTextFieldBorder();
-        jLabel19 = new javax.swing.JLabel();
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
@@ -344,10 +333,6 @@ public class CriarOrdemServico extends javax.swing.JPanel {
         jLabel7.setForeground(new java.awt.Color(51, 51, 51));
         jLabel7.setText("Data entrada");
 
-        dataSaida.setBackground(new java.awt.Color(255, 255, 255));
-        dataSaida.setDateFormatString("d MMMM,y");
-        dataSaida.setFont(new java.awt.Font("Segoe UI Semilight", 1, 14)); // NOI18N
-
         jLabel10.setFont(new java.awt.Font("Segoe UI Semilight", 0, 14)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(51, 51, 51));
         jLabel10.setText("Data Saida");
@@ -361,22 +346,26 @@ public class CriarOrdemServico extends javax.swing.JPanel {
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(txtData)
                     .addComponent(txtValorPago)
-                    .addComponent(dataSaida, javax.swing.GroupLayout.DEFAULT_SIZE, 166, Short.MAX_VALUE)
                     .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jButton2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(68, Short.MAX_VALUE)
                 .addComponent(jLabel17)
                 .addGap(40, 40, 40))
             .addGroup(jPanel7Layout.createSequentialGroup()
-                .addGap(41, 41, 41)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel7)
                     .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addGap(7, 7, 7)
-                        .addComponent(jLabel10)))
+                        .addGap(41, 41, 41)
+                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel7)
+                            .addGroup(jPanel7Layout.createSequentialGroup()
+                                .addGap(7, 7, 7)
+                                .addComponent(jLabel10))))
+                    .addGroup(jPanel7Layout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addComponent(dataSaida, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel7Layout.setVerticalGroup(
@@ -392,14 +381,14 @@ public class CriarOrdemServico extends javax.swing.JPanel {
                 .addComponent(txtData, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel10)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(dataSaida, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(dataSaida, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(6, 6, 6)
+                .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE)
                 .addGap(13, 13, 13)
-                .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE))
         );
 
         jLabel13.setFont(new java.awt.Font("Segoe UI Semilight", 0, 14)); // NOI18N
@@ -456,122 +445,6 @@ public class CriarOrdemServico extends javax.swing.JPanel {
         txtPreco.setFont(new java.awt.Font("Segoe UI Semilight", 0, 14)); // NOI18N
         txtPreco.setForeground(new java.awt.Color(255, 255, 255));
 
-        painelBorderr19.setBackgroundColor(new java.awt.Color(0, 102, 204));
-
-        painelBorderr20.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-        painelBorderr20.setBackgroundColor(new java.awt.Color(0, 102, 204));
-        painelBorderr20.setBorderColor(new java.awt.Color(255, 255, 255));
-
-        jTextField5.setBackground(new java.awt.Color(0, 102, 204));
-        jTextField5.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-
-        jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/search.png"))); // NOI18N
-
-        javax.swing.GroupLayout painelBorderr20Layout = new javax.swing.GroupLayout(painelBorderr20);
-        painelBorderr20.setLayout(painelBorderr20Layout);
-        painelBorderr20Layout.setHorizontalGroup(
-            painelBorderr20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelBorderr20Layout.createSequentialGroup()
-                .addComponent(jLabel16)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField5, javax.swing.GroupLayout.DEFAULT_SIZE, 207, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        painelBorderr20Layout.setVerticalGroup(
-            painelBorderr20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTextField5)
-            .addComponent(jLabel16, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE)
-        );
-
-        jButton9.setBackground(new java.awt.Color(0, 102, 204));
-        jButton9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/home.png"))); // NOI18N
-        jButton9.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-        jButton9.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton9ActionPerformed(evt);
-            }
-        });
-
-        jButton10.setBackground(new java.awt.Color(0, 102, 204));
-        jButton10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/voltar.png"))); // NOI18N
-        jButton10.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-        jButton10.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton10ActionPerformed(evt);
-            }
-        });
-
-        jButton11.setBackground(new java.awt.Color(0, 102, 204));
-        jButton11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/refresh.png"))); // NOI18N
-        jButton11.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-
-        txtCodigo.setEditable(false);
-        txtCodigo.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-        txtCodigo.setForeground(new java.awt.Color(255, 255, 255));
-        txtCodigo.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txtCodigo.setBackgroundColor(new java.awt.Color(0, 102, 204));
-        txtCodigo.setBorderColor(new java.awt.Color(255, 255, 255));
-        txtCodigo.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-
-        jLabel18.setFont(new java.awt.Font("Segoe UI Semilight", 0, 14)); // NOI18N
-        jLabel18.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel18.setText("Numero:");
-
-        txtIdCliente.setEditable(false);
-        txtIdCliente.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-        txtIdCliente.setForeground(new java.awt.Color(255, 255, 255));
-        txtIdCliente.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txtIdCliente.setBackgroundColor(new java.awt.Color(0, 102, 204));
-        txtIdCliente.setBorderColor(new java.awt.Color(255, 255, 255));
-        txtIdCliente.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-
-        jLabel19.setFont(new java.awt.Font("Segoe UI Semilight", 0, 14)); // NOI18N
-        jLabel19.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel19.setText("ID Cliente:");
-
-        javax.swing.GroupLayout painelBorderr19Layout = new javax.swing.GroupLayout(painelBorderr19);
-        painelBorderr19.setLayout(painelBorderr19Layout);
-        painelBorderr19Layout.setHorizontalGroup(
-            painelBorderr19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelBorderr19Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jButton9)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton10)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton11)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel18)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel19)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtIdCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
-                .addComponent(painelBorderr20, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
-        painelBorderr19Layout.setVerticalGroup(
-            painelBorderr19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(painelBorderr19Layout.createSequentialGroup()
-                .addGroup(painelBorderr19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(painelBorderr19Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addGroup(painelBorderr19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel18)
-                            .addComponent(txtIdCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel19)))
-                    .addGroup(painelBorderr19Layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(painelBorderr20, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(4, 4, 4))
-            .addComponent(jButton9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jButton10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jButton11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -597,7 +470,7 @@ public class CriarOrdemServico extends javax.swing.JPanel {
                                 .addGap(18, 18, 18)
                                 .addComponent(btnAdicionar)
                                 .addGap(11, 11, 11))
-                            .addComponent(jScrollPane1)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 517, Short.MAX_VALUE)
                             .addComponent(jScrollPane3)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                                 .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
@@ -605,13 +478,11 @@ public class CriarOrdemServico extends javax.swing.JPanel {
                                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-            .addComponent(painelBorderr19, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addComponent(painelBorderr19, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(66, 66, 66)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(12, 12, 12)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -723,24 +594,6 @@ public class CriarOrdemServico extends javax.swing.JPanel {
         PrencherPrecoPeloNome();
     }//GEN-LAST:event_cboProdutosActionPerformed
 
-    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
-        this.removeAll();
-        PainelCasa painelCasa = new PainelCasa();
-        this.setLayout(new BorderLayout());
-        this.add( painelCasa , BorderLayout.CENTER);
-        this.revalidate();
-        this.repaint();
-    }//GEN-LAST:event_jButton9ActionPerformed
-
-    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
-        this.removeAll();
-        PainelConsultas painelConsultas = new PainelConsultas();
-        this.setLayout(new BorderLayout());
-        this.add( painelConsultas  , BorderLayout.CENTER);
-        this.revalidate();
-        this.repaint();
-    }//GEN-LAST:event_jButton10ActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAdicionar;
@@ -752,21 +605,15 @@ public class CriarOrdemServico extends javax.swing.JPanel {
     private javax.swing.JComboBox cboStatus;
     private com.toedter.calendar.JDateChooser dataSaida;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton10;
-    private javax.swing.JButton jButton11;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel18;
-    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
@@ -779,14 +626,9 @@ public class CriarOrdemServico extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
-    private javax.swing.JTextField jTextField5;
     private javax.swing.JTable jtProdutos;
-    private utilitarios.PainelBorderr1 painelBorderr19;
-    private utilitarios.PainelBorderr1 painelBorderr20;
     private javax.swing.JSpinner spinerQuantidade;
-    private utilitarios.JTextFieldBorder txtCodigo;
     private javax.swing.JTextField txtData;
-    private utilitarios.JTextFieldBorder txtIdCliente;
     private javax.swing.JTextArea txtObservacoes;
     private javax.swing.JTextField txtPreco;
     private javax.swing.JTextArea txtProblema;
@@ -838,7 +680,7 @@ public class CriarOrdemServico extends javax.swing.JPanel {
     }
     private void PrencherIdClientePeloNome(){
         modeloCliente = clienteController.getClienteControllerPeloNome(cboCliente.getSelectedItem().toString());
-        txtIdCliente.setText(String.valueOf(modeloCliente.getId()));
+        //txtIdCliente.setText(String.valueOf(modeloCliente.getId()));
     }
      private void PrencherPrecoPeloNome(){
          modeloPecas = pecasController.getPecasPeloNomeController(cboProdutos.getSelectedItem().toString());
@@ -896,7 +738,7 @@ private void AdicionarProdutos() {
 
     
     private void SalvarOrdemServico(){
-        modeloOrdemServico.setIdCliente(Integer.parseInt(txtIdCliente.getText()));
+       // modeloOrdemServico.setIdCliente(Integer.parseInt(txtIdCliente.getText()));
         modeloOrdemServico.setNomeCliente(cboCliente.getSelectedItem().toString());
         modeloOrdemServico.setNomeMecanico(cboMecanico.getSelectedItem().toString());
         modeloOrdemServico.setMatriculaVeiculo(cboMatricula.getSelectedItem().toString());
