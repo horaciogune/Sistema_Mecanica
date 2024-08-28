@@ -17,13 +17,20 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Component id="painelBorderr11" alignment="0" max="32767" attributes="0"/>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="jTextFieldBorder1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
+          </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <Component id="painelBorderr11" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="440" max="32767" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="jTextFieldBorder1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace pref="400" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -105,5 +112,10 @@
         </Component>
       </SubComponents>
     </Container>
+    <Component class="utilitarios.JTextFieldBorder" name="jTextFieldBorder1">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="jTextFieldBorder1"/>
+      </Properties>
+    </Component>
   </SubComponents>
 </Form>
