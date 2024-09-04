@@ -8,12 +8,32 @@ package visao;
 import Controller.UsuarioController;
 import Modelo.ModeloUsuario;
 import java.awt.BorderLayout;
+import java.sql.Connection;
+import Conexao.Conexao_MySql;
+import connection.ConnectionFactory;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
+import javax.swing.RootPaneContainer;
 import javax.swing.RowFilter;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
 import javax.swing.table.TableRowSorter;
+import net.sf.jasperreports.engine.JRException;
+import net.sf.jasperreports.engine.JasperCompileManager;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.JasperReport;
+import net.sf.jasperreports.view.JasperViewer;
+
+
+import net.sf.jasperreports.engine.JRException;
+import net.sf.jasperreports.engine.JasperCompileManager;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.JasperReport;
+import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
+import net.sf.jasperreports.view.JasperViewer;
 
 /**
  *
@@ -179,6 +199,11 @@ public class ConsultarUsuarios extends javax.swing.JPanel {
         jButton11.setBackground(new java.awt.Color(0, 102, 204));
         jButton11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/refresh.png"))); // NOI18N
         jButton11.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        jButton11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton11ActionPerformed(evt);
+            }
+        });
 
         painelBorderr15.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         painelBorderr15.setBackgroundColor(new java.awt.Color(0, 102, 204));
@@ -283,6 +308,17 @@ public class ConsultarUsuarios extends javax.swing.JPanel {
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+           try {
+            try (Connection conn = ConnectionFactory.getConnection()) {
+                String src = "src\\relatorios\\users.jrxml";
+                JasperReport jr = JasperCompileManager.compileReport(src);
+                JasperPrint jp = JasperFillManager.fillReport(jr, null,conn);
+                JasperViewer.viewReport(jp);
+            }
+            
+        } catch (SQLException | JRException e) {
+            JOptionPane.showMessageDialog(painelBorderr14, e);
+        }
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton6ActionPerformed
 
@@ -304,6 +340,11 @@ public class ConsultarUsuarios extends javax.swing.JPanel {
         this.repaint();
     }//GEN-LAST:event_jButton10ActionPerformed
 
+    private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
+        carregarUsuarios();
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton11ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
@@ -311,23 +352,14 @@ public class ConsultarUsuarios extends javax.swing.JPanel {
     private javax.swing.JButton jButton11;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTable jtUsuarios;
-    private utilitarios.PainelBorderr1 painelBorderr11;
-    private utilitarios.PainelBorderr1 painelBorderr12;
-    private utilitarios.PainelBorderr1 painelBorderr13;
     private utilitarios.PainelBorderr1 painelBorderr14;
     private utilitarios.PainelBorderr1 painelBorderr15;
     // End of variables declaration//GEN-END:variables

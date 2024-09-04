@@ -7,13 +7,22 @@ package visao;
 
 import Controller.MecanicoController;
 import Modelo.ModeloMecanico;
+import connection.ConnectionFactory;
 import java.awt.BorderLayout;
+import java.sql.Connection;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.RowFilter;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
 import javax.swing.table.TableRowSorter;
+import net.sf.jasperreports.engine.JRException;
+import net.sf.jasperreports.engine.JasperCompileManager;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.JasperReport;
+import net.sf.jasperreports.view.JasperViewer;
 
 public class ConsultarMecanicos extends javax.swing.JPanel {
     
@@ -259,6 +268,17 @@ public class ConsultarMecanicos extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+          try {
+            try (Connection conn = ConnectionFactory.getConnection()) {
+                String src = "src\\relatorios\\mecanicos.jrxml";
+                JasperReport jr = JasperCompileManager.compileReport(src);
+                JasperPrint jp = JasperFillManager.fillReport(jr, null,conn);
+                JasperViewer.viewReport(jp);
+            }
+            
+        } catch (SQLException | JRException e) {
+            JOptionPane.showMessageDialog(painelBorderr14, e);
+        }
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton6ActionPerformed
 
