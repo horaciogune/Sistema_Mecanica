@@ -1,24 +1,17 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package visao;
 
 import Controller.UsuarioController;
 import Modelo.ModeloUsuario;
 import java.awt.BorderLayout;
 import java.sql.Connection;
-import Conexao.Conexao_MySql;
-import connection.ConnectionFactory;
+
+import Conexao.ConnectionFactory;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
-import javax.swing.RootPaneContainer;
-import javax.swing.RowFilter;
+
 import javax.swing.table.DefaultTableModel;
-import javax.swing.table.TableModel;
-import javax.swing.table.TableRowSorter;
 import net.sf.jasperreports.engine.JRException;
 import net.sf.jasperreports.engine.JasperCompileManager;
 import net.sf.jasperreports.engine.JasperFillManager;
@@ -27,18 +20,6 @@ import net.sf.jasperreports.engine.JasperReport;
 import net.sf.jasperreports.view.JasperViewer;
 
 
-import net.sf.jasperreports.engine.JRException;
-import net.sf.jasperreports.engine.JasperCompileManager;
-import net.sf.jasperreports.engine.JasperFillManager;
-import net.sf.jasperreports.engine.JasperPrint;
-import net.sf.jasperreports.engine.JasperReport;
-import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
-import net.sf.jasperreports.view.JasperViewer;
-
-/**
- *
- * @author Horacio
- */
 public class ConsultarUsuarios extends javax.swing.JPanel {
 
   ArrayList<ModeloUsuario>listaModeloUsuario = new ArrayList();
@@ -308,17 +289,7 @@ public class ConsultarUsuarios extends javax.swing.JPanel {
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-           try {
-            try (Connection conn = ConnectionFactory.getConnection()) {
-                String src = "src\\relatorios\\users.jrxml";
-                JasperReport jr = JasperCompileManager.compileReport(src);
-                JasperPrint jp = JasperFillManager.fillReport(jr, null,conn);
-                JasperViewer.viewReport(jp);
-            }
-            
-        } catch (SQLException | JRException e) {
-            JOptionPane.showMessageDialog(painelBorderr14, e);
-        }
+        imprimir();
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton6ActionPerformed
 
@@ -443,6 +414,20 @@ private void ApagarUsuarios(){
         JOptionPane.showMessageDialog(this, "ERRO AO EXCLUIR USUÁRIO, o usuário pode estar relacionado a uma operação", "Erro", JOptionPane.ERROR_MESSAGE);
     }
     
+}
+
+private void imprimir(){
+      try {
+            try (Connection conn = ConnectionFactory.getConnection()) {
+                String src = "src\\relatorios\\users.jrxml";
+                JasperReport jr = JasperCompileManager.compileReport(src);
+                JasperPrint jp = JasperFillManager.fillReport(jr, null,conn);
+                JasperViewer.viewReport(jp);
+            }
+            
+        } catch (SQLException | JRException e) {
+            JOptionPane.showMessageDialog(painelBorderr14, e);
+        }
 }
 
 }

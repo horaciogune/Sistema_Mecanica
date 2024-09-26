@@ -11,7 +11,6 @@ import Modelo.ModeloMecanico;
 import Modelo.ModeloOrdemServico;
 import Modelo.ModeloPecas;
 import Modelo.ModeloVeiculo;
-import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.text.SimpleDateFormat;
@@ -583,7 +582,7 @@ public class CriarOrdemServico extends javax.swing.JPanel {
                                 .addGap(18, 18, 18)
                                 .addComponent(btnAdicionar)
                                 .addGap(11, 11, 11))
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 517, Short.MAX_VALUE)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 512, Short.MAX_VALUE)
                             .addComponent(jScrollPane3)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                                 .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)

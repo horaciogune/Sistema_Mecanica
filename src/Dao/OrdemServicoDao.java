@@ -124,39 +124,44 @@ public ArrayList<ModeloOrdemServico> getListaOrdemServicoDao() {
     try {
         this.conectar();
         this.executarSQL(
-            "SELECT " 
-                 +" id,"
-                 +" dataFechamento,"
-                 +" idCliente,"
-                 +" nomeCliente,"
-                 +" matriculaVeiculo,"
-                 +" marcaVeiculo,"
-                 +" problema,"
-                 +" servico,"
-                 +" observacoes,"
-                 +" pecas,"
-                 +" precoTotal,"
-                 +" nomeMecanico,"
-                 +" status "   
-                 +" FROM "
-                 + " Ordem_servico" 
+            "SELECT "+ 
+                 "id, "+
+                 "dataAbertura, "+ 
+                 "dataFechamento, "+ 
+                 "idCliente, "+ 
+                 "nomeCliente, "+ 
+                 "matriculaVeiculo, "+ 
+                 "marcaVeiculo, "+ 
+                 "problema, "+ 
+                 "servico, "+ 
+                 "observacoes, "+ 
+                 "pecas, "+ 
+                 "precoTotal, "+ 
+                 "nomeMecanico, "+ 
+                 "status "+   
+                 "FROM "+ 
+                 "Ordem_servico" 
         );
         
         while (this.getResultSet().next()) {
-            ModeloOrdemServico modeloOrdemServico = new  ModeloOrdemServico(); 
-            modeloOrdemServico.setId(this.getResultSet().getInt(1));
-            modeloOrdemServico.setDataFechamento(this.getResultSet().getString(2));
-            modeloOrdemServico.setIdCliente(this.getResultSet().getInt(3));
-            modeloOrdemServico.setNomeCliente(this.getResultSet().getString(4));
-            modeloOrdemServico.setMatriculaVeiculo(this.getResultSet().getString(5));
-            modeloOrdemServico.setMarcaVeiculo(this.getResultSet().getString(6));
-            modeloOrdemServico.setProblema(this.getResultSet().getString(7));
-            modeloOrdemServico.setServico(this.getResultSet().getString(8));
-            modeloOrdemServico.setObservacoes(this.getResultSet().getString(9));
-            modeloOrdemServico.setPecas(this.getResultSet().getString(10));
-            modeloOrdemServico.setPrecoTotal(this.getResultSet().getDouble(11));
-            modeloOrdemServico.setNomeMecanico(this.getResultSet().getString(12));
-            modeloOrdemServico.setStatus(this.getResultSet().getString(13));
+            ModeloOrdemServico modeloOrdemServico = new ModeloOrdemServico(); 
+            modeloOrdemServico.setId(this.getResultSet().getInt("id"));
+            modeloOrdemServico.setDataAbertura(this.getResultSet().getString("dataAbertura"));
+            modeloOrdemServico.setDataFechamento(this.getResultSet().getString("dataFechamento"));
+            modeloOrdemServico.setIdCliente(this.getResultSet().getInt("idCliente"));
+            modeloOrdemServico.setNomeCliente(this.getResultSet().getString("nomeCliente"));
+            modeloOrdemServico.setMatriculaVeiculo(this.getResultSet().getString("matriculaVeiculo"));
+            modeloOrdemServico.setMarcaVeiculo(this.getResultSet().getString("marcaVeiculo"));
+            modeloOrdemServico.setProblema(this.getResultSet().getString("problema"));
+            modeloOrdemServico.setServico(this.getResultSet().getString("servico"));
+            modeloOrdemServico.setObservacoes(this.getResultSet().getString("observacoes"));
+            modeloOrdemServico.setPecas(this.getResultSet().getString("pecas"));
+            modeloOrdemServico.setPrecoTotal(this.getResultSet().getDouble("precoTotal"));
+            modeloOrdemServico.setNomeMecanico(this.getResultSet().getString("nomeMecanico"));
+            modeloOrdemServico.setStatus(this.getResultSet().getString("status"));
+            
+            
+            listaModeloOrdemServico.add(modeloOrdemServico);
         }
     } catch (Exception e) {
         e.printStackTrace();
@@ -166,6 +171,7 @@ public ArrayList<ModeloOrdemServico> getListaOrdemServicoDao() {
     
     return listaModeloOrdemServico;
 }
+
 
 public boolean apagarOrdemServicoDao(int id){
         

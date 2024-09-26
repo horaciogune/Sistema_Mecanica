@@ -1,58 +1,37 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package visao;
 
-import Controller.ClienteController;
-import Modelo.ModeloCliente;
-import Conexao.ConnectionFactory;
+import Controller.OrdemServicoController;
+import Modelo.ModeloOrdemServico;
 import java.awt.BorderLayout;
-import java.sql.Connection;
-import java.sql.SQLException;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
-import net.sf.jasperreports.engine.JRException;
-import net.sf.jasperreports.engine.JasperCompileManager;
-import net.sf.jasperreports.engine.JasperFillManager;
-import net.sf.jasperreports.engine.JasperPrint;
-import net.sf.jasperreports.engine.JasperReport;
-import net.sf.jasperreports.view.JasperViewer;
 
+public class ConsultarOrdem extends javax.swing.JPanel {
 
-public class ConsultarClientes extends javax.swing.JPanel {
-
-    ArrayList<ModeloCliente> listaModeloClientes = new ArrayList<>();
-    ClienteController clienteController = new ClienteController();
-    ModeloCliente modeloCliente = new ModeloCliente();
+    ModeloOrdemServico modeloOrdemServico = new ModeloOrdemServico();
+    OrdemServicoController ordemservicoController = new OrdemServicoController();
+    ArrayList<ModeloOrdemServico> listaModeloOrdemServicos = new ArrayList<>();
     
-    private CadastrarClientes cliente;
-    
-    public ConsultarClientes() {
+    public ConsultarOrdem() {
         initComponents();
-        CarregarClientes();
-      
-         
-         cliente = new CadastrarClientes();
-         
-         
+        CarregarOrdenServico();
     }
 
-   
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jtClientes = new javax.swing.JTable();
+        jtOrdens = new javax.swing.JTable();
         jPanel2 = new javax.swing.JPanel();
         jButton6 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
+        jButton7 = new javax.swing.JButton();
         painelBorderr11 = new utilitarios.PainelBorderr1();
         jButton4 = new javax.swing.JButton();
         jButton9 = new javax.swing.JButton();
@@ -63,32 +42,33 @@ public class ConsultarClientes extends javax.swing.JPanel {
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
-        jtClientes.setFont(new java.awt.Font("Segoe UI Semilight", 1, 14)); // NOI18N
-        jtClientes.setModel(new javax.swing.table.DefaultTableModel(
+        jtOrdens.setFont(new java.awt.Font("Yu Gothic UI Semilight", 1, 14)); // NOI18N
+        jtOrdens.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "ID Cliente", "Nome", "ENDERECO", "TELEFONE", "DOCUMENTO", "NUMERO", "DATA REGISTRO"
+                "ID", "DATA ABERTURA", "DATA FECHAMENTO", "CLIENTE", "MATRICULA", "SERVICO", "PRECO TOTAL", "STATUS"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false
+                false, false, false, false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(jtClientes);
-        if (jtClientes.getColumnModel().getColumnCount() > 0) {
-            jtClientes.getColumnModel().getColumn(0).setResizable(false);
-            jtClientes.getColumnModel().getColumn(1).setResizable(false);
-            jtClientes.getColumnModel().getColumn(2).setResizable(false);
-            jtClientes.getColumnModel().getColumn(3).setResizable(false);
-            jtClientes.getColumnModel().getColumn(4).setResizable(false);
-            jtClientes.getColumnModel().getColumn(5).setResizable(false);
-            jtClientes.getColumnModel().getColumn(6).setResizable(false);
+        jScrollPane1.setViewportView(jtOrdens);
+        if (jtOrdens.getColumnModel().getColumnCount() > 0) {
+            jtOrdens.getColumnModel().getColumn(0).setResizable(false);
+            jtOrdens.getColumnModel().getColumn(1).setResizable(false);
+            jtOrdens.getColumnModel().getColumn(2).setResizable(false);
+            jtOrdens.getColumnModel().getColumn(3).setResizable(false);
+            jtOrdens.getColumnModel().getColumn(4).setResizable(false);
+            jtOrdens.getColumnModel().getColumn(5).setResizable(false);
+            jtOrdens.getColumnModel().getColumn(6).setResizable(false);
+            jtOrdens.getColumnModel().getColumn(7).setResizable(false);
         }
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
@@ -96,7 +76,7 @@ public class ConsultarClientes extends javax.swing.JPanel {
 
         jButton6.setFont(new java.awt.Font("Yu Gothic UI Semilight", 1, 14)); // NOI18N
         jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/print.png"))); // NOI18N
-        jButton6.setText("Imprimir");
+        jButton6.setText("Factura");
         jButton6.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         jButton6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -134,6 +114,16 @@ public class ConsultarClientes extends javax.swing.JPanel {
             }
         });
 
+        jButton7.setFont(new java.awt.Font("Yu Gothic UI Semilight", 1, 14)); // NOI18N
+        jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/print.png"))); // NOI18N
+        jButton7.setText("Detalhes");
+        jButton7.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton7ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -142,6 +132,7 @@ public class ConsultarClientes extends javax.swing.JPanel {
             .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -154,7 +145,9 @@ public class ConsultarClientes extends javax.swing.JPanel {
                 .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(130, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(105, Short.MAX_VALUE))
         );
 
         painelBorderr11.setBackgroundColor(new java.awt.Color(0, 102, 204));
@@ -218,7 +211,7 @@ public class ConsultarClientes extends javax.swing.JPanel {
                 .addComponent(jButton9)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton10)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 301, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(painelBorderr13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -238,7 +231,7 @@ public class ConsultarClientes extends javax.swing.JPanel {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 462, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 558, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addComponent(painelBorderr11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -247,10 +240,10 @@ public class ConsultarClientes extends javax.swing.JPanel {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addComponent(painelBorderr11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(47, 47, 47)
+                .addGap(48, 48, 48)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGap(9, 9, 9)
+                        .addGap(10, 10, 10)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                     .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
@@ -259,42 +252,37 @@ public class ConsultarClientes extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(0, 0, 0))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(0, 0, 0))
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-           try {
-            try (Connection conn = ConnectionFactory.getConnection()) {
-                String src = "src\\relatorios\\clientes.jrxml";
-                JasperReport jr = JasperCompileManager.compileReport(src);
-                JasperPrint jp = JasperFillManager.fillReport(jr, null,conn);
-                JasperViewer.viewReport(jp);
-            }
-            
-        } catch (SQLException | JRException e) {
-            JOptionPane.showMessageDialog(painelBorderr13, e);
-        }
-
-        // TODO add your handling code here:
+      
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        
-        EnviarDadosParaFormulariio();
+       
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-
-        ApagarCliente();
+  
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-    new CadastrarClientes().setVisible(true);
+         this.removeAll();
+         CriarOrdemServico criarOrdemServico = new CriarOrdemServico();
+        this.setLayout(new BorderLayout());
+        this.add(criarOrdemServico  , BorderLayout.CENTER);
+        this.revalidate();
+        this.repaint();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
@@ -315,6 +303,10 @@ public class ConsultarClientes extends javax.swing.JPanel {
         this.repaint();
     }//GEN-LAST:event_jButton9ActionPerformed
 
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton7ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
@@ -323,81 +315,40 @@ public class ConsultarClientes extends javax.swing.JPanel {
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField jTextField1;
-    private javax.swing.JTable jtClientes;
+    private javax.swing.JTable jtOrdens;
     private utilitarios.PainelBorderr1 painelBorderr11;
     private utilitarios.PainelBorderr1 painelBorderr13;
     // End of variables declaration//GEN-END:variables
 
-
-public void CarregarClientes(){
-  
-    DefaultTableModel modelo = (DefaultTableModel) jtClientes.getModel();
-    modelo.setNumRows(0); 
-    listaModeloClientes = clienteController.getListaModeloClienteController();
-    int cont = listaModeloClientes.size();
-    
-    for(int i=0; i< cont;i++){
-        modelo.addRow(new Object[]{
-            listaModeloClientes.get(i).getId(),
-            listaModeloClientes.get(i).getNome(),
-            listaModeloClientes.get(i).getEndereco(),
-            listaModeloClientes.get(i).getTelefone(),
-            listaModeloClientes.get(i).getDocumento(),
-            listaModeloClientes.get(i).getNumero(),
-            listaModeloClientes.get(i).getDataCriacao()
-        });
-        
-    }
-}
-
-public void EnviarDadosParaFormulariio(){
-   
-    int linha = jtClientes.getSelectedRow();
-    
-    if (linha == -1) {
-        JOptionPane.showMessageDialog(null, "SELECIONE UM CLIENTE PARA ATUALIZAR!", "Erro", JOptionPane.WARNING_MESSAGE);
-        return;
-    }
-   int codigo = (int) jtClientes.getValueAt(linha, 0);
-    modeloCliente = clienteController.getClientePeloIdController(codigo);
-    cliente.setVisible(true);
-    
-    cliente.codigo().setText(String.valueOf(modeloCliente.getId()));
-    cliente.nome().setText(modeloCliente.getNome());
-    cliente.endereco().setText(modeloCliente.getEndereco());
-    cliente.telefone().setText(modeloCliente.getTelefone());
-    cliente.documento().setSelectedItem(modeloCliente.getDocumento());
-    cliente.numero().setText(modeloCliente.getNumero());
+public void CarregarOrdenServico(){
      
+  DefaultTableModel modelo = (DefaultTableModel) jtOrdens.getModel();
+  modelo.setNumRows(0);
+  listaModeloOrdemServicos = ordemservicoController.getListaOrdemServicocontroller();
+  int cont = listaModeloOrdemServicos.size();
+        
+   for(int i =0; i<cont;i++){
+      modelo.addRow(new Object[]{
+                listaModeloOrdemServicos.get(i).getId(),
+                listaModeloOrdemServicos.get(i).getDataAbertura(),
+                listaModeloOrdemServicos.get(i).getDataFechamento(),
+                listaModeloOrdemServicos.get(i).getNomeCliente(),
+                listaModeloOrdemServicos.get(i).getMatriculaVeiculo(),
+                listaModeloOrdemServicos.get(i).getServico(),
+                listaModeloOrdemServicos.get(i).getPrecoTotal(),
+                listaModeloOrdemServicos.get(i).getStatus()
+          
+            });
+            }
 }
 
-public void ApagarCliente(){
-    int linha = jtClientes.getSelectedRow();
-    if (linha == -1) {
-        JOptionPane.showMessageDialog(null, "SELECIONE UM CLIENTE PARA EXCLUIR!", "Erro", JOptionPane.WARNING_MESSAGE);
-        return;
-    }
-   
-    int codigo = (int) jtClientes.getValueAt(linha, 0);
-
-    int opcaoApagar = JOptionPane.showConfirmDialog(this, "EXCLUIR CLIENTE ?", "Confirmação", JOptionPane.YES_NO_OPTION);
-    if (opcaoApagar != JOptionPane.YES_OPTION) {
-        return;
-    }
-    
-    if(clienteController.ApagarClienteController(codigo)){
-      
-        this.CarregarClientes();
-    }else{
-     JOptionPane.showMessageDialog(this,"ERRO AO EXCLUIR CLIENTE, ELE PODE ESTAR ASSOCIADO A UMA OPERACAO","ERRO",JOptionPane.ERROR_MESSAGE);
-    }
-    
-}
 
 }
+

@@ -3,16 +3,13 @@ package visao;
 
 import Controller.VeiculoController;
 import Modelo.ModeloVeiculo;
-import connection.ConnectionFactory;
+import Conexao.ConnectionFactory;
 import java.awt.BorderLayout;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
-import javax.swing.RowFilter;
 import javax.swing.table.DefaultTableModel;
-import javax.swing.table.TableModel;
-import javax.swing.table.TableRowSorter;
 import net.sf.jasperreports.engine.JRException;
 import net.sf.jasperreports.engine.JasperCompileManager;
 import net.sf.jasperreports.engine.JasperFillManager;

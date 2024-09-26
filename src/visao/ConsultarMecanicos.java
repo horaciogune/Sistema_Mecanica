@@ -7,7 +7,7 @@ package visao;
 
 import Controller.MecanicoController;
 import Modelo.ModeloMecanico;
-import connection.ConnectionFactory;
+import Conexao.ConnectionFactory;
 import java.awt.BorderLayout;
 import java.sql.Connection;
 import java.sql.SQLException;

@@ -195,6 +195,26 @@ public class PecasDao extends Conexao_MySql {
         this.fecharConexao();
     }
 } 
+  
+   public boolean AtualizarQuantidadeDao(ArrayList<ModeloPecas> modeloPecas) {
+    try {
+        this.conectar();
+        for (int i = 0; i < modeloPecas.size(); i++) {
+            
+            this.executarUpdateDeleteSQL(
+               "UPDATE pecas SET " 
+               + "quantidade = '" +modeloPecas.get(i).getQuantidade() + "' " 
+               + " WHERE id = '" + modeloPecas.get(i).getId() + "'"
+            );
+        }
+        return true;
+    } catch (Exception e) {
+        e.printStackTrace();
+        return false;
+    } finally {
+        this.fecharConexao();
+    }
+}
 
   public int contarPecasDao() {
     String query = "SELECT COUNT(*) as total FROM peca";
