@@ -2,7 +2,9 @@
 package visao;
 
 import Controller.OrdemServicoController;
+import Controller.PecasController;
 import Modelo.ModeloOrdemServico;
+import Modelo.ModeloPecas;
 import java.awt.BorderLayout;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
@@ -13,6 +15,11 @@ public class ConsultarOrdem extends javax.swing.JPanel {
     ModeloOrdemServico modeloOrdemServico = new ModeloOrdemServico();
     OrdemServicoController ordemservicoController = new OrdemServicoController();
     ArrayList<ModeloOrdemServico> listaModeloOrdemServicos = new ArrayList<>();
+    
+    PecasController pecasController = new PecasController();
+    ArrayList<ModeloPecas> listaModeloPecas = new ArrayList<ModeloPecas>();
+    ModeloPecas modeloPecas = new ModeloPecas();
+    
     
     public ConsultarOrdem() {
         initComponents();
@@ -42,7 +49,8 @@ public class ConsultarOrdem extends javax.swing.JPanel {
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
-        jtOrdens.setFont(new java.awt.Font("Yu Gothic UI Semilight", 1, 14)); // NOI18N
+        jtOrdens.setBackground(new java.awt.Color(240, 240, 240));
+        jtOrdens.setFont(new java.awt.Font("Segoe UI Semibold", 1, 14)); // NOI18N
         jtOrdens.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -71,7 +79,6 @@ public class ConsultarOrdem extends javax.swing.JPanel {
             jtOrdens.getColumnModel().getColumn(7).setResizable(false);
         }
 
-        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Accoes", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Yu Gothic UI Semilight", 1, 14))); // NOI18N
 
         jButton6.setFont(new java.awt.Font("Yu Gothic UI Semilight", 1, 14)); // NOI18N
@@ -147,7 +154,7 @@ public class ConsultarOrdem extends javax.swing.JPanel {
                 .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(105, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         painelBorderr11.setBackgroundColor(new java.awt.Color(0, 102, 204));
@@ -180,6 +187,7 @@ public class ConsultarOrdem extends javax.swing.JPanel {
 
         jTextField1.setBackground(new java.awt.Color(0, 102, 204));
         jTextField1.setFont(new java.awt.Font("Segoe UI Semilight", 0, 14)); // NOI18N
+        jTextField1.setForeground(new java.awt.Color(255, 255, 255));
         jTextField1.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/search.png"))); // NOI18N
@@ -240,12 +248,10 @@ public class ConsultarOrdem extends javax.swing.JPanel {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addComponent(painelBorderr11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(48, 48, 48)
+                .addGap(58, 58, 58)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
-                    .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 389, Short.MAX_VALUE)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);

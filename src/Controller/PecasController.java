@@ -21,6 +21,9 @@ public class PecasController {
   public ModeloPecas getPecasPeloNomeController(String nome){
     return this.pecasDao.getPecasPeloNomeDao(nome);
   }
+   public ModeloPecas getPecasController(int id){
+    return this.pecasDao.getPecasDao(id);
+  }
 
   public ArrayList<ModeloPecas> getListaPecasController(){
     return this.pecasDao.getListaPecasDao();
@@ -29,6 +32,10 @@ public class PecasController {
   public boolean AtualizarPecasController(ModeloPecas modeloPecas){
       return this.pecasDao.AtualizarPecasDao(modeloPecas);
   }
+    public boolean AtualizarQuantidadeDePecasController(ArrayList<ModeloPecas> modeloPecases){
+      return this.pecasDao.AtualizarQuantidadeDao(modeloPecases);
+  }
+  
   
   public boolean ApagarPecasController(int id){
       return this.pecasDao.apagarPecasDao(id);

@@ -33,8 +33,7 @@ public class OrdemServicoDao extends Conexao_MySql{
                  +" precoTotal,"
                  +" nomeMecanico,"
                  +" status "   
-                 
-                
+                                 
                 +") VALUES ("
                 
                  +"'"+modeloOrdemServico.getId()+"',"

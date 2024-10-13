@@ -102,6 +102,44 @@ public class PecasDao extends Conexao_MySql {
             modeloPecas.setQuantidade(this.getResultSet().getInt(5));
             modeloPecas.setDatacriacao(this.getResultSet().getString(6));
             
+        }
+
+    } catch (Exception e) {
+        e.printStackTrace();
+    } finally {
+        this.fecharConexao();
+    }
+
+    return  modeloPecas;
+}
+    public ModeloPecas getPecasDao(int id) {
+    ModeloPecas modeloPecas = new ModeloPecas();
+
+    try {
+        this.conectar();
+        this.executarSQL(
+            "SELECT "+ 
+                 "id, "+
+                 "descricao, "+
+                 "precoCompra, "+
+                 "precoVenda, "+
+                 "quantidade, "+
+                 "data "+   
+                 "FROM "+
+                 "peca "+ 
+                 "WHERE "+ 
+                 "id = '" + id + "'"
+             +";"
+        );
+
+        if (this.getResultSet().next()) {
+            modeloPecas.setId(this.getResultSet().getInt(1));
+            modeloPecas.setDescriacao(this.getResultSet().getString(2));
+            modeloPecas.setPrecocompra(this.getResultSet().getDouble(3));
+            modeloPecas.setPrecovenda(this.getResultSet().getDouble(4));
+            modeloPecas.setQuantidade(this.getResultSet().getInt(5));
+            modeloPecas.setDatacriacao(this.getResultSet().getString(6));
+            
             
         }
 
@@ -202,7 +240,7 @@ public class PecasDao extends Conexao_MySql {
         for (int i = 0; i < modeloPecas.size(); i++) {
             
             this.executarUpdateDeleteSQL(
-               "UPDATE pecas SET " 
+               "UPDATE peca SET " 
                + "quantidade = '" +modeloPecas.get(i).getQuantidade() + "' " 
                + " WHERE id = '" + modeloPecas.get(i).getId() + "'"
             );
