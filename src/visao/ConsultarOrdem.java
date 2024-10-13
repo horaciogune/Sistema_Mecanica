@@ -279,7 +279,8 @@ public class ConsultarOrdem extends javax.swing.JPanel {
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-  
+        ApagarOrdem();
+        
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -355,6 +356,31 @@ public void CarregarOrdenServico(){
             }
 }
 
+private void ApagarOrdem(){
+    int linha = jtOrdens.getSelectedRow();
+   
+    if (linha == -1) {
+        JOptionPane.showMessageDialog(null, "SELECIONE UMA ORDEM PARA EXCLUIR!", "Erro", JOptionPane.ERROR_MESSAGE);
+        return;
+    }
+    
+     int id = (int) jtOrdens.getValueAt(linha, 0);
 
+    int opcaoApagar = JOptionPane.showConfirmDialog(this, "EXCLUIR ORDEM DE SERVIÇO?", "Confirmação", JOptionPane.YES_NO_OPTION);
+    if (opcaoApagar != JOptionPane.YES_OPTION) {
+        return;
+    }
+    OrdemServicoController ordemServicoController = new OrdemServicoController();
+     if (ordemServicoController.ApagarOrdemServicocontroller(id)) {
+        this.CarregarOrdenServico();
+    } else {
+        JOptionPane.showMessageDialog(this, "ERRO AO EXCLUIR SERVIÇO, A ordem pode estar relacionado a uma operação", "Erro", JOptionPane.ERROR_MESSAGE);
+    }
+    
 }
+}
+
+
+
+
 
