@@ -1,4 +1,3 @@
-
 package visao;
 
 import Controller.OrdemServicoController;
@@ -15,14 +14,17 @@ public class ConsultarOrdem extends javax.swing.JPanel {
     ModeloOrdemServico modeloOrdemServico = new ModeloOrdemServico();
     OrdemServicoController ordemservicoController = new OrdemServicoController();
     ArrayList<ModeloOrdemServico> listaModeloOrdemServicos = new ArrayList<>();
-    
+
     PecasController pecasController = new PecasController();
     ArrayList<ModeloPecas> listaModeloPecas = new ArrayList<ModeloPecas>();
     ModeloPecas modeloPecas = new ModeloPecas();
     
+    private VerDetalhesOrdem verDetalhesOrdem;
     
+
     public ConsultarOrdem() {
         initComponents();
+        verDetalhesOrdem = new VerDetalhesOrdem();
         CarregarOrdenServico();
     }
 
@@ -271,23 +273,23 @@ public class ConsultarOrdem extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-      
+
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-       
+
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         ApagarOrdem();
-        
+
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-         this.removeAll();
-         CriarOrdemServico criarOrdemServico = new CriarOrdemServico();
+        this.removeAll();
+        CriarOrdemServico criarOrdemServico = new CriarOrdemServico();
         this.setLayout(new BorderLayout());
-        this.add(criarOrdemServico  , BorderLayout.CENTER);
+        this.add(criarOrdemServico, BorderLayout.CENTER);
         this.revalidate();
         this.repaint();
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -296,7 +298,7 @@ public class ConsultarOrdem extends javax.swing.JPanel {
         this.removeAll();
         PainelCasa painelCasa = new PainelCasa();
         this.setLayout(new BorderLayout());
-        this.add(painelCasa , BorderLayout.CENTER);
+        this.add(painelCasa, BorderLayout.CENTER);
         this.revalidate();
         this.repaint();
     }//GEN-LAST:event_jButton4ActionPerformed
@@ -305,13 +307,14 @@ public class ConsultarOrdem extends javax.swing.JPanel {
         this.removeAll();
         PainelConsultas painelConsultas = new PainelConsultas();
         this.setLayout(new BorderLayout());
-        this.add(painelConsultas , BorderLayout.CENTER);
+        this.add(painelConsultas, BorderLayout.CENTER);
         this.revalidate();
         this.repaint();
     }//GEN-LAST:event_jButton9ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-        // TODO add your handling code here:
+       verDetalhes();
+       jtOrdens.clearSelection();
     }//GEN-LAST:event_jButton7ActionPerformed
 
 
@@ -334,15 +337,15 @@ public class ConsultarOrdem extends javax.swing.JPanel {
     private utilitarios.PainelBorderr1 painelBorderr13;
     // End of variables declaration//GEN-END:variables
 
-public void CarregarOrdenServico(){
-     
-  DefaultTableModel modelo = (DefaultTableModel) jtOrdens.getModel();
-  modelo.setNumRows(0);
-  listaModeloOrdemServicos = ordemservicoController.getListaOrdemServicocontroller();
-  int cont = listaModeloOrdemServicos.size();
-        
-   for(int i =0; i<cont;i++){
-      modelo.addRow(new Object[]{
+    public void CarregarOrdenServico() {
+
+        DefaultTableModel modelo = (DefaultTableModel) jtOrdens.getModel();
+        modelo.setNumRows(0);
+        listaModeloOrdemServicos = ordemservicoController.getListaOrdemServicocontroller();
+        int cont = listaModeloOrdemServicos.size();
+
+        for (int i = 0; i < cont; i++) {
+            modelo.addRow(new Object[]{
                 listaModeloOrdemServicos.get(i).getId(),
                 listaModeloOrdemServicos.get(i).getDataAbertura(),
                 listaModeloOrdemServicos.get(i).getDataFechamento(),
@@ -351,36 +354,61 @@ public void CarregarOrdenServico(){
                 listaModeloOrdemServicos.get(i).getServico(),
                 listaModeloOrdemServicos.get(i).getPrecoTotal(),
                 listaModeloOrdemServicos.get(i).getStatus()
-          
+
             });
-            }
-}
-
-private void ApagarOrdem(){
-    int linha = jtOrdens.getSelectedRow();
-   
-    if (linha == -1) {
-        JOptionPane.showMessageDialog(null, "SELECIONE UMA ORDEM PARA EXCLUIR!", "Erro", JOptionPane.ERROR_MESSAGE);
-        return;
+        }
     }
-    
-     int id = (int) jtOrdens.getValueAt(linha, 0);
 
-    int opcaoApagar = JOptionPane.showConfirmDialog(this, "EXCLUIR ORDEM DE SERVIÇO?", "Confirmação", JOptionPane.YES_NO_OPTION);
-    if (opcaoApagar != JOptionPane.YES_OPTION) {
-        return;
+    private void ApagarOrdem() {
+        int linha = jtOrdens.getSelectedRow();
+
+        if (linha == -1) {
+            JOptionPane.showMessageDialog(null, "SELECIONE UMA ORDEM PARA EXCLUIR!", "Erro", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        int id = (int) jtOrdens.getValueAt(linha, 0);
+
+        int opcaoApagar = JOptionPane.showConfirmDialog(this, "EXCLUIR ORDEM DE SERVIÇO?", "Confirmação", JOptionPane.YES_NO_OPTION);
+        if (opcaoApagar != JOptionPane.YES_OPTION) {
+            return;
+        }
+
+        if (ordemservicoController.ApagarOrdemServicocontroller(id)) {
+            this.CarregarOrdenServico();
+        } else {
+            JOptionPane.showMessageDialog(this, "ERRO AO EXCLUIR SERVIÇO, A ordem pode estar relacionado a uma operação", "Erro", JOptionPane.ERROR_MESSAGE);
+        }
+
     }
-    OrdemServicoController ordemServicoController = new OrdemServicoController();
-     if (ordemServicoController.ApagarOrdemServicocontroller(id)) {
-        this.CarregarOrdenServico();
-    } else {
-        JOptionPane.showMessageDialog(this, "ERRO AO EXCLUIR SERVIÇO, A ordem pode estar relacionado a uma operação", "Erro", JOptionPane.ERROR_MESSAGE);
+
+    public void verDetalhes(){
+      int linha = jtOrdens.getSelectedRow();
+      
+       if (linha == -1) {
+            JOptionPane.showMessageDialog(null, "SELECIONE UMA ORDEM PARA VER DETALHES!", "Erro", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+       
+        int id = (int) jtOrdens.getValueAt(linha, 0);
+        
+        verDetalhesOrdem.setVisible(true);
+        
+        modeloOrdemServico = ordemservicoController.getOrdemServicocontroller(id);
+        verDetalhesOrdem.txtCodigoOrdem().setText(String.valueOf(modeloOrdemServico.getId()));
+        verDetalhesOrdem.txtCodigoCliente().setText(String.valueOf(modeloOrdemServico.getIdCliente()));
+        verDetalhesOrdem.txtCliente().setText(modeloOrdemServico.getNomeCliente());
+        verDetalhesOrdem.txtMatricula().setText(modeloOrdemServico.getMatriculaVeiculo());
+        verDetalhesOrdem.txtVeiculo().setText(modeloOrdemServico.getMarcaVeiculo());
+        verDetalhesOrdem.txtMecanico().setText(modeloOrdemServico.getNomeMecanico());
+        verDetalhesOrdem.txtProblema().setText(modeloOrdemServico.getProblema());
+        verDetalhesOrdem.txtServico().setText(modeloOrdemServico.getServico());
+        verDetalhesOrdem.txtObservacoes().setText(modeloOrdemServico.getObservacoes());
+        verDetalhesOrdem.txtDataAbertura().setText(modeloOrdemServico.getDataAbertura());
+        verDetalhesOrdem.txtDataFechamento().setText(modeloOrdemServico.getDataFechamento());
+        verDetalhesOrdem.txtPecas().setText(modeloOrdemServico.getPecas());
+        verDetalhesOrdem.txtStatus().setText(modeloOrdemServico.getStatus());
+        verDetalhesOrdem.txtValor().setText(String.valueOf(modeloOrdemServico.getPrecoTotal()));
+      
     }
-    
 }
-}
-
-
-
-
-

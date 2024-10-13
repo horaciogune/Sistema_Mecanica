@@ -83,7 +83,8 @@ public ModeloOrdemServico getOrdemServicoDao(int id) {
                  +" pecas,"
                  +" precoTotal,"
                  +" nomeMecanico,"
-                 +" status "   
+                 +" status, "
+                 +" dataAbertura "  
                  +" FROM "
                  +" ordem_servico" 
                  + " WHERE" 
@@ -105,6 +106,7 @@ public ModeloOrdemServico getOrdemServicoDao(int id) {
             modeloOrdemServico.setPrecoTotal(this.getResultSet().getDouble(11));
             modeloOrdemServico.setNomeMecanico(this.getResultSet().getString(12));
             modeloOrdemServico.setStatus(this.getResultSet().getString(13));
+            modeloOrdemServico.setDataAbertura(this.getResultSet().getString(14));
             
         }
 
