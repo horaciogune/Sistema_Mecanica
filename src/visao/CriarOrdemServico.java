@@ -10,12 +10,16 @@ import Modelo.ModeloMecanico;
 import Modelo.ModeloOrdemServico;
 import Modelo.ModeloPecas;
 import Modelo.ModeloVeiculo;
+import com.toedter.calendar.JDateChooser;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
 import javax.swing.Timer;
 import javax.swing.table.DefaultTableModel;
 
@@ -325,6 +329,7 @@ public class CriarOrdemServico extends javax.swing.JPanel {
         txtCodigo.setEditable(false);
         txtCodigo.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         txtCodigo.setForeground(new java.awt.Color(255, 255, 255));
+        txtCodigo.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtCodigo.setBackgroundColor(new java.awt.Color(0, 102, 204));
         txtCodigo.setBorderColor(new java.awt.Color(255, 255, 255));
         txtCodigo.setFont(new java.awt.Font("Segoe UI Semilight", 0, 14)); // NOI18N
@@ -337,6 +342,7 @@ public class CriarOrdemServico extends javax.swing.JPanel {
         txtIdCliente.setEditable(false);
         txtIdCliente.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         txtIdCliente.setForeground(new java.awt.Color(255, 255, 255));
+        txtIdCliente.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtIdCliente.setBackgroundColor(new java.awt.Color(0, 102, 204));
         txtIdCliente.setBorderColor(new java.awt.Color(255, 255, 255));
         txtIdCliente.setFont(new java.awt.Font("Segoe UI Semilight", 0, 14)); // NOI18N
@@ -465,11 +471,14 @@ public class CriarOrdemServico extends javax.swing.JPanel {
                     .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtValorPago, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel17)
-                    .addComponent(jButton2))
-                .addContainerGap(103, Short.MAX_VALUE))
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(1, 1, 1))
+                    .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(txtValorPago, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel17)))
+                .addContainerGap(102, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -535,7 +544,7 @@ public class CriarOrdemServico extends javax.swing.JPanel {
     }//GEN-LAST:event_txtVeiculoKeyReleased
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        SalvarOrdemServico();
+        SalvarOuAtualizar();
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void txtValorPagoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtValorPagoKeyReleased
@@ -601,6 +610,58 @@ public class CriarOrdemServico extends javax.swing.JPanel {
     private javax.swing.JTextArea txtpecas;
     // End of variables declaration//GEN-END:variables
 
+    public JComboBox cboCliente() {
+        return cboCliente;
+    }
+
+    public JComboBox cboMatricula() {
+        return cboMatricula;
+    }
+
+    public JComboBox cboMecanico() {
+        return cboMecanico;
+    }
+
+    public JComboBox cboStatus() {
+        return cboStatus;
+    }
+
+    public JDateChooser dataSaida() {
+        return dataSaida;
+    }
+
+    public JTextField txtCodigo() {
+        return txtCodigo;
+    }
+
+    public JTextField txtIdCliente() {
+        return txtIdCliente;
+    }
+
+    public JTextArea txtObservacoes() {
+        return txtObservacoes;
+    }
+
+    public JTextArea txtProblema() {
+        return txtProblema;
+    }
+
+    public JTextArea txtServico() {
+        return txtServico;
+    }
+
+    public JTextArea txtpecas() {
+        return txtpecas;
+    }
+
+    public JTextField txtValorPago() {
+        return txtValorPago;
+    }
+
+    public JTextField txtVeiculo() {
+        return txtVeiculo;
+    }
+
     private void CarregarClientesNaComboBox() {
         listaModeloClientes = clienteController.getListaModeloClienteController();
         cboCliente.removeAllItems();
@@ -638,8 +699,6 @@ public class CriarOrdemServico extends javax.swing.JPanel {
         txtIdCliente.setText(String.valueOf(modeloCliente.getId()));
     }
 
-    
-
     private void SalvarOrdemServico() {
 
         modeloOrdemServico.setIdCliente(Integer.parseInt(txtIdCliente.getText()));
@@ -674,6 +733,50 @@ public class CriarOrdemServico extends javax.swing.JPanel {
 
         }
     }
+     private void AtualizarOrdemServico() {
 
-  
+        modeloOrdemServico.setId(Integer.parseInt(txtCodigo.getText()));
+        modeloOrdemServico.setIdCliente(Integer.parseInt(txtIdCliente.getText()));
+        modeloOrdemServico.setNomeCliente(cboCliente.getSelectedItem().toString());
+        modeloOrdemServico.setNomeMecanico(cboMecanico.getSelectedItem().toString());
+        modeloOrdemServico.setMatriculaVeiculo(cboMatricula.getSelectedItem().toString());
+        modeloOrdemServico.setMarcaVeiculo(txtVeiculo.getText());
+        modeloOrdemServico.setStatus(cboStatus.getSelectedItem().toString());
+        modeloOrdemServico.setProblema(txtProblema.getText());
+        modeloOrdemServico.setServico(txtServico.getText());
+        modeloOrdemServico.setObservacoes(txtObservacoes.getText());
+        modeloOrdemServico.setPecas(txtpecas.getText());
+        modeloOrdemServico.setPrecoTotal(Double.parseDouble(txtValorPago.getText()));
+
+        Date dataSelecionada = dataSaida.getDate();
+
+        if (dataSelecionada != null) {
+
+            SimpleDateFormat formatoData = new SimpleDateFormat("d 'de' MMMM 'de' yyyy");
+
+            String dataFormatada = formatoData.format(dataSelecionada);
+
+            modeloOrdemServico.setDataFechamento(dataFormatada);
+        } else {
+            System.out.println("Nenhuma data foi selecionada.");
+        }
+
+        if (ordemServicoController.AtualizarOrdemServicocontroller(modeloOrdemServico)) {
+            JOptionPane.showMessageDialog(this, "ATUALIZADO COM SUCESSO");
+        } else {
+            JOptionPane.showMessageDialog(this, "ERRO", "ERRO", JOptionPane.ERROR_MESSAGE);
+
+        }
+    }
+    
+    public void SalvarOuAtualizar(){
+        
+        if(txtCodigo.getText().equals("")){
+            this.SalvarOrdemServico();
+        }else{
+            this.AtualizarOrdemServico();
+        }
+        
+    }
+
 }

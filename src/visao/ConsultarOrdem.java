@@ -18,13 +18,15 @@ public class ConsultarOrdem extends javax.swing.JPanel {
     PecasController pecasController = new PecasController();
     ArrayList<ModeloPecas> listaModeloPecas = new ArrayList<ModeloPecas>();
     ModeloPecas modeloPecas = new ModeloPecas();
-    
+
     private VerDetalhesOrdem verDetalhesOrdem;
-    
+
+    private CriarOrdemServico criarOrdemServico;
 
     public ConsultarOrdem() {
         initComponents();
         verDetalhesOrdem = new VerDetalhesOrdem();
+        criarOrdemServico = new CriarOrdemServico();
         CarregarOrdenServico();
     }
 
@@ -277,7 +279,8 @@ public class ConsultarOrdem extends javax.swing.JPanel {
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-
+        EnviarDadosParaFormulario();
+        jtOrdens.clearSelection();
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -313,8 +316,8 @@ public class ConsultarOrdem extends javax.swing.JPanel {
     }//GEN-LAST:event_jButton9ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-       verDetalhes();
-       jtOrdens.clearSelection();
+        verDetalhes();
+        jtOrdens.clearSelection();
     }//GEN-LAST:event_jButton7ActionPerformed
 
 
@@ -382,18 +385,18 @@ public class ConsultarOrdem extends javax.swing.JPanel {
 
     }
 
-    public void verDetalhes(){
-      int linha = jtOrdens.getSelectedRow();
-      
-       if (linha == -1) {
+    public void verDetalhes() {
+        int linha = jtOrdens.getSelectedRow();
+
+        if (linha == -1) {
             JOptionPane.showMessageDialog(null, "SELECIONE UMA ORDEM PARA VER DETALHES!", "Erro", JOptionPane.ERROR_MESSAGE);
             return;
         }
-       
+
         int id = (int) jtOrdens.getValueAt(linha, 0);
-        
+
         verDetalhesOrdem.setVisible(true);
-        
+
         modeloOrdemServico = ordemservicoController.getOrdemServicocontroller(id);
         verDetalhesOrdem.txtCodigoOrdem().setText(String.valueOf(modeloOrdemServico.getId()));
         verDetalhesOrdem.txtCodigoCliente().setText(String.valueOf(modeloOrdemServico.getIdCliente()));
@@ -409,6 +412,45 @@ public class ConsultarOrdem extends javax.swing.JPanel {
         verDetalhesOrdem.txtPecas().setText(modeloOrdemServico.getPecas());
         verDetalhesOrdem.txtStatus().setText(modeloOrdemServico.getStatus());
         verDetalhesOrdem.txtValor().setText(String.valueOf(modeloOrdemServico.getPrecoTotal()));
-      
+
     }
+
+    public void EnviarDadosParaFormulario() {
+
+        int linha = jtOrdens.getSelectedRow();
+
+        if (linha == -1) {
+            JOptionPane.showMessageDialog(null, "SELECIONE UMA ORDEM PARA VER ATUALIZAR!", "Erro", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        int id = (int) jtOrdens.getValueAt(linha, 0);
+
+        modeloOrdemServico = ordemservicoController.getOrdemServicocontroller(id);
+        criarOrdemServico.txtCodigo().setText(String.valueOf(modeloOrdemServico.getId()));
+        criarOrdemServico.txtIdCliente().setText(String.valueOf(modeloOrdemServico.getIdCliente()));
+        criarOrdemServico.cboCliente().setSelectedItem(modeloOrdemServico.getNomeCliente());
+        criarOrdemServico.cboMatricula().setSelectedItem(modeloOrdemServico.getMatriculaVeiculo());
+        criarOrdemServico.txtVeiculo().setText(modeloOrdemServico.getMarcaVeiculo());
+        criarOrdemServico.cboMecanico().setSelectedItem(modeloOrdemServico.getNomeMecanico());
+        criarOrdemServico.txtProblema().setText(modeloOrdemServico.getProblema());
+        criarOrdemServico.txtServico().setText(modeloOrdemServico.getServico());
+        criarOrdemServico.txtObservacoes().setText(modeloOrdemServico.getObservacoes());
+        criarOrdemServico.txtpecas().setText(modeloOrdemServico.getPecas());
+        criarOrdemServico.cboStatus().setSelectedItem(modeloOrdemServico.getStatus());
+        criarOrdemServico.dataSaida().setDateFormatString(modeloOrdemServico.getDataAbertura());
+        criarOrdemServico.txtValorPago().setText(String.valueOf(modeloOrdemServico.getPrecoTotal()));
+
+        this.ChamarFormulario(criarOrdemServico);
+
+    }
+
+    public void ChamarFormulario(CriarOrdemServico criarOrdemServico) {
+        this.removeAll();
+        this.setLayout(new BorderLayout());
+        this.add(criarOrdemServico, BorderLayout.CENTER);
+        this.revalidate();
+        this.repaint();
+    }
+
 }

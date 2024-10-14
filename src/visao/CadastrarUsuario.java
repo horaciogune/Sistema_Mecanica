@@ -1,4 +1,3 @@
-
 package visao;
 
 import Controller.UsuarioController;
@@ -12,17 +11,16 @@ import javax.swing.table.DefaultTableModel;
 
 public class CadastrarUsuario extends javax.swing.JFrame {
 
-    
     UsuarioController usuarioController = new UsuarioController();
     ModeloUsuario modeloUsuario = new ModeloUsuario();
-    
+
     MenuPrincipal menuPrincipal = new MenuPrincipal();
-    
+
     public CadastrarUsuario() {
         initComponents();
         setLocationRelativeTo(null);
         menuPrincipal.tema();
-        
+
     }
 
     @SuppressWarnings("unchecked")
@@ -285,7 +283,6 @@ public class CadastrarUsuario extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
 
-    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -339,129 +336,130 @@ public class CadastrarUsuario extends javax.swing.JFrame {
     private javax.swing.JTextField txtUserName;
     // End of variables declaration//GEN-END:variables
 
-
-public JTextField getTxtCodigo(){
-    return txtCodigo;
-}
-public JTextField getTxtNome(){
-    return txtNome;
-}
-public JTextField getTxtUserName(){
-    return txtUserName;
-}
-public JTextField getTxtEmail(){
-    return txtEmail;
-}
-public JPasswordField getTxtSenha(){
-    return txtSenha;
-}
-public JComboBox  getTxtPerfil(){
-    return cboPerfil;
-}
-public JRadioButton getTxtRadioAticto(){
-    return radActivo;
-}
-public JRadioButton getTxtRadioDesativo(){
-    return radDesativo;
-}
-
-
-private void SalvarUsuarios() {
-    
-    if (!txtNome.getText().isEmpty() && !txtUserName.getText().isEmpty() && !txtEmail.getText().isEmpty() && !txtSenha.getText().isEmpty() && cboPerfil.getSelectedItem() != null) {
-        modeloUsuario.setNome(txtNome.getText());
-        modeloUsuario.setUsername(txtUserName.getText());
-        modeloUsuario.setEmail(txtEmail.getText());
-        modeloUsuario.setSenha(txtSenha.getText());
-        modeloUsuario.setPerfil(cboPerfil.getSelectedItem().toString());
-
-        // Definir o estado baseado nos radio buttons
-        if (radActivo.isSelected()) {
-            modeloUsuario.setEstado("Ativo");
-        } else if (radDesativo.isSelected()) {
-            modeloUsuario.setEstado("Desativo");
-        } else {
-            JOptionPane.showMessageDialog(this, "Selecione o estado do usuário.", "Erro", JOptionPane.ERROR_MESSAGE);
-            return;
-        }
-
-        // Verificar se o nome de usuário ou nome já existem no banco de dados
-        if (usuarioController.VerificarEexistenciaUsuarioController(modeloUsuario)) {
-            JOptionPane.showMessageDialog(this, "NOME DO USUARIO JA EXISTENTE. Por favor, escolha outro.", "Erro", JOptionPane.ERROR_MESSAGE);
-            return;
-        }
-
-        
-        if (usuarioController.salvarUsuariocontroller(modeloUsuario)>0) {
-            JOptionPane.showMessageDialog(this,"SUCESSO");
-            limparFormulatio();
-              
-        } else {
-            JOptionPane.showMessageDialog(this, "ERRO", "Error", JOptionPane.ERROR_MESSAGE);
-        }
-    } else {
-        JOptionPane.showMessageDialog(this, "ALGUM CAMPO OBRIGADO INGNORADO.", "Erro", JOptionPane.ERROR_MESSAGE);
+    public JTextField getTxtCodigo() {
+        return txtCodigo;
     }
-}
 
-public void ediatarUsuario(){
-    
-    if (!txtNome.getText().isEmpty() && !txtUserName.getText().isEmpty() && !txtEmail.getText().isEmpty() && !txtSenha.getText().isEmpty() && cboPerfil.getSelectedItem() != null) {
+    public JTextField getTxtNome() {
+        return txtNome;
+    }
 
-        modeloUsuario.setId(Integer.parseInt(txtCodigo.getText()));
-        modeloUsuario.setNome(txtNome.getText());
-        modeloUsuario.setUsername(txtUserName.getText());
-        modeloUsuario.setEmail(txtEmail.getText());
-        modeloUsuario.setSenha(txtSenha.getText());
-        modeloUsuario.setPerfil(cboPerfil.getSelectedItem().toString()); 
-        
-        if (radActivo.isSelected()) {
-            modeloUsuario.setEstado("Ativo");
-        } else if (radDesativo.isSelected()) {
-            modeloUsuario.setEstado("Desativo");
+    public JTextField getTxtUserName() {
+        return txtUserName;
+    }
+
+    public JTextField getTxtEmail() {
+        return txtEmail;
+    }
+
+    public JPasswordField getTxtSenha() {
+        return txtSenha;
+    }
+
+    public JComboBox getTxtPerfil() {
+        return cboPerfil;
+    }
+
+    public JRadioButton getTxtRadioAticto() {
+        return radActivo;
+    }
+
+    public JRadioButton getTxtRadioDesativo() {
+        return radDesativo;
+    }
+
+    private void SalvarUsuarios() {
+
+        if (!txtNome.getText().isEmpty() && !txtUserName.getText().isEmpty() && !txtEmail.getText().isEmpty() && !txtSenha.getText().isEmpty() && cboPerfil.getSelectedItem() != null) {
+            modeloUsuario.setNome(txtNome.getText());
+            modeloUsuario.setUsername(txtUserName.getText());
+            modeloUsuario.setEmail(txtEmail.getText());
+            modeloUsuario.setSenha(txtSenha.getText());
+            modeloUsuario.setPerfil(cboPerfil.getSelectedItem().toString());
+
+            // Definir o estado baseado nos radio buttons
+            if (radActivo.isSelected()) {
+                modeloUsuario.setEstado("Ativo");
+            } else if (radDesativo.isSelected()) {
+                modeloUsuario.setEstado("Desativo");
+            } else {
+                JOptionPane.showMessageDialog(this, "Selecione o estado do usuário.", "Erro", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+
+            // Verificar se o nome de usuário ou nome já existem no banco de dados
+            if (usuarioController.VerificarEexistenciaUsuarioController(modeloUsuario)) {
+                JOptionPane.showMessageDialog(this, "NOME DO USUARIO JA EXISTENTE. Por favor, escolha outro.", "Erro", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+
+            if (usuarioController.salvarUsuariocontroller(modeloUsuario) > 0) {
+                JOptionPane.showMessageDialog(this, "SUCESSO");
+                limparFormulatio();
+
+            } else {
+                JOptionPane.showMessageDialog(this, "ERRO", "Error", JOptionPane.ERROR_MESSAGE);
+            }
         } else {
-            JOptionPane.showMessageDialog(this, "SELECIONE UM ESTADO.", "Erro", JOptionPane.ERROR_MESSAGE);
-            return;
+            JOptionPane.showMessageDialog(this, "ALGUM CAMPO OBRIGADO INGNORADO.", "Erro", JOptionPane.ERROR_MESSAGE);
         }
-        
-      
-        if(usuarioController.AtualizarUsuariocontroller(modeloUsuario)){
-        JOptionPane.showMessageDialog(this,"ATUALIZADO COM SUCESSO");
-       
-        limparFormulatio();
-        dispose();
-        
-        }else{
-            
-           JOptionPane.showMessageDialog(this,"ERRO AO ATUALIZAR DADOS DO USUARIO ","Erro",JOptionPane.ERROR_MESSAGE);
-  
+    }
+
+    public void ediatarUsuario() {
+
+        if (!txtNome.getText().isEmpty() && !txtUserName.getText().isEmpty() && !txtEmail.getText().isEmpty() && !txtSenha.getText().isEmpty() && cboPerfil.getSelectedItem() != null) {
+
+            modeloUsuario.setId(Integer.parseInt(txtCodigo.getText()));
+            modeloUsuario.setNome(txtNome.getText());
+            modeloUsuario.setUsername(txtUserName.getText());
+            modeloUsuario.setEmail(txtEmail.getText());
+            modeloUsuario.setSenha(txtSenha.getText());
+            modeloUsuario.setPerfil(cboPerfil.getSelectedItem().toString());
+
+            if (radActivo.isSelected()) {
+                modeloUsuario.setEstado("Ativo");
+            } else if (radDesativo.isSelected()) {
+                modeloUsuario.setEstado("Desativo");
+            } else {
+                JOptionPane.showMessageDialog(this, "SELECIONE UM ESTADO.", "Erro", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+
+            if (usuarioController.AtualizarUsuariocontroller(modeloUsuario)) {
+                JOptionPane.showMessageDialog(this, "ATUALIZADO COM SUCESSO");
+
+                limparFormulatio();
+                dispose();
+
+            } else {
+
+                JOptionPane.showMessageDialog(this, "ERRO AO ATUALIZAR DADOS DO USUARIO ", "Erro", JOptionPane.ERROR_MESSAGE);
+
+            }
+        } else {
+            JOptionPane.showMessageDialog(this, "ALGUM CAMPO OBRIGADO IGNORADO.", "Erro", JOptionPane.ERROR_MESSAGE);
         }
-         } else {
-        JOptionPane.showMessageDialog(this, "ALGUM CAMPO OBRIGADO IGNORADO.", "Erro", JOptionPane.ERROR_MESSAGE);
     }
-}
 
-private void salvarOuAlterar(){
-    
-    if(txtCodigo.getText().isEmpty()){
-    this.SalvarUsuarios();
-    }else{
-        this.ediatarUsuario();
+    private void salvarOuAlterar() {
+
+        if (txtCodigo.getText().isEmpty()) {
+            this.SalvarUsuarios();
+        } else {
+            this.ediatarUsuario();
+        }
     }
-}
 
+    private void limparFormulatio() {
 
-
-private void limparFormulatio(){
-    
-    this.txtCodigo.setText("");
-    this.txtNome.setText("");
-    this.txtEmail.setText("");
-    this.txtUserName.setText("");
-    this.txtSenha.setText("");
-    this.radActivo.setSelected(false);
-    this.radDesativo.setSelected(false);
-    this.cboPerfil.setSelectedItem("");
-}
+        this.txtCodigo.setText("");
+        this.txtNome.setText("");
+        this.txtEmail.setText("");
+        this.txtUserName.setText("");
+        this.txtSenha.setText("");
+        this.radActivo.setSelected(false);
+        this.radDesativo.setSelected(false);
+        this.cboPerfil.setSelectedItem("");
+    }
 
 }
