@@ -56,6 +56,7 @@ private CadastrarVeiculos veiculos;
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
+        jtVeiculos.setFont(new java.awt.Font("Yu Gothic UI Semilight", 1, 14)); // NOI18N
         jtVeiculos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 

@@ -54,7 +54,7 @@ public class ConsultarOrdem extends javax.swing.JPanel {
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
         jtOrdens.setBackground(new java.awt.Color(240, 240, 240));
-        jtOrdens.setFont(new java.awt.Font("Segoe UI Semibold", 1, 14)); // NOI18N
+        jtOrdens.setFont(new java.awt.Font("Yu Gothic UI Semilight", 1, 14)); // NOI18N
         jtOrdens.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 

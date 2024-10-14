@@ -63,7 +63,7 @@ public class ConsultarClientes extends javax.swing.JPanel {
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
-        jtClientes.setFont(new java.awt.Font("Segoe UI Semilight", 1, 14)); // NOI18N
+        jtClientes.setFont(new java.awt.Font("Yu Gothic UI Semilight", 1, 14)); // NOI18N
         jtClientes.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
