@@ -93,9 +93,13 @@ public class VerDetalhesOrdem extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Segoe UI Semilight", 1, 14)); // NOI18N
         jLabel2.setText("ID Ordem:");
 
+        txtCodigoOrdem.setEditable(false);
         txtCodigoOrdem.setFont(new java.awt.Font("Segoe UI Semilight", 1, 14)); // NOI18N
+        txtCodigoOrdem.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
+        txtCodigoCliente.setEditable(false);
         txtCodigoCliente.setFont(new java.awt.Font("Segoe UI Semilight", 1, 14)); // NOI18N
+        txtCodigoCliente.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
         jLabel3.setFont(new java.awt.Font("Segoe UI Semilight", 1, 14)); // NOI18N
         jLabel3.setText("codigo cliente:");
@@ -103,19 +107,27 @@ public class VerDetalhesOrdem extends javax.swing.JFrame {
         jLabel5.setFont(new java.awt.Font("Segoe UI Semilight", 1, 14)); // NOI18N
         jLabel5.setText("Veiculo:");
 
+        txtVeiculo.setEditable(false);
         txtVeiculo.setFont(new java.awt.Font("Segoe UI Semilight", 1, 14)); // NOI18N
+        txtVeiculo.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
+        txtCliente.setEditable(false);
         txtCliente.setFont(new java.awt.Font("Segoe UI Semilight", 1, 14)); // NOI18N
+        txtCliente.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
         jLabel8.setFont(new java.awt.Font("Segoe UI Semilight", 1, 14)); // NOI18N
         jLabel8.setText("Problema:");
 
+        txtMatricula.setEditable(false);
         txtMatricula.setFont(new java.awt.Font("Segoe UI Semilight", 1, 14)); // NOI18N
+        txtMatricula.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
         jLabel6.setFont(new java.awt.Font("Segoe UI Semilight", 1, 14)); // NOI18N
         jLabel6.setText("Matricula:");
 
+        txtProblema.setEditable(false);
         txtProblema.setFont(new java.awt.Font("Segoe UI Semilight", 1, 14)); // NOI18N
+        txtProblema.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
         jLabel9.setFont(new java.awt.Font("Segoe UI Semilight", 1, 14)); // NOI18N
         jLabel9.setText("Cliente:");
@@ -123,19 +135,27 @@ public class VerDetalhesOrdem extends javax.swing.JFrame {
         jLabel10.setFont(new java.awt.Font("Segoe UI Semilight", 1, 14)); // NOI18N
         jLabel10.setText("Servico:");
 
+        txtServico.setEditable(false);
         txtServico.setFont(new java.awt.Font("Segoe UI Semilight", 1, 14)); // NOI18N
+        txtServico.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
         jLabel11.setFont(new java.awt.Font("Segoe UI Semilight", 1, 14)); // NOI18N
         jLabel11.setText("Observacoes:");
 
+        txtObservacoes.setEditable(false);
         txtObservacoes.setFont(new java.awt.Font("Segoe UI Semilight", 1, 14)); // NOI18N
+        txtObservacoes.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
         jLabel12.setFont(new java.awt.Font("Segoe UI Semilight", 1, 14)); // NOI18N
         jLabel12.setText("Pecas:");
 
+        txtPecas.setEditable(false);
         txtPecas.setFont(new java.awt.Font("Segoe UI Semilight", 1, 14)); // NOI18N
+        txtPecas.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
+        txtStatus.setEditable(false);
         txtStatus.setFont(new java.awt.Font("Segoe UI Semilight", 1, 14)); // NOI18N
+        txtStatus.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
         jLabel13.setFont(new java.awt.Font("Segoe UI Semilight", 1, 14)); // NOI18N
         jLabel13.setText("Situacao:");
@@ -143,19 +163,28 @@ public class VerDetalhesOrdem extends javax.swing.JFrame {
         jLabel14.setFont(new java.awt.Font("Segoe UI Semilight", 1, 14)); // NOI18N
         jLabel14.setText("Valor A pagar:");
 
+        txtValor.setEditable(false);
         txtValor.setFont(new java.awt.Font("Segoe UI Semilight", 1, 14)); // NOI18N
+        txtValor.setForeground(new java.awt.Color(255, 0, 0));
+        txtValor.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
         jLabel15.setFont(new java.awt.Font("Segoe UI Semilight", 1, 14)); // NOI18N
         jLabel15.setText("Abertura:");
 
+        txtDataAbertura.setEditable(false);
         txtDataAbertura.setFont(new java.awt.Font("Segoe UI Semilight", 1, 14)); // NOI18N
+        txtDataAbertura.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
         jLabel16.setFont(new java.awt.Font("Segoe UI Semilight", 1, 14)); // NOI18N
         jLabel16.setText("Fechamento:");
 
+        txtDataFechamento.setEditable(false);
         txtDataFechamento.setFont(new java.awt.Font("Segoe UI Semilight", 1, 14)); // NOI18N
+        txtDataFechamento.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
+        txtMecanico.setEditable(false);
         txtMecanico.setFont(new java.awt.Font("Segoe UI Semilight", 1, 14)); // NOI18N
+        txtMecanico.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
         jLabel17.setFont(new java.awt.Font("Segoe UI Semilight", 1, 14)); // NOI18N
         jLabel17.setText("Mecanico");
@@ -213,11 +242,12 @@ public class VerDetalhesOrdem extends javax.swing.JFrame {
                                         .addGap(10, 10, 10)
                                         .addComponent(jLabel3)
                                         .addGap(0, 0, Short.MAX_VALUE)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtVeiculo, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGap(52, 52, 52)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(txtVeiculo, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGap(55, 55, 55)
                                         .addComponent(jLabel5)))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -240,14 +270,12 @@ public class VerDetalhesOrdem extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel3))
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel5))
                         .addGap(37, 37, 37))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel5)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtVeiculo, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txtVeiculo, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(txtCodigoOrdem, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(txtCodigoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))

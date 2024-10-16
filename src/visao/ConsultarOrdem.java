@@ -22,11 +22,14 @@ public class ConsultarOrdem extends javax.swing.JPanel {
     private VerDetalhesOrdem verDetalhesOrdem;
 
     private CriarOrdemServico criarOrdemServico;
+    
+    private Faturar fatura;
 
     public ConsultarOrdem() {
         initComponents();
         verDetalhesOrdem = new VerDetalhesOrdem();
         criarOrdemServico = new CriarOrdemServico();
+        fatura = new Faturar();
         CarregarOrdenServico();
     }
 
@@ -71,6 +74,7 @@ public class ConsultarOrdem extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
+        jtOrdens.setRowHeight(35);
         jScrollPane1.setViewportView(jtOrdens);
         if (jtOrdens.getColumnModel().getColumnCount() > 0) {
             jtOrdens.getColumnModel().getColumn(0).setResizable(false);
@@ -139,26 +143,25 @@ public class ConsultarOrdem extends javax.swing.JPanel {
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 148, Short.MAX_VALUE)
+            .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, 148, Short.MAX_VALUE)
+            .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, 148, Short.MAX_VALUE)
+            .addComponent(jButton6, javax.swing.GroupLayout.DEFAULT_SIZE, 148, Short.MAX_VALUE)
+            .addComponent(jButton7, javax.swing.GroupLayout.DEFAULT_SIZE, 148, Short.MAX_VALUE)
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addGap(25, 25, 25)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 67, Short.MAX_VALUE)
+                .addGap(4, 4, 4)
+                .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, 67, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, 67, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton6, javax.swing.GroupLayout.DEFAULT_SIZE, 67, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton7, javax.swing.GroupLayout.DEFAULT_SIZE, 71, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         painelBorderr11.setBackgroundColor(new java.awt.Color(0, 102, 204));
@@ -254,7 +257,7 @@ public class ConsultarOrdem extends javax.swing.JPanel {
                 .addComponent(painelBorderr11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(58, 58, 58)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 389, Short.MAX_VALUE)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 401, Short.MAX_VALUE)
                     .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
 
@@ -275,7 +278,8 @@ public class ConsultarOrdem extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-
+      GerarFatura();
+      jtOrdens.clearSelection();
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
@@ -425,6 +429,8 @@ public class ConsultarOrdem extends javax.swing.JPanel {
         }
 
         int id = (int) jtOrdens.getValueAt(linha, 0);
+        
+      
 
         modeloOrdemServico = ordemservicoController.getOrdemServicocontroller(id);
         criarOrdemServico.txtCodigo().setText(String.valueOf(modeloOrdemServico.getId()));
@@ -443,6 +449,25 @@ public class ConsultarOrdem extends javax.swing.JPanel {
 
         this.ChamarFormulario(criarOrdemServico);
 
+    }
+    
+    public void GerarFatura(){
+        
+        int linha = jtOrdens.getSelectedRow();
+
+        if (linha == -1) {
+            JOptionPane.showMessageDialog(null, "SELECIONE UMA ORDEM PARA GERAR FATURA!", "Erro", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        int id = (int) jtOrdens.getValueAt(linha, 0);
+        
+        fatura.setVisible(true);
+        modeloOrdemServico = ordemservicoController.getOrdemServicocontroller(id);
+        
+        fatura.txtCodigoOrdem().setText(String.valueOf(modeloOrdemServico.getId()));
+        fatura.txtValorpagar().setText(String.valueOf(modeloOrdemServico.getPrecoTotal()));
+        
     }
 
     public void ChamarFormulario(CriarOrdemServico criarOrdemServico) {

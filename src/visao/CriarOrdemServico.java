@@ -163,7 +163,7 @@ public class CriarOrdemServico extends javax.swing.JPanel {
         cboStatus.setBackground(new java.awt.Color(0, 102, 204));
         cboStatus.setFont(new java.awt.Font("Segoe UI Semilight", 0, 14)); // NOI18N
         cboStatus.setForeground(new java.awt.Color(255, 255, 255));
-        cboStatus.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "--Selecione--", "Aberto", "Fechado", "EM Andamento" }));
+        cboStatus.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "--Selecione--", "Aberto", "em Andamento" }));
 
         jLabel12.setFont(new java.awt.Font("Segoe UI Semilight", 0, 14)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(51, 51, 51));
@@ -749,6 +749,7 @@ public class CriarOrdemServico extends javax.swing.JPanel {
         modeloOrdemServico.setPrecoTotal(Double.parseDouble(txtValorPago.getText()));
 
         Date dataSelecionada = dataSaida.getDate();
+        
 
         if (dataSelecionada != null) {
 
@@ -760,6 +761,7 @@ public class CriarOrdemServico extends javax.swing.JPanel {
         } else {
             System.out.println("Nenhuma data foi selecionada.");
         }
+        
 
         if (ordemServicoController.AtualizarOrdemServicocontroller(modeloOrdemServico)) {
             JOptionPane.showMessageDialog(this, "ATUALIZADO COM SUCESSO");
