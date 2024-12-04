@@ -12,6 +12,8 @@ import java.awt.BorderLayout;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 import javax.swing.JOptionPane;
 import javax.swing.RowFilter;
 import javax.swing.table.DefaultTableModel;
@@ -39,6 +41,7 @@ public class ConsultarMecanicos extends javax.swing.JPanel {
         mecanicos = new CadastrarMecanicos();
     }
 
+    
    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -268,20 +271,12 @@ public class ConsultarMecanicos extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-          try {
-            try (Connection conn = ConnectionFactory.getConnection()) {
-                String src = "src\\relatorios\\mecanicos.jrxml";
-                JasperReport jr = JasperCompileManager.compileReport(src);
-                JasperPrint jp = JasperFillManager.fillReport(jr, null,conn);
-                JasperViewer.viewReport(jp);
-            }
-            
-        } catch (SQLException | JRException e) {
-            JOptionPane.showMessageDialog(painelBorderr14, e);
-        }
+         relatorio();
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton6ActionPerformed
 
+    
+    
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
      EnviarDadosParaFormulario();
        
@@ -376,6 +371,47 @@ public class ConsultarMecanicos extends javax.swing.JPanel {
     
 }
       
+  public void relatorio(){
+                                             
+
+    try {
+        // Pegar a linha selecionada
+        int linha = jtMecanicos.getSelectedRow(); 
+        
+        // Verificar se alguma linha foi selecionada
+        if (linha == -1) {
+            JOptionPane.showMessageDialog(null, "SELECIONE UM FUNCIONARIO PARA GERAR O RELATÓRIO!", "Erro", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+        
+        // Pegar o valor do ID na primeira coluna (coluna 0)
+      int codigo = (int) jtMecanicos.getValueAt(linha, 0);
+System.out.println("ID selecionado: " + codigo); // Coluna 0 contém o ID do funcionário
+
+        try (Connection conn = ConnectionFactory.getConnection()) {
+            // Caminho para o arquivo .jrxml
+            String src = "src\\relatorios\\funcionarios.jrxml";
+            
+            // Compilar o relatório
+            JasperReport jr = JasperCompileManager.compileReport(src);
+
+            // Criar um Map para os parâmetros do relatório
+          Map<String, Object> parametros = new HashMap<>();
+parametros.put("P_id", codigo); // 'selectedId' é o nome do parâmetro definido no relatório Jasper
+
+            // Preencher o relatório com o parâmetro e a conexão
+            JasperPrint jp = JasperFillManager.fillReport(jr, parametros, conn);
+
+            // Exibir o relatório
+            JasperViewer.viewReport(jp, false);
+        }
+
+    } catch (SQLException | JRException e) {
+        JOptionPane.showMessageDialog(null, e.getMessage(), "Erro", JOptionPane.ERROR_MESSAGE);
+    }
+
+
+  }
   
     
     

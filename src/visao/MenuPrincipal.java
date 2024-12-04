@@ -11,7 +11,6 @@ import java.awt.BorderLayout;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.UIManager;
-
 /**
  *
  * @author Guilhrme casimiro
@@ -24,7 +23,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         setLocationRelativeTo(null);
         tema();
         setarCasas();
-      
+     
       
     }
 
@@ -291,11 +290,10 @@ public class MenuPrincipal extends javax.swing.JFrame {
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
+ 
+    
+    // Configurando a janela para exibição
+    
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
@@ -320,6 +318,9 @@ public class MenuPrincipal extends javax.swing.JFrame {
                 new MenuPrincipal().setVisible(true);
             }
         });
+        
+        // Criando uma instância de GraficoDeBarras
+    
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -374,5 +375,6 @@ public void setarCasas(){
     PainelReceptor.repaint();
 }
 
-
+ 
+ 
 }
