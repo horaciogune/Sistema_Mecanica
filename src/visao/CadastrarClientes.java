@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package visao;
 
 import Controller.ClienteController;
@@ -11,24 +6,20 @@ import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
-
-
 public class CadastrarClientes extends javax.swing.JFrame {
 
-    
     ClienteController clienteController = new ClienteController();
     ModeloCliente modeloCliente = new ModeloCliente();
-    
+
     MenuPrincipal menuPrincipal = new MenuPrincipal();
-   
+
     public CadastrarClientes() {
         initComponents();
         setLocationRelativeTo(null);
         menuPrincipal.tema();
-         
+
     }
 
-   
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -226,32 +217,25 @@ public class CadastrarClientes extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("REGISTRO DE CLIENTES");
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-
         jLabel2.setFont(new java.awt.Font("Segoe UI Semilight", 0, 14)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(51, 51, 51));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel2.setText("ID:");
 
         jLabel3.setFont(new java.awt.Font("Segoe UI Semilight", 0, 14)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(51, 51, 51));
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel3.setText("Nome:");
 
         jLabel4.setFont(new java.awt.Font("Segoe UI Semilight", 0, 14)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(51, 51, 51));
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel4.setText("Documento");
+        jLabel4.setText("Documento:");
 
         jLabel5.setFont(new java.awt.Font("Segoe UI Semilight", 0, 14)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(51, 51, 51));
         jLabel5.setText("Numero:");
 
         txtCodigo.setEditable(false);
         txtCodigo.setFont(new java.awt.Font("Segoe UI Semilight", 1, 14)); // NOI18N
 
         txtNome.setFont(new java.awt.Font("Segoe UI Semilight", 1, 14)); // NOI18N
-        txtNome.setForeground(new java.awt.Color(51, 51, 51));
         txtNome.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtNomeActionPerformed(evt);
@@ -259,7 +243,6 @@ public class CadastrarClientes extends javax.swing.JFrame {
         });
 
         txtNumero.setFont(new java.awt.Font("Segoe UI Semilight", 1, 14)); // NOI18N
-        txtNumero.setForeground(new java.awt.Color(51, 51, 51));
 
         jButton1.setFont(new java.awt.Font("Segoe UI Semilight", 1, 14)); // NOI18N
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Adicionar.png"))); // NOI18N
@@ -270,10 +253,7 @@ public class CadastrarClientes extends javax.swing.JFrame {
             }
         });
 
-        cboDocumento.setBackground(new java.awt.Color(240, 240, 240));
-        cboDocumento.setEditable(true);
         cboDocumento.setFont(new java.awt.Font("Segoe UI Semilight", 0, 14)); // NOI18N
-        cboDocumento.setForeground(new java.awt.Color(51, 51, 51));
         cboDocumento.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "--Selecione--", "Bilhete de Identidade", "Passa Porte", "Nuit", "Carta de Conducao" }));
         cboDocumento.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -282,46 +262,42 @@ public class CadastrarClientes extends javax.swing.JFrame {
         });
 
         jLabel6.setFont(new java.awt.Font("Segoe UI Semilight", 0, 14)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(51, 51, 51));
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel6.setText("Endereco:");
 
         txtEndereco.setFont(new java.awt.Font("Segoe UI Semilight", 1, 14)); // NOI18N
-        txtEndereco.setForeground(new java.awt.Color(51, 51, 51));
 
         jLabel7.setFont(new java.awt.Font("Segoe UI Semilight", 0, 14)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(51, 51, 51));
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel7.setText("Telefone:");
 
         txtContato.setFont(new java.awt.Font("Segoe UI Semilight", 1, 14)); // NOI18N
-        txtContato.setForeground(new java.awt.Color(51, 51, 51));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(0, 21, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, 117, Short.MAX_VALUE)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.TRAILING))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txtNome, javax.swing.GroupLayout.DEFAULT_SIZE, 353, Short.MAX_VALUE)
+                            .addComponent(txtNome)
                             .addComponent(txtNumero)
                             .addComponent(txtCodigo)
                             .addComponent(cboDocumento, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(txtEndereco)
-                            .addComponent(txtContato)))
-                    .addComponent(jButton1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap())
+                            .addComponent(txtContato, javax.swing.GroupLayout.PREFERRED_SIZE, 353, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(29, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -335,9 +311,9 @@ public class CadastrarClientes extends javax.swing.JFrame {
                     .addComponent(jLabel3)
                     .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(cboDocumento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(cboDocumento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel4))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
@@ -350,9 +326,9 @@ public class CadastrarClientes extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
                     .addComponent(txtContato, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButton1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(28, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -374,7 +350,7 @@ public class CadastrarClientes extends javax.swing.JFrame {
     }//GEN-LAST:event_txtNomeActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-    SalvarOuEditar();  
+        SalvarOuEditar();
 
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -461,95 +437,112 @@ public class CadastrarClientes extends javax.swing.JFrame {
     private javax.swing.JTextField txtNumero1;
     // End of variables declaration//GEN-END:variables
 
-
-public JTextField codigo(){
-    return txtCodigo;
-}
-public JTextField nome(){
-    return txtNome;
-}
-public JTextField endereco(){
-    return txtEndereco;
-}
-public JTextField telefone(){
-    return txtContato;
-}
-public JComboBox documento(){
-    return cboDocumento;
-}
-public JTextField numero(){
-    return txtNumero;
-}
-
-
-
-
-public void SalavarClientes(){
-
-   if(!txtNome.getText().isEmpty() && !txtEndereco.getText().isEmpty() && !txtNumero.getText().isEmpty() && cboDocumento.getSelectedItem() !=null 
-    && !txtContato.getText().isEmpty()){
-    modeloCliente.setNome(txtNome.getText());
-    modeloCliente.setDocumento(cboDocumento.getSelectedItem().toString());
-    modeloCliente.setNumero(txtNumero.getText());
-    modeloCliente.setEndereco(txtEndereco.getText());
-    modeloCliente.setTelefone(txtContato.getText());
-    
-    if(clienteController.VerificarExistenciaClienteController(modeloCliente)){
-    JOptionPane.showMessageDialog(this,"Cliente ja Existente","ERRO",JOptionPane.ERROR_MESSAGE);
-    return;
+    public JTextField codigo() {
+        return txtCodigo;
     }
-    
-    if(clienteController.SalvarClienteController(modeloCliente)>0){
-        JOptionPane.showMessageDialog(this,"SUCESSO");
-        LimparFormulario();
-        
-    }else{
-        JOptionPane.showMessageDialog(this,"ERRO","ERRO",JOptionPane.ERROR_MESSAGE);
-    }
-   }else{
-    JOptionPane.showMessageDialog(this,"Algum Campo Obrigatorio foi Ignorado","ERRO",JOptionPane.ERROR_MESSAGE);
- }
-    
-}
 
-public void EditarCliente(){
-  
-    if(!txtCodigo.getText().isEmpty() && !txtNome.getText().isEmpty() && !txtEndereco.getText().isEmpty() 
-    && !txtContato.getText().isEmpty() && !txtNumero.getText().isEmpty() && cboDocumento.getSelectedItem() != null){
-    modeloCliente.setId(Integer.parseInt(txtCodigo.getText()));
-    modeloCliente.setNome(txtNome.getText());
-    modeloCliente.setEndereco(txtEndereco.getText());
-    modeloCliente.setTelefone(txtContato.getText());
-    modeloCliente.setDocumento(cboDocumento.getSelectedItem().toString());
-    modeloCliente.setNumero(txtNumero.getText());
-    
-    if(clienteController.AtualizarClienteController(modeloCliente)){
-     JOptionPane.showMessageDialog(this,"ATUALIZADO COM SUCESSO");
-     this.LimparFormulario();
-     dispose();
-    }else{
-      JOptionPane.showMessageDialog(this,"ERRO AO ATUALIZAR DADOS","ERRO",JOptionPane.ERROR_MESSAGE);
-    
+    public JTextField nome() {
+        return txtNome;
     }
-     }else{
-    JOptionPane.showMessageDialog(this,"ALGUM CAMPO OBRIGATORIO FOI IGNORADO","ERRO",JOptionPane.ERROR_MESSAGE);
-     }
-}
-public void SalvarOuEditar(){
-  
-    if(txtCodigo.getText().isEmpty()){
-       SalavarClientes();
-   } else{
-       EditarCliente();
-   }
-}
-public void LimparFormulario(){
-    txtNome.setText("");
-    cboDocumento.setSelectedItem("--Selecione--");
-    txtNumero.setText("");
-    txtEndereco.setText("");
-    txtContato.setText("");
-}
 
+    public JTextField endereco() {
+        return txtEndereco;
+    }
+
+    public JTextField telefone() {
+        return txtContato;
+    }
+
+    public JComboBox documento() {
+        return cboDocumento;
+    }
+
+    public JTextField numero() {
+        return txtNumero;
+    }
+
+    public void SalavarClientes() {
+
+        if (!txtNome.getText().isEmpty() && !txtEndereco.getText().isEmpty() && !txtNumero.getText().isEmpty() && cboDocumento.getSelectedItem() != null
+                && !txtContato.getText().isEmpty()) {
+            modeloCliente.setNome(txtNome.getText());
+            modeloCliente.setDocumento(cboDocumento.getSelectedItem().toString());
+            modeloCliente.setNumero(txtNumero.getText());
+            modeloCliente.setEndereco(txtEndereco.getText());
+            modeloCliente.setTelefone(txtContato.getText());
+
+            if (clienteController.VerificarExistenciaClienteController(modeloCliente)) {
+                JOptionPane.showMessageDialog(this, "NOME DO CLIENTE JA EXISTENTE, por favor, escolhe outro", "Duplicação de Dados", JOptionPane.WARNING_MESSAGE);
+                return;
+            }
+
+            if (modeloCliente.getDocumento().equals("--Selecione--")) {
+                JOptionPane.showMessageDialog(this, "ALGUM CAMPO OBRIGATORIO IGNORADO ", "Campo vazio", JOptionPane.WARNING_MESSAGE);
+                return;
+            }
+
+            if (clienteController.SalvarClienteController(modeloCliente) > 0) {
+                JOptionPane.showMessageDialog(this, "SUCESSO");
+                LimparFormulario();
+
+            } else {
+                JOptionPane.showMessageDialog(this, "ERRO", "ERRO", JOptionPane.ERROR_MESSAGE);
+            }
+        } else {
+            JOptionPane.showMessageDialog(this, "ALGUM CAMPO OBRIGATORIO IGNORADO ", "Campo vazio", JOptionPane.WARNING_MESSAGE);
+        }
+
+    }
+
+    public void EditarCliente() {
+
+        if (!txtCodigo.getText().isEmpty() && !txtNome.getText().isEmpty() && !txtEndereco.getText().isEmpty()
+                && !txtContato.getText().isEmpty() && !txtNumero.getText().isEmpty() && cboDocumento.getSelectedItem() != null) {
+            modeloCliente.setId(Integer.parseInt(txtCodigo.getText()));
+            modeloCliente.setNome(txtNome.getText());
+            modeloCliente.setEndereco(txtEndereco.getText());
+            modeloCliente.setTelefone(txtContato.getText());
+            modeloCliente.setDocumento(cboDocumento.getSelectedItem().toString());
+            modeloCliente.setNumero(txtNumero.getText());
+
+            if (clienteController.VerificarExistenciaClienteController(modeloCliente)) {
+                JOptionPane.showMessageDialog(this, "NOME DO CLIENTE JA EXISTENTE, por favor, escolhe outro", "Duplicação de Dados", JOptionPane.WARNING_MESSAGE);
+                return;
+            }
+
+            if (modeloCliente.getDocumento().equals("--Selecione--")) {
+                JOptionPane.showMessageDialog(this, "ALGUM CAMPO OBRIGATORIO IGNORADO ", "Campo vazio", JOptionPane.WARNING_MESSAGE);
+                return;
+            }
+
+            if (clienteController.AtualizarClienteController(modeloCliente)) {
+                JOptionPane.showMessageDialog(this, "ATUALIZADO COM SUCESSO");
+                this.LimparFormulario();
+                dispose();
+            } else {
+                JOptionPane.showMessageDialog(this, "ERRO AO ATUALIZAR DADOS DO CLIENTE", "ERRO", JOptionPane.ERROR_MESSAGE);
+
+            }
+        } else {
+            JOptionPane.showMessageDialog(this, "ALGUM CAMPO OBRIGATORIO FOI IGNORADO", "Campo vazio", JOptionPane.WARNING_MESSAGE);
+        }
+    }
+
+    public void SalvarOuEditar() {
+
+        if (txtCodigo.getText().isEmpty()) {
+            SalavarClientes();
+        } else {
+            EditarCliente();
+        }
+    }
+
+    public void LimparFormulario() {
+        txtNome.setText("");
+        cboDocumento.setSelectedItem("");
+        txtNumero.setText("");
+        txtEndereco.setText("");
+        txtContato.setText("");
+    }
 
 }

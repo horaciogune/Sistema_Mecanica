@@ -97,14 +97,11 @@ public class CriarOrdemServico extends javax.swing.JPanel {
         txtValorPago = new javax.swing.JTextField();
         jButton2 = new javax.swing.JButton();
 
-        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
 
-        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
         jPanel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
 
         jLabel5.setFont(new java.awt.Font("Segoe UI Semilight", 0, 14)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(51, 51, 51));
         jLabel5.setText("Cliente:");
 
         cboCliente.setBackground(new java.awt.Color(0, 102, 204));
@@ -117,7 +114,6 @@ public class CriarOrdemServico extends javax.swing.JPanel {
         });
 
         jLabel6.setFont(new java.awt.Font("Segoe UI Semilight", 0, 14)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(51, 51, 51));
         jLabel6.setText("Mecanico:");
 
         cboMecanico.setBackground(new java.awt.Color(0, 102, 204));
@@ -157,7 +153,6 @@ public class CriarOrdemServico extends javax.swing.JPanel {
         dataSaida.setFont(new java.awt.Font("Yu Gothic UI Semilight", 1, 18)); // NOI18N
 
         jLabel10.setFont(new java.awt.Font("Segoe UI Semilight", 0, 14)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(51, 51, 51));
         jLabel10.setText("Data Saida:");
 
         cboStatus.setBackground(new java.awt.Color(0, 102, 204));
@@ -166,7 +161,6 @@ public class CriarOrdemServico extends javax.swing.JPanel {
         cboStatus.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "--Selecione--", "Aberto", "em Andamento" }));
 
         jLabel12.setFont(new java.awt.Font("Segoe UI Semilight", 0, 14)); // NOI18N
-        jLabel12.setForeground(new java.awt.Color(51, 51, 51));
         jLabel12.setText("Status:");
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
@@ -199,7 +193,6 @@ public class CriarOrdemServico extends javax.swing.JPanel {
         );
 
         jLabel9.setFont(new java.awt.Font("Segoe UI Semilight", 0, 14)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(51, 51, 51));
         jLabel9.setText("Matricula:");
 
         cboMatricula.setBackground(new java.awt.Color(0, 102, 204));
@@ -212,7 +205,6 @@ public class CriarOrdemServico extends javax.swing.JPanel {
         });
 
         jLabel8.setFont(new java.awt.Font("Segoe UI Semilight", 0, 14)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(51, 51, 51));
         jLabel8.setText("Veiculo :");
 
         txtVeiculo.setEditable(false);
@@ -328,7 +320,6 @@ public class CriarOrdemServico extends javax.swing.JPanel {
 
         txtCodigo.setEditable(false);
         txtCodigo.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-        txtCodigo.setForeground(new java.awt.Color(255, 255, 255));
         txtCodigo.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtCodigo.setBackgroundColor(new java.awt.Color(0, 102, 204));
         txtCodigo.setBorderColor(new java.awt.Color(255, 255, 255));
@@ -341,7 +332,6 @@ public class CriarOrdemServico extends javax.swing.JPanel {
 
         txtIdCliente.setEditable(false);
         txtIdCliente.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-        txtIdCliente.setForeground(new java.awt.Color(255, 255, 255));
         txtIdCliente.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtIdCliente.setBackgroundColor(new java.awt.Color(0, 102, 204));
         txtIdCliente.setBorderColor(new java.awt.Color(255, 255, 255));
@@ -414,7 +404,6 @@ public class CriarOrdemServico extends javax.swing.JPanel {
         txtpecas.getAccessibleContext().setAccessibleName("Incluir pecas");
 
         jLabel17.setFont(new java.awt.Font("Segoe UI Semilight", 0, 14)); // NOI18N
-        jLabel17.setForeground(new java.awt.Color(51, 51, 51));
         jLabel17.setText("Valor Total a Pagar:");
 
         txtValorPago.setFont(new java.awt.Font("Segoe UI Semilight", 0, 18)); // NOI18N
@@ -434,6 +423,7 @@ public class CriarOrdemServico extends javax.swing.JPanel {
         });
 
         jButton2.setFont(new java.awt.Font("Segoe UI Semilight", 1, 14)); // NOI18N
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Adicionar.png"))); // NOI18N
         jButton2.setText("Gravar");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -518,6 +508,15 @@ public class CriarOrdemServico extends javax.swing.JPanel {
 
     private void cboClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboClienteActionPerformed
         PrencherIdClientePeloNome();
+
+        /*   cboCliente.addActionListener(e -> {
+         String clienteSelecionado = cboCliente.getSelectedItem().toString();
+         if (!clienteSelecionado.equals("--Selecione--")) {
+         CarregarMatriculasPeloCliente(clienteSelecionado);
+         PrencherIdClientePeloNome();
+         }
+         });*/
+
     }//GEN-LAST:event_cboClienteActionPerformed
 
     private void cboMecanicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboMecanicoActionPerformed
@@ -526,6 +525,15 @@ public class CriarOrdemServico extends javax.swing.JPanel {
 
     private void cboMatriculaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboMatriculaActionPerformed
         PrencherMarcaDoVeiculoPelaMatricula();
+
+        cboMatricula.addActionListener(e -> {
+            String matriculaSelecionada = cboMatricula.getSelectedItem().toString();
+            if (!matriculaSelecionada.equals("--Selecione--")) {
+                CarregarClientePelaMatricula(matriculaSelecionada);
+                PrencherMarcaDoVeiculoPelaMatricula();
+            }
+        });
+
     }//GEN-LAST:event_cboMatriculaActionPerformed
 
     private void txtVeiculoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtVeiculoActionPerformed
@@ -692,93 +700,165 @@ public class CriarOrdemServico extends javax.swing.JPanel {
     private void PrencherMarcaDoVeiculoPelaMatricula() {
         modeloVeiculo = veiculoController.getVeiculoPelaMatriculaController(cboMatricula.getSelectedItem().toString());
         txtVeiculo.setText(modeloVeiculo.getMarca());
+
     }
 
     private void PrencherIdClientePeloNome() {
-        modeloCliente = clienteController.getClienteControllerPeloNome(cboCliente.getSelectedItem().toString());
-        txtIdCliente.setText(String.valueOf(modeloCliente.getId()));
+//       modeloCliente = clienteController.getClienteControllerPeloNome(cboCliente.getSelectedItem().toString());
+        // txtIdCliente.setText(String.valueOf(modeloCliente.getId()));
+    }
+
+    private void CarregarClientePelaMatricula(String matricula) {
+        modeloVeiculo = veiculoController.getVeiculoPelaMatriculaController(matricula);
+        cboCliente.removeAllItems();
+        cboCliente.addItem("--Selecione--");
+
+        if (modeloVeiculo != null) {
+            String nomeCliente = modeloVeiculo.getCliente();
+            modeloCliente = clienteController.getClienteControllerPeloNome(nomeCliente);
+            if (modeloCliente != null) {
+                cboCliente.addItem(modeloCliente.getNome());
+                txtIdCliente.setText(String.valueOf(modeloCliente.getId()));
+                cboCliente.setSelectedIndex(1);
+            } else {
+                System.err.println("Cliente não encontrado para o veículo selecionado.");
+            }
+        }
     }
 
     private void SalvarOrdemServico() {
 
-        modeloOrdemServico.setIdCliente(Integer.parseInt(txtIdCliente.getText()));
-        modeloOrdemServico.setNomeCliente(cboCliente.getSelectedItem().toString());
-        modeloOrdemServico.setNomeMecanico(cboMecanico.getSelectedItem().toString());
-        modeloOrdemServico.setMatriculaVeiculo(cboMatricula.getSelectedItem().toString());
-        modeloOrdemServico.setMarcaVeiculo(txtVeiculo.getText());
-        modeloOrdemServico.setStatus(cboStatus.getSelectedItem().toString());
-        modeloOrdemServico.setProblema(txtProblema.getText());
-        modeloOrdemServico.setServico(txtServico.getText());
-        modeloOrdemServico.setObservacoes(txtObservacoes.getText());
-        modeloOrdemServico.setPecas(txtpecas.getText());
-        modeloOrdemServico.setPrecoTotal(Double.parseDouble(txtValorPago.getText()));
+        if (txtIdCliente.getText().isEmpty()
+                || cboCliente.getSelectedItem().toString().equals("--Selecione--")
+                || cboMecanico.getSelectedItem().toString().equals("--Selecione--")
+                || cboMatricula.getSelectedItem().toString().equals("--Selecione--")
+                || txtVeiculo.getText().isEmpty()
+                || cboStatus.getSelectedItem().toString().equals("--Selecione--")
+                || txtProblema.getText().isEmpty()
+                || txtServico.getText().isEmpty()
+                || txtValorPago.getText().isEmpty()) {
 
-        Date dataSelecionada = dataSaida.getDate();
-
-        if (dataSelecionada != null) {
-
-            SimpleDateFormat formatoData = new SimpleDateFormat("d 'de' MMMM 'de' yyyy");
-
-            String dataFormatada = formatoData.format(dataSelecionada);
-
-            modeloOrdemServico.setDataFechamento(dataFormatada);
-        } else {
-            System.out.println("Nenhuma data foi selecionada.");
+            JOptionPane.showMessageDialog(this, "ALGUM CAMPO OBRIGATÓRIO FOI IGNORADO OU NÃO PREENCHIDO CORRETAMENTE!",
+                    "Campo Vazio", JOptionPane.WARNING_MESSAGE);
+            return;
         }
 
-        if (ordemServicoController.SalvarOrdemServicocontroller(modeloOrdemServico) > 0) {
-            JOptionPane.showMessageDialog(this, "SUCESSO");
-        } else {
-            JOptionPane.showMessageDialog(this, "ERRO", "ERRO", JOptionPane.ERROR_MESSAGE);
+        try {
+            modeloOrdemServico.setIdCliente(Integer.parseInt(txtIdCliente.getText()));
+            modeloOrdemServico.setNomeCliente(cboCliente.getSelectedItem().toString());
+            modeloOrdemServico.setNomeMecanico(cboMecanico.getSelectedItem().toString());
+            modeloOrdemServico.setMatriculaVeiculo(cboMatricula.getSelectedItem().toString());
+            modeloOrdemServico.setMarcaVeiculo(txtVeiculo.getText());
+            modeloOrdemServico.setStatus(cboStatus.getSelectedItem().toString());
+            modeloOrdemServico.setProblema(txtProblema.getText());
+            modeloOrdemServico.setServico(txtServico.getText());
+            modeloOrdemServico.setObservacoes(txtObservacoes.getText());
+            modeloOrdemServico.setPecas(txtpecas.getText());
+            modeloOrdemServico.setPrecoTotal(Double.parseDouble(txtValorPago.getText()));
 
-        }
-    }
-     private void AtualizarOrdemServico() {
+            Date dataSelecionada = dataSaida.getDate();
+            if (dataSelecionada != null) {
+                SimpleDateFormat formatoData = new SimpleDateFormat("d 'de' MMMM 'de' yyyy");
+                String dataFormatada = formatoData.format(dataSelecionada);
+                modeloOrdemServico.setDataFechamento(dataFormatada);
+            } else {
+                modeloOrdemServico.setDataFechamento(null);
+            }
 
-        modeloOrdemServico.setId(Integer.parseInt(txtCodigo.getText()));
-        modeloOrdemServico.setIdCliente(Integer.parseInt(txtIdCliente.getText()));
-        modeloOrdemServico.setNomeCliente(cboCliente.getSelectedItem().toString());
-        modeloOrdemServico.setNomeMecanico(cboMecanico.getSelectedItem().toString());
-        modeloOrdemServico.setMatriculaVeiculo(cboMatricula.getSelectedItem().toString());
-        modeloOrdemServico.setMarcaVeiculo(txtVeiculo.getText());
-        modeloOrdemServico.setStatus(cboStatus.getSelectedItem().toString());
-        modeloOrdemServico.setProblema(txtProblema.getText());
-        modeloOrdemServico.setServico(txtServico.getText());
-        modeloOrdemServico.setObservacoes(txtObservacoes.getText());
-        modeloOrdemServico.setPecas(txtpecas.getText());
-        modeloOrdemServico.setPrecoTotal(Double.parseDouble(txtValorPago.getText()));
+            if (ordemServicoController.SalvarOrdemServicocontroller(modeloOrdemServico) > 0) {
+                JOptionPane.showMessageDialog(this, "Ordem de serviço salva com sucesso!", "Sucesso", JOptionPane.INFORMATION_MESSAGE);
+                limparFormularioOrdemServico();
+            } else {
+                JOptionPane.showMessageDialog(this, "Erro ao salvar a ordem de serviço!", "Erro", JOptionPane.ERROR_MESSAGE);
+            }
 
-        Date dataSelecionada = dataSaida.getDate();
-        
-
-        if (dataSelecionada != null) {
-
-            SimpleDateFormat formatoData = new SimpleDateFormat("d 'de' MMMM 'de' yyyy");
-
-            String dataFormatada = formatoData.format(dataSelecionada);
-
-            modeloOrdemServico.setDataFechamento(dataFormatada);
-        } else {
-            System.out.println("Nenhuma data foi selecionada.");
-        }
-        
-
-        if (ordemServicoController.AtualizarOrdemServicocontroller(modeloOrdemServico)) {
-            JOptionPane.showMessageDialog(this, "ATUALIZADO COM SUCESSO");
-        } else {
-            JOptionPane.showMessageDialog(this, "ERRO", "ERRO", JOptionPane.ERROR_MESSAGE);
-
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, "O valor pago deve ser um número válido!", "Erro de Formato", JOptionPane.ERROR_MESSAGE);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Ocorreu um erro inesperado: " + e.getMessage(), "Erro", JOptionPane.ERROR_MESSAGE);
         }
     }
-    
-    public void SalvarOuAtualizar(){
-        
-        if(txtCodigo.getText().equals("")){
+
+    private void AtualizarOrdemServico() {
+        if (txtCodigo.getText().isEmpty()
+                || txtIdCliente.getText().isEmpty()
+                || cboCliente.getSelectedItem().toString().equals("--Selecione--")
+                || cboMecanico.getSelectedItem().toString().equals("--Selecione--")
+                || cboMatricula.getSelectedItem().toString().equals("--Selecione--")
+                || txtVeiculo.getText().isEmpty()
+                || cboStatus.getSelectedItem().toString().equals("--Selecione--")
+                || txtProblema.getText().isEmpty()
+                || txtServico.getText().isEmpty()
+                || txtValorPago.getText().isEmpty()) {
+
+            JOptionPane.showMessageDialog(this,
+                    "ALGUM CAMPO OBRIGATÓRIO FOI IGNORADO OU NÃO PREENCHIDO CORRETAMENTE!",
+                    "Campo Vazio",
+                    JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+
+        try {
+            modeloOrdemServico.setId(Integer.parseInt(txtCodigo.getText()));
+            modeloOrdemServico.setIdCliente(Integer.parseInt(txtIdCliente.getText()));
+            modeloOrdemServico.setNomeCliente(cboCliente.getSelectedItem().toString());
+            modeloOrdemServico.setNomeMecanico(cboMecanico.getSelectedItem().toString());
+            modeloOrdemServico.setMatriculaVeiculo(cboMatricula.getSelectedItem().toString());
+            modeloOrdemServico.setMarcaVeiculo(txtVeiculo.getText());
+            modeloOrdemServico.setStatus(cboStatus.getSelectedItem().toString());
+            modeloOrdemServico.setProblema(txtProblema.getText());
+            modeloOrdemServico.setServico(txtServico.getText());
+            modeloOrdemServico.setObservacoes(txtObservacoes.getText());
+            modeloOrdemServico.setPecas(txtpecas.getText());
+            modeloOrdemServico.setPrecoTotal(Double.parseDouble(txtValorPago.getText()));
+
+            Date dataSelecionada = dataSaida.getDate();
+            if (dataSelecionada != null) {
+                SimpleDateFormat formatoData = new SimpleDateFormat("d 'de' MMMM 'de' yyyy");
+                String dataFormatada = formatoData.format(dataSelecionada);
+                modeloOrdemServico.setDataFechamento(dataFormatada);
+            } else {
+                modeloOrdemServico.setDataFechamento(null);
+            }
+
+            if (ordemServicoController.AtualizarOrdemServicocontroller(modeloOrdemServico)) {
+                JOptionPane.showMessageDialog(this, "Ordem de serviço atualizada com sucesso!", "Sucesso", JOptionPane.INFORMATION_MESSAGE);
+                limparFormularioOrdemServico();
+            } else {
+                JOptionPane.showMessageDialog(this, "Erro ao atualizar a ordem de serviço!", "Erro", JOptionPane.ERROR_MESSAGE);
+            }
+
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, "Os campos de código e valor pago devem conter números válidos!", "Erro de Formato", JOptionPane.ERROR_MESSAGE);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Ocorreu um erro inesperado: " + e.getMessage(), "Erro", JOptionPane.ERROR_MESSAGE);
+        }
+    }
+private void limparFormularioOrdemServico() {
+   
+    txtIdCliente.setText("");
+    txtVeiculo.setText("");
+    txtProblema.setText("");
+    txtServico.setText("");
+    txtObservacoes.setText("");
+    txtpecas.setText("");
+    txtValorPago.setText("");
+
+    cboCliente.setSelectedIndex(0); 
+    cboMecanico.setSelectedIndex(0);
+    cboMatricula.setSelectedIndex(0);
+    cboStatus.setSelectedIndex(0);
+
+}
+
+    public void SalvarOuAtualizar() {
+
+        if (txtCodigo.getText().equals("")) {
             this.SalvarOrdemServico();
-        }else{
+        } else {
             this.AtualizarOrdemServico();
         }
-        
+
     }
 
 }

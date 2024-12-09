@@ -1,4 +1,3 @@
-
 package visao;
 
 import Controller.MecanicoController;
@@ -7,20 +6,17 @@ import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
-
 public class CadastrarMecanicos extends javax.swing.JFrame {
 
-    ArrayList<ModeloMecanico>listaModeloMecanicos = new ArrayList<>();
+    ArrayList<ModeloMecanico> listaModeloMecanicos = new ArrayList<>();
     MecanicoController mecanicoController = new MecanicoController();
     ModeloMecanico modeloMecanico = new ModeloMecanico();
-    
-    
+
     public CadastrarMecanicos() {
         initComponents();
         setLocationRelativeTo(null);
     }
 
-  
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -39,21 +35,17 @@ public class CadastrarMecanicos extends javax.swing.JFrame {
         txtEspecialidade = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        setTitle("REGISTRAR MECANICO");
 
         jLabel2.setFont(new java.awt.Font("Segoe UI Semilight", 0, 14)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(51, 51, 51));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel2.setText("ID:");
 
         jLabel3.setFont(new java.awt.Font("Segoe UI Semilight", 0, 14)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(51, 51, 51));
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel3.setText("Nome:");
 
         jLabel4.setFont(new java.awt.Font("Segoe UI Semilight", 0, 14)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(51, 51, 51));
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel4.setText("Especialidade:");
 
@@ -61,7 +53,6 @@ public class CadastrarMecanicos extends javax.swing.JFrame {
         txtCodigo.setFont(new java.awt.Font("Segoe UI Semilight", 1, 14)); // NOI18N
 
         txtNome.setFont(new java.awt.Font("Segoe UI Semilight", 1, 14)); // NOI18N
-        txtNome.setForeground(new java.awt.Color(51, 51, 51));
         txtNome.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtNomeActionPerformed(evt);
@@ -78,23 +69,18 @@ public class CadastrarMecanicos extends javax.swing.JFrame {
         });
 
         jLabel6.setFont(new java.awt.Font("Segoe UI Semilight", 0, 14)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(51, 51, 51));
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel6.setText("Endereco:");
 
         txtEndereco.setFont(new java.awt.Font("Segoe UI Semilight", 1, 14)); // NOI18N
-        txtEndereco.setForeground(new java.awt.Color(51, 51, 51));
 
         jLabel7.setFont(new java.awt.Font("Segoe UI Semilight", 0, 14)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(51, 51, 51));
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel7.setText("Telefone:");
 
         txtTelefone.setFont(new java.awt.Font("Segoe UI Semilight", 1, 14)); // NOI18N
-        txtTelefone.setForeground(new java.awt.Color(51, 51, 51));
 
         txtEspecialidade.setFont(new java.awt.Font("Segoe UI Semilight", 1, 14)); // NOI18N
-        txtEspecialidade.setForeground(new java.awt.Color(51, 51, 51));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -102,13 +88,12 @@ public class CadastrarMecanicos extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel4)
+                    .addComponent(jLabel2)
+                    .addComponent(jLabel3)
                     .addComponent(jLabel6)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jLabel7))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -119,7 +104,7 @@ public class CadastrarMecanicos extends javax.swing.JFrame {
                             .addComponent(txtNome, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txtEspecialidade, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 327, Short.MAX_VALUE)))
                     .addComponent(txtCodigo))
-                .addContainerGap(22, Short.MAX_VALUE))
+                .addContainerGap(39, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -141,7 +126,7 @@ public class CadastrarMecanicos extends javax.swing.JFrame {
                     .addComponent(jLabel4)
                     .addComponent(txtEspecialidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(txtTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel7))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -168,7 +153,7 @@ public class CadastrarMecanicos extends javax.swing.JFrame {
     }//GEN-LAST:event_txtNomeActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-      SalvarOuAtualizar();
+        SalvarOuAtualizar();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
@@ -221,85 +206,93 @@ public class CadastrarMecanicos extends javax.swing.JFrame {
     private javax.swing.JTextField txtTelefone;
     // End of variables declaration//GEN-END:variables
 
- public JTextField codigo(){
-     return txtCodigo;
- }
- public JTextField nome(){
-     return txtNome;
- }
- public JTextField endereco(){
-     return txtEndereco;
- }
- public JTextField especialidade(){
-     return txtEspecialidade;
- }
- public JTextField telefone(){
-     return txtTelefone;
- }
- 
- 
- public void SalvarFuncionarios(){
-     
-     if(!txtNome.getText().isEmpty() && !txtEndereco.getText().isEmpty() && !txtEspecialidade.getText().isEmpty()
-        && !txtTelefone.getText().isEmpty()){
-         
-         modeloMecanico.setNome(txtNome.getText());
-         modeloMecanico.setEndereco(txtEndereco.getText());
-         modeloMecanico.setEspecialidade(txtEspecialidade.getText());
-         modeloMecanico.setTelefone(txtTelefone.getText());
-         
-         if(mecanicoController.VerificarExistenciaMecanicoController(modeloMecanico)){
-             JOptionPane.showMessageDialog(this,"FUNCIONARIO JA EXISTENTE","Atencao",JOptionPane.WARNING_MESSAGE);
-             return;
-         }
-         if(mecanicoController.SalvarMecanicocontroller(modeloMecanico)>0){
-             JOptionPane.showMessageDialog(this,"SUCESSO");
-             dispose();
-             LimparFormulario();
-             
-         }else{
-             JOptionPane.showMessageDialog(this,"ERRO","ERROR",JOptionPane.ERROR_MESSAGE);
-         }
-         
-     }else{
-         JOptionPane.showMessageDialog(this,"ALGUM CAMPO OBRIGATORIO FOI IGNORADO","Espaco Vazio !",JOptionPane.ERROR_MESSAGE);
-         
-     }
- }
-  public void EditarFuncionarios(){
-     
-     if(!txtNome.getText().isEmpty() && !txtEndereco.getText().isEmpty() && !txtEspecialidade.getText().isEmpty()
-        && !txtTelefone.getText().isEmpty()){
-         
-         modeloMecanico.setId(Integer.parseInt(txtCodigo.getText()));
-         modeloMecanico.setNome(txtNome.getText());
-         modeloMecanico.setEndereco(txtEndereco.getText());
-         modeloMecanico.setEspecialidade(txtEspecialidade.getText());
-         modeloMecanico.setTelefone(txtTelefone.getText());
-         
-        
-         if(mecanicoController.AtualizarMecanicocontroller(modeloMecanico)){
-             JOptionPane.showMessageDialog(this,"ATUALIZADO COM SUCESSO");
-             dispose();
-             LimparFormulario();
-             
-         }else{
-             JOptionPane.showMessageDialog(this,"ERRO","ERROR",JOptionPane.ERROR_MESSAGE);
-         }
-         
-     }else{
-         JOptionPane.showMessageDialog(this,"ALGUM CAMPO OBRIGATORIO FOI IGNORADO","Espaco Vazio !",JOptionPane.ERROR_MESSAGE);
-         
-     }
- }
-  
-  private void SalvarOuAtualizar(){
-      if(txtCodigo.getText().isEmpty()){
-          this.SalvarFuncionarios();
-      }else{
-          this.EditarFuncionarios();
-      }
-  }
+    public JTextField codigo() {
+        return txtCodigo;
+    }
+
+    public JTextField nome() {
+        return txtNome;
+    }
+
+    public JTextField endereco() {
+        return txtEndereco;
+    }
+
+    public JTextField especialidade() {
+        return txtEspecialidade;
+    }
+
+    public JTextField telefone() {
+        return txtTelefone;
+    }
+
+    public void SalvarFuncionarios() {
+
+        if (!txtNome.getText().isEmpty() && !txtEndereco.getText().isEmpty() && !txtEspecialidade.getText().isEmpty()
+                && !txtTelefone.getText().isEmpty()) {
+
+            modeloMecanico.setNome(txtNome.getText());
+            modeloMecanico.setEndereco(txtEndereco.getText());
+            modeloMecanico.setEspecialidade(txtEspecialidade.getText());
+            modeloMecanico.setTelefone(txtTelefone.getText());
+
+            if (mecanicoController.VerificarExistenciaMecanicoController(modeloMecanico)) {
+                JOptionPane.showMessageDialog(this, " NOME DO FUNCIONARIO EXISTENTE, por vafor, selecione outro", "Duplicação de Dados", JOptionPane.WARNING_MESSAGE);
+                return;
+            }
+            if (mecanicoController.SalvarMecanicocontroller(modeloMecanico) > 0) {
+                JOptionPane.showMessageDialog(this, "SUCESSO");
+                dispose();
+                LimparFormulario();
+
+            } else {
+                JOptionPane.showMessageDialog(this, "ERRO", "ERROR", JOptionPane.ERROR_MESSAGE);
+            }
+
+        } else {
+            JOptionPane.showMessageDialog(this, "ALGUM CAMPO OBRIGATORIO FOI IGNORADO", "Campo Vazio !", JOptionPane.WARNING_MESSAGE);
+
+        }
+    }
+
+    public void EditarFuncionarios() {
+
+        if (!txtNome.getText().isEmpty() && !txtEndereco.getText().isEmpty() && !txtEspecialidade.getText().isEmpty()
+                && !txtTelefone.getText().isEmpty()) {
+
+            modeloMecanico.setId(Integer.parseInt(txtCodigo.getText()));
+            modeloMecanico.setNome(txtNome.getText());
+            modeloMecanico.setEndereco(txtEndereco.getText());
+            modeloMecanico.setEspecialidade(txtEspecialidade.getText());
+            modeloMecanico.setTelefone(txtTelefone.getText());
+
+            if (mecanicoController.VerificarExistenciaMecanicoController(modeloMecanico)) {
+                JOptionPane.showMessageDialog(this, " NOME DO FUNCIONARIO EXISTENTE, por vafor, selecione outro", "Duplicação de Dados", JOptionPane.WARNING_MESSAGE);
+                return;
+            }
+
+            if (mecanicoController.AtualizarMecanicocontroller(modeloMecanico)) {
+                JOptionPane.showMessageDialog(this, " FUNCIONARIO ATUALIZADO COM SUCESSO");
+                dispose();
+                LimparFormulario();
+
+            } else {
+                JOptionPane.showMessageDialog(this, "ERRO AO ATUALIZAR DADOS DO FUNCIONARIO", "ERROR", JOptionPane.ERROR_MESSAGE);
+            }
+
+        } else {
+            JOptionPane.showMessageDialog(this, "ALGUM CAMPO OBRIGATORIO FOI IGNORADO", "Espaco Vazio !", JOptionPane.ERROR_MESSAGE);
+
+        }
+    }
+
+    private void SalvarOuAtualizar() {
+        if (txtCodigo.getText().isEmpty()) {
+            this.SalvarFuncionarios();
+        } else {
+            this.EditarFuncionarios();
+        }
+    }
 
     private void LimparFormulario() {
         txtCodigo.setText("");
@@ -308,7 +301,5 @@ public class CadastrarMecanicos extends javax.swing.JFrame {
         txtEspecialidade.setText("");
         txtTelefone.setText("");
     }
-
-
 
 }

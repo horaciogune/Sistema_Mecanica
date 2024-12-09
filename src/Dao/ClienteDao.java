@@ -113,7 +113,7 @@ public class ClienteDao extends Conexao_MySql{
 
     return modeloCliente;
 }
-     public ModeloCliente getClientePeloIdDao(int id) {
+    public ModeloCliente getClientePeloIdDao(int id) {
     ModeloCliente modeloCliente = new ModeloCliente();
 
     try {

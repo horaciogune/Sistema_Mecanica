@@ -33,7 +33,7 @@ public class ConsultarOrdem extends javax.swing.JPanel {
     private VerDetalhesOrdem verDetalhesOrdem;
 
     private CriarOrdemServico criarOrdemServico;
-    
+
     private Faturar fatura;
 
     public ConsultarOrdem() {
@@ -49,15 +49,13 @@ public class ConsultarOrdem extends javax.swing.JPanel {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jtOrdens = new javax.swing.JTable();
         jPanel2 = new javax.swing.JPanel();
-        jButton6 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
         jButton8 = new javax.swing.JButton();
+        jButton6 = new javax.swing.JButton();
+        jButton7 = new javax.swing.JButton();
         painelBorderr11 = new utilitarios.PainelBorderr1();
         jButton4 = new javax.swing.JButton();
         jButton9 = new javax.swing.JButton();
@@ -65,51 +63,10 @@ public class ConsultarOrdem extends javax.swing.JPanel {
         painelBorderr13 = new utilitarios.PainelBorderr1();
         jTextField1 = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
-
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-
-        jtOrdens.setBackground(new java.awt.Color(240, 240, 240));
-        jtOrdens.setFont(new java.awt.Font("Yu Gothic UI Semilight", 1, 14)); // NOI18N
-        jtOrdens.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "ID", "DATA ABERTURA", "DATA FECHAMENTO", "CLIENTE", "MATRICULA", "SERVICO", "PRECO TOTAL", "STATUS"
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false, false
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        jtOrdens.setRowHeight(35);
-        jScrollPane1.setViewportView(jtOrdens);
-        if (jtOrdens.getColumnModel().getColumnCount() > 0) {
-            jtOrdens.getColumnModel().getColumn(0).setResizable(false);
-            jtOrdens.getColumnModel().getColumn(1).setResizable(false);
-            jtOrdens.getColumnModel().getColumn(2).setResizable(false);
-            jtOrdens.getColumnModel().getColumn(3).setResizable(false);
-            jtOrdens.getColumnModel().getColumn(4).setResizable(false);
-            jtOrdens.getColumnModel().getColumn(5).setResizable(false);
-            jtOrdens.getColumnModel().getColumn(6).setResizable(false);
-            jtOrdens.getColumnModel().getColumn(7).setResizable(false);
-        }
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jtOrdens = new componentes.Tabela();
 
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Accoes", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Yu Gothic UI Semilight", 1, 14))); // NOI18N
-
-        jButton6.setFont(new java.awt.Font("Yu Gothic UI Semilight", 1, 14)); // NOI18N
-        jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/print.png"))); // NOI18N
-        jButton6.setText("Factura");
-        jButton6.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-        jButton6.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton6ActionPerformed(evt);
-            }
-        });
 
         jButton3.setFont(new java.awt.Font("Yu Gothic UI Semilight", 1, 14)); // NOI18N
         jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Atualizar.png"))); // NOI18N
@@ -141,6 +98,26 @@ public class ConsultarOrdem extends javax.swing.JPanel {
             }
         });
 
+        jButton8.setFont(new java.awt.Font("Yu Gothic UI Semilight", 1, 14)); // NOI18N
+        jButton8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/print.png"))); // NOI18N
+        jButton8.setText("Fatura");
+        jButton8.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        jButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton8ActionPerformed(evt);
+            }
+        });
+
+        jButton6.setFont(new java.awt.Font("Yu Gothic UI Semilight", 1, 14)); // NOI18N
+        jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/print.png"))); // NOI18N
+        jButton6.setText("Recibo");
+        jButton6.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
+
         jButton7.setFont(new java.awt.Font("Yu Gothic UI Semilight", 1, 14)); // NOI18N
         jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/print.png"))); // NOI18N
         jButton7.setText("Detalhes");
@@ -151,42 +128,35 @@ public class ConsultarOrdem extends javax.swing.JPanel {
             }
         });
 
-        jButton8.setFont(new java.awt.Font("Yu Gothic UI Semilight", 1, 14)); // NOI18N
-        jButton8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/print.png"))); // NOI18N
-        jButton8.setText("Imprimir");
-        jButton8.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-        jButton8.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton8ActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 168, Short.MAX_VALUE)
-            .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, 168, Short.MAX_VALUE)
-            .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, 168, Short.MAX_VALUE)
-            .addComponent(jButton6, javax.swing.GroupLayout.DEFAULT_SIZE, 168, Short.MAX_VALUE)
-            .addComponent(jButton7, javax.swing.GroupLayout.DEFAULT_SIZE, 168, Short.MAX_VALUE)
-            .addComponent(jButton8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jButton8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton7, javax.swing.GroupLayout.DEFAULT_SIZE, 169, Short.MAX_VALUE)))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
-                .addGap(4, 4, 4)
-                .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+                .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 55, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(16, 16, 16))
+                .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, 55, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, 55, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton8, javax.swing.GroupLayout.DEFAULT_SIZE, 59, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton6, javax.swing.GroupLayout.DEFAULT_SIZE, 57, Short.MAX_VALUE)
+                .addGap(7, 7, 7)
+                .addComponent(jButton7, javax.swing.GroupLayout.DEFAULT_SIZE, 44, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         painelBorderr11.setBackgroundColor(new java.awt.Color(0, 102, 204));
@@ -266,12 +236,41 @@ public class ConsultarOrdem extends javax.swing.JPanel {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        jtOrdens.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "ID ORDEM", "DATA ABERTURA", "DATA SAIDA", "CLIENTE", "MATRICULA", "SERVICO", "PRECO TOTAL", "STATUS"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane2.setViewportView(jtOrdens);
+        if (jtOrdens.getColumnModel().getColumnCount() > 0) {
+            jtOrdens.getColumnModel().getColumn(0).setResizable(false);
+            jtOrdens.getColumnModel().getColumn(1).setResizable(false);
+            jtOrdens.getColumnModel().getColumn(2).setResizable(false);
+            jtOrdens.getColumnModel().getColumn(3).setResizable(false);
+            jtOrdens.getColumnModel().getColumn(4).setResizable(false);
+            jtOrdens.getColumnModel().getColumn(5).setResizable(false);
+            jtOrdens.getColumnModel().getColumn(6).setResizable(false);
+            jtOrdens.getColumnModel().getColumn(7).setResizable(false);
+        }
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 538, Short.MAX_VALUE)
+                .addContainerGap()
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 461, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addComponent(painelBorderr11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -280,31 +279,31 @@ public class ConsultarOrdem extends javax.swing.JPanel {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addComponent(painelBorderr11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(58, 58, 58)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 401, Short.MAX_VALUE)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(46, 46, 46)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(37, 37, 37)
+                        .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(0, 0, 0))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(0, 0, 0))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-      GerarFatura();
-      jtOrdens.clearSelection();
+        GerarFatura();
+        jtOrdens.clearSelection();
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
@@ -351,8 +350,7 @@ public class ConsultarOrdem extends javax.swing.JPanel {
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
 
-         relatorio();
-
+        relatorio();
 
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton8ActionPerformed
@@ -371,9 +369,9 @@ public class ConsultarOrdem extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextField jTextField1;
-    private javax.swing.JTable jtOrdens;
+    private componentes.Tabela jtOrdens;
     private utilitarios.PainelBorderr1 painelBorderr11;
     private utilitarios.PainelBorderr1 painelBorderr13;
     // End of variables declaration//GEN-END:variables
@@ -404,7 +402,7 @@ public class ConsultarOrdem extends javax.swing.JPanel {
         int linha = jtOrdens.getSelectedRow();
 
         if (linha == -1) {
-            JOptionPane.showMessageDialog(null, "SELECIONE UMA ORDEM PARA EXCLUIR!", "Erro", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "SELECIONE UMA ORDEM PARA EXCLUIR!", "Erro", JOptionPane.WARNING_MESSAGE);
             return;
         }
 
@@ -427,7 +425,7 @@ public class ConsultarOrdem extends javax.swing.JPanel {
         int linha = jtOrdens.getSelectedRow();
 
         if (linha == -1) {
-            JOptionPane.showMessageDialog(null, "SELECIONE UMA ORDEM PARA VER DETALHES!", "Erro", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "SELECIONE UMA ORDEM PARA VER DETALHES!", "Atenção", JOptionPane.WARNING_MESSAGE);
             return;
         }
 
@@ -458,15 +456,24 @@ public class ConsultarOrdem extends javax.swing.JPanel {
         int linha = jtOrdens.getSelectedRow();
 
         if (linha == -1) {
-            JOptionPane.showMessageDialog(null, "SELECIONE UMA ORDEM PARA VER ATUALIZAR!", "Erro", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "SELECIONE UMA ORDEM PARA VER/ATUALIZAR!", "Atenção", JOptionPane.WARNING_MESSAGE);
             return;
         }
 
         int id = (int) jtOrdens.getValueAt(linha, 0);
-        
-      
 
         modeloOrdemServico = ordemservicoController.getOrdemServicocontroller(id);
+
+        if (modeloOrdemServico == null) {
+            JOptionPane.showMessageDialog(null, "Ordem de serviço não encontrada!", "Erro", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        if ("Finalizado".equals(modeloOrdemServico.getStatus())) {
+            JOptionPane.showMessageDialog(null, "A ORDEM DE SERVIÇO JÁ ESTÁ FINALIZADA!", "Atenção", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+
         criarOrdemServico.txtCodigo().setText(String.valueOf(modeloOrdemServico.getId()));
         criarOrdemServico.txtIdCliente().setText(String.valueOf(modeloOrdemServico.getIdCliente()));
         criarOrdemServico.cboCliente().setSelectedItem(modeloOrdemServico.getNomeCliente());
@@ -482,26 +489,30 @@ public class ConsultarOrdem extends javax.swing.JPanel {
         criarOrdemServico.txtValorPago().setText(String.valueOf(modeloOrdemServico.getPrecoTotal()));
 
         this.ChamarFormulario(criarOrdemServico);
-
     }
-    
-    public void GerarFatura(){
-        
+
+    public void GerarFatura() {
+
         int linha = jtOrdens.getSelectedRow();
 
         if (linha == -1) {
-            JOptionPane.showMessageDialog(null, "SELECIONE UMA ORDEM PARA GERAR FATURA!", "Erro", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "SELECIONE UMA ORDEM PARA FINALIZAR!", "Atenção", JOptionPane.WARNING_MESSAGE);
             return;
         }
 
         int id = (int) jtOrdens.getValueAt(linha, 0);
-        
-        fatura.setVisible(true);
         modeloOrdemServico = ordemservicoController.getOrdemServicocontroller(id);
-        
+
+        if ("Finalizado".equals(modeloOrdemServico.getStatus())) {
+            JOptionPane.showMessageDialog(null, "A ORDEM DE SERVIÇO JÁ ESTÁ FINALIZADA!", "Atenção", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+
+        fatura.setVisible(true);
+
         fatura.txtCodigoOrdem().setText(String.valueOf(modeloOrdemServico.getId()));
         fatura.txtValorpagar().setText(String.valueOf(modeloOrdemServico.getPrecoTotal()));
-        
+
     }
 
     public void ChamarFormulario(CriarOrdemServico criarOrdemServico) {
@@ -511,49 +522,45 @@ public class ConsultarOrdem extends javax.swing.JPanel {
         this.revalidate();
         this.repaint();
     }
-    
-    public void relatorio(){
-                                             
 
-    try {
-        // Pegar a linha selecionada
-        int linha = jtOrdens.getSelectedRow(); 
-        
-        // Verificar se alguma linha foi selecionada
-        if (linha == -1) {
-            JOptionPane.showMessageDialog(null, "SELECIONE UMA ORDEM PARA GERAR O RELATÓRIO!", "Erro", JOptionPane.WARNING_MESSAGE);
-            return;
+    public void relatorio() {
+
+        try {
+            // Pegar a linha selecionada
+            int linha = jtOrdens.getSelectedRow();
+
+            // Verificar se alguma linha foi selecionada
+            if (linha == -1) {
+                JOptionPane.showMessageDialog(null, "SELECIONE UMA ORDEM PARA GERAR O RELATÓRIO!", "Atenção", JOptionPane.WARNING_MESSAGE);
+                return;
+            }
+
+            // Pegar o valor do ID na primeira coluna (coluna 0)
+            int codigo = (int) jtOrdens.getValueAt(linha, 0);
+            System.out.println("ID selecionado: " + codigo); // Coluna 0 contém o ID do funcionário
+
+            try (Connection conn = ConnectionFactory.getConnection()) {
+                // Caminho para o arquivo .jrxml
+                String src = "src\\relatorios\\rcb.jrxml";
+
+                // Compilar o relatório
+                JasperReport jr = JasperCompileManager.compileReport(src);
+
+                // Criar um Map para os parâmetros do relatório
+                Map<String, Object> parametros = new HashMap<>();
+                parametros.put("P_idd", codigo); // 'selectedId' é o nome do parâmetro definido no relatório Jasper
+
+                // Preencher o relatório com o parâmetro e a conexão
+                JasperPrint jp = JasperFillManager.fillReport(jr, parametros, conn);
+
+                // Exibir o relatório
+                JasperViewer.viewReport(jp, false);
+            }
+
+        } catch (SQLException | JRException e) {
+            JOptionPane.showMessageDialog(null, e.getMessage(), "Erro", JOptionPane.ERROR_MESSAGE);
         }
-        
-        // Pegar o valor do ID na primeira coluna (coluna 0)
-      int codigo = (int) jtOrdens.getValueAt(linha, 0);
-System.out.println("ID selecionado: " + codigo); // Coluna 0 contém o ID do funcionário
 
-        try (Connection conn = ConnectionFactory.getConnection()) {
-            // Caminho para o arquivo .jrxml
-            String src = "src\\relatorios\\rcb.jrxml";
-            
-            // Compilar o relatório
-            JasperReport jr = JasperCompileManager.compileReport(src);
-
-            // Criar um Map para os parâmetros do relatório
-          Map<String, Object> parametros = new HashMap<>();
-parametros.put("P_idd", codigo); // 'selectedId' é o nome do parâmetro definido no relatório Jasper
-
-            // Preencher o relatório com o parâmetro e a conexão
-            JasperPrint jp = JasperFillManager.fillReport(jr, parametros, conn);
-
-            // Exibir o relatório
-            JasperViewer.viewReport(jp, false);
-        }
-
-    } catch (SQLException | JRException e) {
-        JOptionPane.showMessageDialog(null, e.getMessage(), "Erro", JOptionPane.ERROR_MESSAGE);
     }
-
-
-  }
-  
-
 
 }

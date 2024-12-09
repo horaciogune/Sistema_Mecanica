@@ -1,26 +1,24 @@
-
 package visao;
 
 import Controller.ClienteController;
+import Controller.ControllerFluxo;
 import Controller.VeiculoController;
 import Modelo.ModeloCliente;
+import Modelo.ModeloFluxo;
 import Modelo.ModeloVeiculo;
 import java.util.ArrayList;
 import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
-
 public class CadastrarVeiculos extends javax.swing.JFrame {
 
     ModeloVeiculo modeloVeiculo = new ModeloVeiculo();
     VeiculoController veiculoController = new VeiculoController();
-    
+
     ClienteController clienteController = new ClienteController();
     ArrayList<ModeloCliente> listaModeloClientes = new ArrayList<>();
-    
-    
-   
+
     public CadastrarVeiculos() {
         initComponents();
         setLocationRelativeTo(null);
@@ -28,7 +26,6 @@ public class CadastrarVeiculos extends javax.swing.JFrame {
         CarregarProprietariosNaComobox();
     }
 
-   
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -47,26 +44,21 @@ public class CadastrarVeiculos extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        setTitle("REGISTRAR VEICULOS");
 
         jLabel3.setFont(new java.awt.Font("Segoe UI Semilight", 0, 14)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(51, 51, 51));
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel3.setText("Matricula:");
 
         jLabel4.setFont(new java.awt.Font("Segoe UI Semilight", 0, 14)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(51, 51, 51));
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel4.setText("Proprietario:");
 
         jLabel5.setFont(new java.awt.Font("Segoe UI Semilight", 0, 14)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(51, 51, 51));
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel5.setText("Modelo:");
 
         txtMatricula.setFont(new java.awt.Font("Segoe UI Semilight", 1, 14)); // NOI18N
-        txtMatricula.setForeground(new java.awt.Color(51, 51, 51));
         txtMatricula.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtMatriculaActionPerformed(evt);
@@ -83,16 +75,12 @@ public class CadastrarVeiculos extends javax.swing.JFrame {
         });
 
         jLabel6.setFont(new java.awt.Font("Segoe UI Semilight", 0, 14)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(51, 51, 51));
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel6.setText("Marca:");
 
         txtMarca.setFont(new java.awt.Font("Segoe UI Semilight", 1, 14)); // NOI18N
-        txtMarca.setForeground(new java.awt.Color(51, 51, 51));
 
-        cboProprietario.setBackground(new java.awt.Color(240, 240, 240));
         cboProprietario.setFont(new java.awt.Font("Segoe UI Semilight", 0, 14)); // NOI18N
-        cboProprietario.setForeground(new java.awt.Color(51, 51, 51));
         cboProprietario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cboProprietarioActionPerformed(evt);
@@ -104,7 +92,6 @@ public class CadastrarVeiculos extends javax.swing.JFrame {
 
         txtCodigo.setEditable(false);
         txtCodigo.setFont(new java.awt.Font("Segoe UI Semilight", 1, 14)); // NOI18N
-        txtCodigo.setForeground(new java.awt.Color(51, 51, 51));
         txtCodigo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtCodigoActionPerformed(evt);
@@ -112,8 +99,7 @@ public class CadastrarVeiculos extends javax.swing.JFrame {
         });
 
         jLabel7.setFont(new java.awt.Font("Segoe UI Semilight", 0, 14)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel7.setText("Id:");
+        jLabel7.setText("ID:");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -121,29 +107,28 @@ public class CadastrarVeiculos extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 92, Short.MAX_VALUE)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
-                                .addComponent(jLabel7))
-                            .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jLabel7)
+                                .addGap(4, 4, 4))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel5)
+                                    .addComponent(jLabel3)
+                                    .addComponent(jLabel6)
+                                    .addComponent(jLabel4))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txtMatricula, javax.swing.GroupLayout.PREFERRED_SIZE, 353, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(txtMarca)
                                 .addComponent(cboProprietario, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(cboModelo, javax.swing.GroupLayout.PREFERRED_SIZE, 353, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(txtCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 353, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(22, Short.MAX_VALUE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel3)
-                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .addComponent(txtCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 353, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(27, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -157,9 +142,9 @@ public class CadastrarVeiculos extends javax.swing.JFrame {
                     .addComponent(jLabel3)
                     .addComponent(txtMatricula, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel5)
-                    .addComponent(cboModelo, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(cboModelo, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel5))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
@@ -192,7 +177,7 @@ public class CadastrarVeiculos extends javax.swing.JFrame {
     }//GEN-LAST:event_txtMatriculaActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-       salvarOuAlterar();
+        salvarOuAlterar();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void cboProprietarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboProprietarioActionPerformed
@@ -203,7 +188,6 @@ public class CadastrarVeiculos extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtCodigoActionPerformed
 
-    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -251,89 +235,130 @@ public class CadastrarVeiculos extends javax.swing.JFrame {
     private javax.swing.JTextField txtMatricula;
     // End of variables declaration//GEN-END:variables
 
-public JTextField codigo(){
-    return txtCodigo;
-}
-public JTextField matricula(){
-    return txtMatricula;
-}
-public JComboBox modelo(){
-    return cboModelo;
-}
-public JTextField marca(){
-    return txtMarca;
-}
-public JComboBox proprietario(){
-    return cboProprietario;
-}
-    
-    
+    public JTextField codigo() {
+        return txtCodigo;
+    }
 
-private void CarregarProprietariosNaComobox(){
-    
-    listaModeloClientes = clienteController.getListaModeloClienteController();
-    cboProprietario.removeAllItems();
-    cboProprietario.addItem("--Selecione--");
-    for(int i=0; i < listaModeloClientes.size();i++){
-        cboProprietario.addItem(listaModeloClientes.get(i).getNome());
+    public JTextField matricula() {
+        return txtMatricula;
     }
-    
-    
-}
-   
-private void SalvarVeiculos(){
-    
-    if(!txtMatricula.getText().isEmpty()&& cboModelo.getSelectedItem()!= null && !txtMarca.getText().isEmpty() && cboProprietario.getSelectedItem() !=null){
-    modeloVeiculo.setMatricula(txtMatricula.getText());
-    modeloVeiculo.setModelo(cboModelo.getSelectedItem().toString());
-    modeloVeiculo.setMarca(txtMarca.getText());
-    modeloVeiculo.setCliente(cboProprietario.getSelectedItem().toString());
-    
-    if(veiculoController.VerificarExistenciaVeiculoController(modeloVeiculo)){
-        JOptionPane.showMessageDialog(this,"Veiculo ja existente","ERRO",JOptionPane.ERROR_MESSAGE);
-        return;
+
+    public JComboBox modelo() {
+        return cboModelo;
     }
-    
-    if(veiculoController.SalvarVeiculoController(modeloVeiculo)>0){
-     JOptionPane.showMessageDialog(this,"SUCESSO");
-    }else{
-     JOptionPane.showMessageDialog(this,"ERRO","ERRO",JOptionPane.ERROR_MESSAGE);
- 
+
+    public JTextField marca() {
+        return txtMarca;
     }
-    }else{
-       JOptionPane.showMessageDialog(this,"ALGUN CAMPO OBRIGATORIO IGNORADO","ERRO",JOptionPane.ERROR_MESSAGE);
-   
+
+    public JComboBox proprietario() {
+        return cboProprietario;
+    }
+
+    private void CarregarProprietariosNaComobox() {
+
+        listaModeloClientes = clienteController.getListaModeloClienteController();
+        cboProprietario.removeAllItems();
+        cboProprietario.addItem("--Selecione--");
+        for (int i = 0; i < listaModeloClientes.size(); i++) {
+            cboProprietario.addItem(listaModeloClientes.get(i).getNome());
+        }
+
+    }
+
+   private void SalvarVeiculos() {
+    if (!txtMatricula.getText().isEmpty() && cboModelo.getSelectedItem() != null && !txtMarca.getText().isEmpty() && cboProprietario.getSelectedItem() != null) {
+        // Configuração do modelo de veículo
+        modeloVeiculo.setMatricula(txtMatricula.getText());
+        modeloVeiculo.setModelo(cboModelo.getSelectedItem().toString());
+        modeloVeiculo.setMarca(txtMarca.getText());
+        modeloVeiculo.setCliente(cboProprietario.getSelectedItem().toString());
+
+        // Verificação de duplicação
+        if (veiculoController.VerificarExistenciaVeiculoController(modeloVeiculo)) {
+            JOptionPane.showMessageDialog(this, "MATRICULA DO VEICULO JA EXISTENTE  ", "Duplicação de Dados", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+
+        // Validação de campos obrigatórios
+        if (modeloVeiculo.getModelo().equals("--Selecione--") || modeloVeiculo.getCliente().equals("--Selecione--")) {
+            JOptionPane.showMessageDialog(this, "ALGUM CAMPO OBRIGATORIO IGNORADO", "ERRO", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+
+        // Salvar veículo no banco de dados
+        if (veiculoController.SalvarVeiculoController(modeloVeiculo) > 0) {
+            JOptionPane.showMessageDialog(this, "SUCESSO");
+            
+            // Inserir no fluxo com estado "Entrada"
+            ModeloFluxo modeloFluxo = new ModeloFluxo();
+            modeloFluxo.setMatricula(txtMatricula.getText());
+            modeloFluxo.setEstado("Entrada");
+            modeloFluxo.setData(new java.util.Date());
+
+            ControllerFluxo controllerFluxo = new ControllerFluxo();
+            if (controllerFluxo.salvarFluxoController(modeloFluxo)) {
+                JOptionPane.showMessageDialog(this, "Fluxo registrado com sucesso!");
+            } else {
+                JOptionPane.showMessageDialog(this, "Erro ao registrar fluxo!", "Erro", JOptionPane.ERROR_MESSAGE);
+            }
+
+            LimparaGormulario(); // Limpar formulário
+        } else {
+            JOptionPane.showMessageDialog(this, "ERRO", "ERRO", JOptionPane.ERROR_MESSAGE);
+        }
+    } else {
+        JOptionPane.showMessageDialog(this, "ALGUM CAMPO OBRIGATORIO IGNORADO", "ERRO", JOptionPane.WARNING_MESSAGE);
     }
 }
 
-public void EditarVeiculo(){
-    if(!txtMatricula.getText().isEmpty() && ! txtMarca.getText().isEmpty() && cboModelo.getSelectedItem() !=null 
-    && cboProprietario.getSelectedItem() !=null){
-    modeloVeiculo.setId(Integer.parseInt(txtCodigo.getText()));
-    modeloVeiculo.setMatricula(txtMatricula.getText());
-    modeloVeiculo.setModelo(cboModelo.getSelectedItem().toString());
-    modeloVeiculo.setMarca(txtMarca.getText());
-    modeloVeiculo.setCliente(cboProprietario.getSelectedItem().toString());
-    
-    if(veiculoController.AtualizarVeiculoController(modeloVeiculo)){
-        JOptionPane.showMessageDialog(this,"ATUALIZADO COM SUCESSO");
-        
-    }else{
-       JOptionPane.showMessageDialog(this,"ERRO AO ATUALIZAR DADOS DO VEICULO","Erro",JOptionPane.ERROR_MESSAGE);
-    }
-    }else{
-     JOptionPane.showMessageDialog(this, "ALGUM CAMPO OBRIGADO IGNORADO.", "Erro", JOptionPane.ERROR_MESSAGE);
-   
-    }
-}
 
-private void salvarOuAlterar(){
-    
-    if(txtCodigo.getText().isEmpty()){
-    this.SalvarVeiculos();
-    }else{
-        this.EditarVeiculo();
+    public void EditarVeiculo() {
+        if (!txtMatricula.getText().isEmpty() && !txtMarca.getText().isEmpty() && cboModelo.getSelectedItem() != null
+                && cboProprietario.getSelectedItem() != null) {
+            modeloVeiculo.setId(Integer.parseInt(txtCodigo.getText()));
+            modeloVeiculo.setMatricula(txtMatricula.getText());
+            modeloVeiculo.setModelo(cboModelo.getSelectedItem().toString());
+            modeloVeiculo.setMarca(txtMarca.getText());
+            modeloVeiculo.setCliente(cboProprietario.getSelectedItem().toString());
+
+            if (veiculoController.VerificarExistenciaVeiculoController(modeloVeiculo)) {
+                JOptionPane.showMessageDialog(this, "MATRICULA DO VEICULO JA EXISTENTE  ", "Duplicação de Dados", JOptionPane.WARNING_MESSAGE);
+                return;
+            }
+            if (modeloVeiculo.getModelo().equals("--Selecione--") || modeloVeiculo.getCliente().equals("--Selecione--")) {
+                JOptionPane.showMessageDialog(this, "ALGUN CAMPO OBRIGATORIO IGNORADO", "ERRO", JOptionPane.WARNING_MESSAGE);
+                return;
+            }
+            if (veiculoController.AtualizarVeiculoController(modeloVeiculo)) {
+                JOptionPane.showMessageDialog(this, "ATUALIZADO COM SUCESSO");
+                LimparaGormulario();
+
+            } else {
+                JOptionPane.showMessageDialog(this, "ERRO AO ATUALIZAR DADOS DO VEICULO", "Erro", JOptionPane.ERROR_MESSAGE);
+            }
+        } else {
+            JOptionPane.showMessageDialog(this, "ALGUM CAMPO OBRIGADO IGNORADO.", "Erro", JOptionPane.ERROR_MESSAGE);
+
+        }
     }
-}
+
+    private void salvarOuAlterar() {
+
+        if (txtCodigo.getText().isEmpty()) {
+            this.SalvarVeiculos();
+        } else {
+            this.EditarVeiculo();
+        }
+    }
+
+    public void LimparaGormulario() {
+        this.txtCodigo.setText("");
+        this.txtMarca.setText("");
+        this.txtMarca.setText("");
+        this.cboModelo.setSelectedItem("--Selecione");
+        this.txtMatricula.setText("");
+        this.cboProprietario.setSelectedItem("--Selecione--");
+    }
 
 }

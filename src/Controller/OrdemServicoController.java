@@ -1,8 +1,8 @@
 
 package Controller;
 
-import Dao.OrdemServicoDao;
-import Modelo.ModeloOrdemServico;
+import Dao.*;
+import Modelo.*;
 import java.util.ArrayList;
 
 
@@ -13,6 +13,11 @@ public class OrdemServicoController {
     public int SalvarOrdemServicocontroller(ModeloOrdemServico modeloOrdemServico){
         return this.ordemServicoDao.salvarOrdemServicoDao(modeloOrdemServico);
     }
+    
+  public String obterMatriculaPorIdOrdemController(int id) {
+    return this.ordemServicoDao.obterMatriculaPorIdOrdem(id);
+}
+
     
    public ModeloOrdemServico getOrdemServicocontroller(int id){
         return this.ordemServicoDao.getOrdemServicoDao(id);
@@ -29,7 +34,7 @@ public class OrdemServicoController {
         return this.ordemServicoDao.apagarOrdemServicoDao(id);
     }
    
-   public int ContarOrdemServicocontroller(ModeloOrdemServico modeloOrdemServico){
+   public int ContarOrdemServicocontroller(){
         return this.ordemServicoDao.contarOrdensServicos();
     }
     

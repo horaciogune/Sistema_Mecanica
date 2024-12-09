@@ -13,4 +13,8 @@ public class FaturaController {
         return this.faturaDao.GerarFaturaDao(modeloFatura);
     }
     
+    public int ContarFaturasController(){
+        return this.faturaDao.contarFaturasDao();
+    }
+    
 }

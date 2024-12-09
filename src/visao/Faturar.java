@@ -1,7 +1,10 @@
 package visao;
 
+import Controller.ControllerFluxo;
 import Controller.FaturaController;
+import Controller.OrdemServicoController;
 import Modelo.ModeloFatura;
+import Modelo.ModeloFluxo;
 import java.awt.Color;
 import java.text.DecimalFormat;
 import javax.swing.JOptionPane;
@@ -11,6 +14,8 @@ public class Faturar extends javax.swing.JFrame {
 
     ModeloFatura modeloFatura = new ModeloFatura();
     FaturaController faturaController = new FaturaController();
+
+    OrdemServicoController ordemServicoController = new OrdemServicoController();
 
     public Faturar() {
         initComponents();
@@ -41,16 +46,16 @@ public class Faturar extends javax.swing.JFrame {
         btnFinalizar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("GERAR FATURA");
+        setTitle("FINALIZAR");
         setResizable(false);
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setForeground(new java.awt.Color(60, 63, 65));
 
         painelBorderr11.setBackgroundColor(new java.awt.Color(0, 102, 204));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI Semilight", 1, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Gerar Fatura");
+        jLabel1.setText("Finalizar Ordem de Servico");
 
         javax.swing.GroupLayout painelBorderr11Layout = new javax.swing.GroupLayout(painelBorderr11);
         painelBorderr11.setLayout(painelBorderr11Layout);
@@ -59,14 +64,13 @@ public class Faturar extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelBorderr11Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel1)
-                .addGap(215, 215, 215))
+                .addGap(147, 147, 147))
         );
         painelBorderr11Layout.setVerticalGroup(
             painelBorderr11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
         );
 
-        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
 
         jLabel6.setFont(new java.awt.Font("Segoe UI Semilight", 1, 14)); // NOI18N
@@ -79,7 +83,6 @@ public class Faturar extends javax.swing.JFrame {
 
         txtCodigoOrdem.setEditable(false);
         txtCodigoOrdem.setFont(new java.awt.Font("Segoe UI Semilight", 1, 16)); // NOI18N
-        txtCodigoOrdem.setForeground(new java.awt.Color(255, 0, 0));
         txtCodigoOrdem.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -106,7 +109,6 @@ public class Faturar extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Dados de Pagamento", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI Semilight", 1, 14))); // NOI18N
 
         jLabel9.setFont(new java.awt.Font("Segoe UI Semilight", 1, 14)); // NOI18N
@@ -116,8 +118,9 @@ public class Faturar extends javax.swing.JFrame {
         jLabel10.setText("Total A pagar :");
 
         txtValorpagar.setEditable(false);
+        txtValorpagar.setBackground(new java.awt.Color(187, 187, 187));
         txtValorpagar.setFont(new java.awt.Font("Segoe UI Semilight", 1, 16)); // NOI18N
-        txtValorpagar.setForeground(new java.awt.Color(0, 153, 0));
+        txtValorpagar.setForeground(new java.awt.Color(60, 63, 65));
         txtValorpagar.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
         cboMetodoPagamento.setFont(new java.awt.Font("Segoe UI Semilight", 1, 16)); // NOI18N
@@ -128,6 +131,7 @@ public class Faturar extends javax.swing.JFrame {
             }
         });
 
+        txtValorRecebido.setBackground(new java.awt.Color(60, 63, 65));
         txtValorRecebido.setFont(new java.awt.Font("Segoe UI Semilight", 1, 16)); // NOI18N
         txtValorRecebido.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtValorRecebido.addActionListener(new java.awt.event.ActionListener() {
@@ -149,7 +153,6 @@ public class Faturar extends javax.swing.JFrame {
 
         txtTrocos.setEditable(false);
         txtTrocos.setFont(new java.awt.Font("Segoe UI Semilight", 1, 16)); // NOI18N
-        txtTrocos.setForeground(new java.awt.Color(0, 153, 0));
         txtTrocos.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
@@ -226,8 +229,8 @@ public class Faturar extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(btnFinalizar)
-                .addContainerGap(20, Short.MAX_VALUE))
+                .addComponent(btnFinalizar, javax.swing.GroupLayout.DEFAULT_SIZE, 52, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -349,36 +352,78 @@ public class Faturar extends javax.swing.JFrame {
             txtTrocos.setText("0.00");
             txtValorRecebido.setForeground(Color.RED);
         }
-        if(txtValorRecebido.getText().equals("")){
+        if (txtValorRecebido.getText().equals("")) {
             btnFinalizar.setEnabled(false);
             return;
         }
     }
 
-   public void GerarFatura() {
+    public void GerarFatura() {
 
-    modeloFatura.setIdOrdem(Integer.parseInt(txtCodigoOrdem.getText()));
-    modeloFatura.setMetodoPagamento(cboMetodoPagamento.getSelectedItem().toString());
-    modeloFatura.setValorApagar(Double.parseDouble(txtValorpagar.getText().replace(".", "").replace(",", ".")));
-    modeloFatura.setValorRecebido(Double.parseDouble(txtValorRecebido.getText().replace(".", "").replace(",", ".")));
+        if (txtCodigoOrdem.getText().isEmpty() || cboMetodoPagamento.getSelectedItem() == null
+                || txtValorpagar.getText().isEmpty() || txtValorRecebido.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Preencha todos os campos obrigatórios.", "Erro", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
 
-    try {
-        
-        String trocosStr = txtTrocos.getText().replace(".", "").replace(",", ".");
-        double trocos = Double.parseDouble(trocosStr);
-        modeloFatura.setTrocos(trocos);
-    } catch (NumberFormatException e) {
-        JOptionPane.showMessageDialog(this, "Valor dos trocos inválido.", "Erro", JOptionPane.ERROR_MESSAGE);
-        return;
+        modeloFatura.setIdOrdem(Integer.parseInt(txtCodigoOrdem.getText()));
+        modeloFatura.setMetodoPagamento(cboMetodoPagamento.getSelectedItem().toString());
+        modeloFatura.setValorApagar(Double.parseDouble(txtValorpagar.getText().replace(".", "").replace(",", ".")));
+        modeloFatura.setValorRecebido(Double.parseDouble(txtValorRecebido.getText().replace(".", "").replace(",", ".")));
+
+        try {
+            String trocosStr = txtTrocos.getText().replace(".", "").replace(",", ".");
+            double trocos = Double.parseDouble(trocosStr);
+            modeloFatura.setTrocos(trocos);
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, "VALOR DOS TROCOS INVÁLIDOS.", "Erro", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        int resultado = faturaController.GerarFaturaController(modeloFatura);
+
+        if (resultado > 0) {
+            JOptionPane.showMessageDialog(null, "SUCESSO!");
+
+            try {
+
+                OrdemServicoController ordemServicoController = new OrdemServicoController();
+                String matriculaVeiculo = ordemServicoController.obterMatriculaPorIdOrdemController(modeloFatura.getIdOrdem());
+
+                if (matriculaVeiculo != null) {
+                    ModeloFluxo modeloFluxo = new ModeloFluxo();
+                    modeloFluxo.setMatricula(matriculaVeiculo);
+                    modeloFluxo.setEstado("Saída");
+                    modeloFluxo.setData(new java.util.Date());
+
+                    ControllerFluxo controllerFluxo = new ControllerFluxo();
+                    boolean sucessoFluxo = controllerFluxo.salvarFluxoController(modeloFluxo);
+
+                    if (sucessoFluxo) {
+                        // JOptionPane.showMessageDialog(this, "Fluxo de saída registrado com sucesso!");
+                    } else {
+                        JOptionPane.showMessageDialog(this, "Erro ao registrar fluxo de saída.", "Erro", JOptionPane.ERROR_MESSAGE);
+                    }
+                } else {
+                    JOptionPane.showMessageDialog(this, "Não foi possível encontrar a matrícula do veículo para esta ordem.", "Erro", JOptionPane.ERROR_MESSAGE);
+                }
+            } catch (Exception ex) {
+                JOptionPane.showMessageDialog(this, "Erro ao registrar fluxo: " + ex.getMessage(), "Erro", JOptionPane.ERROR_MESSAGE);
+            }
+
+            limparFormulario();
+            dispose();
+        } else {
+            JOptionPane.showMessageDialog(this, "OCORREU UM ERRO AO FINALIZAR A ORDEM DE SERVIÇO", "ERRO", JOptionPane.ERROR_MESSAGE);
+        }
     }
 
-    if (faturaController.GerarFaturaController(modeloFatura) > 0) {
-        JOptionPane.showMessageDialog(null, "SUCESSO");
-    } else {
-        JOptionPane.showMessageDialog(this, "OCORREU UM ERRO", "ERRO", JOptionPane.ERROR_MESSAGE);
+    public void limparFormulario() {
+        this.txtCodigoOrdem.setText("");
+        this.txtTrocos.setText("");
+        this.txtValorRecebido.setText("");
+        this.txtValorpagar.setText("");
+
     }
-
-}
-
 
 }

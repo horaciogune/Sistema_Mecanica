@@ -3,6 +3,7 @@ package Dao;
 import Conexao.Conexao_MySql;
 import Modelo.ModeloOrdemServico;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -215,6 +216,21 @@ public class OrdemServicoDao extends Conexao_MySql {
         } finally {
             this.fecharConexao();
         }
+    }
+
+    public String obterMatriculaPorIdOrdem(int idOrdem) {
+        String matricula = null;
+        String sql = "SELECT matriculaVeiculo FROM ordem_servico WHERE id = ?";
+        try (PreparedStatement stmt = this.conectar().prepareStatement(sql)) {
+            stmt.setInt(1, idOrdem);
+            ResultSet rs = stmt.executeQuery();
+            if (rs.next()) {
+                matricula = rs.getString("matriculaVeiculo");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return matricula;
     }
 
     public int contarOrdensServicos() {

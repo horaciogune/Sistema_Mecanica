@@ -27,29 +27,25 @@ import net.sf.jasperreports.engine.JasperReport;
 import net.sf.jasperreports.view.JasperViewer;
 
 public class ConsultarMecanicos extends javax.swing.JPanel {
-    
-    ArrayList<ModeloMecanico>listaModeloMecanicos = new ArrayList<>();
+
+    ArrayList<ModeloMecanico> listaModeloMecanicos = new ArrayList<>();
     MecanicoController mecanicoController = new MecanicoController();
     ModeloMecanico modeloMecanico = new ModeloMecanico();
-    
+
     private CadastrarMecanicos mecanicos;
-    
+
     public ConsultarMecanicos() {
         initComponents();
         CarregarMecanicos();
-        
+
         mecanicos = new CadastrarMecanicos();
     }
 
-    
-   
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jtMecanicos = new javax.swing.JTable();
         jPanel2 = new javax.swing.JPanel();
         jButton6 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
@@ -62,38 +58,10 @@ public class ConsultarMecanicos extends javax.swing.JPanel {
         painelBorderr15 = new utilitarios.PainelBorderr1();
         jTextField2 = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jtMecanicos = new componentes.Tabela();
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-
-        jtMecanicos.setFont(new java.awt.Font("Yu Gothic UI Semilight", 1, 14)); // NOI18N
-        jtMecanicos.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "ID UNCIONARIO", "NOME", "ENDERECO", "TELEFONE", "ESPECIALIDADE", "DATA REGISTRO"
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        jScrollPane1.setViewportView(jtMecanicos);
-        if (jtMecanicos.getColumnModel().getColumnCount() > 0) {
-            jtMecanicos.getColumnModel().getColumn(0).setResizable(false);
-            jtMecanicos.getColumnModel().getColumn(1).setResizable(false);
-            jtMecanicos.getColumnModel().getColumn(2).setResizable(false);
-            jtMecanicos.getColumnModel().getColumn(3).setResizable(false);
-            jtMecanicos.getColumnModel().getColumn(4).setResizable(false);
-            jtMecanicos.getColumnModel().getColumn(5).setResizable(false);
-        }
-
-        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Accoes", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Yu Gothic UI Semilight", 1, 14))); // NOI18N
+        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Acção", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Yu Gothic UI Semilight", 1, 14))); // NOI18N
 
         jButton6.setFont(new java.awt.Font("Yu Gothic UI Semilight", 1, 14)); // NOI18N
         jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/print.png"))); // NOI18N
@@ -139,23 +107,25 @@ public class ConsultarMecanicos extends javax.swing.JPanel {
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addGap(25, 25, 25)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 79, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(130, Short.MAX_VALUE))
+                .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, 79, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, 79, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton6, javax.swing.GroupLayout.DEFAULT_SIZE, 78, Short.MAX_VALUE))
         );
 
         painelBorderr14.setBackgroundColor(new java.awt.Color(0, 102, 204));
@@ -234,28 +204,59 @@ public class ConsultarMecanicos extends javax.swing.JPanel {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        jtMecanicos.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        jtMecanicos.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "ID FUNCIONARIO", "NOME", "ENDERECO", "TELEFONE", "ESPECIALIDADE", "DATA REGISTRO"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jtMecanicos.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 14)); // NOI18N
+        jScrollPane2.setViewportView(jtMecanicos);
+        if (jtMecanicos.getColumnModel().getColumnCount() > 0) {
+            jtMecanicos.getColumnModel().getColumn(0).setResizable(false);
+            jtMecanicos.getColumnModel().getColumn(1).setResizable(false);
+            jtMecanicos.getColumnModel().getColumn(2).setResizable(false);
+            jtMecanicos.getColumnModel().getColumn(3).setResizable(false);
+            jtMecanicos.getColumnModel().getColumn(4).setResizable(false);
+            jtMecanicos.getColumnModel().getColumn(5).setResizable(false);
+        }
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 462, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(painelBorderr14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(4, 4, 4)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 469, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(painelBorderr14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addComponent(painelBorderr14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(46, 46, 46)
+                .addGap(54, 54, 54)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGap(9, 9, 9)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
-                    .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addGap(8, 8, 8)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                    .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -271,31 +272,30 @@ public class ConsultarMecanicos extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-         relatorio();
+        relatorio();
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton6ActionPerformed
 
-    
-    
+
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-     EnviarDadosParaFormulario();
-       
+        EnviarDadosParaFormulario();
+
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-    ApagarFuncionario();
+        ApagarFuncionario();
 
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-      new CadastrarMecanicos().setVisible(true);
+        new CadastrarMecanicos().setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
         this.removeAll();
         PainelCasa painelCasa = new PainelCasa();
         this.setLayout(new BorderLayout());
-        this.add(painelCasa , BorderLayout.CENTER);
+        this.add(painelCasa, BorderLayout.CENTER);
         this.revalidate();
         this.repaint();
     }//GEN-LAST:event_jButton9ActionPerformed
@@ -304,7 +304,7 @@ public class ConsultarMecanicos extends javax.swing.JPanel {
         this.removeAll();
         PainelConsultas painelConsultas = new PainelConsultas();
         this.setLayout(new BorderLayout());
-        this.add(painelConsultas , BorderLayout.CENTER);
+        this.add(painelConsultas, BorderLayout.CENTER);
         this.revalidate();
         this.repaint();
     }//GEN-LAST:event_jButton10ActionPerformed
@@ -321,107 +321,96 @@ public class ConsultarMecanicos extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextField jTextField2;
-    private javax.swing.JTable jtMecanicos;
+    private componentes.Tabela jtMecanicos;
     private utilitarios.PainelBorderr1 painelBorderr14;
     private utilitarios.PainelBorderr1 painelBorderr15;
     // End of variables declaration//GEN-END:variables
-    
-   
-  private void EnviarDadosParaFormulario(){
-       int linha = jtMecanicos.getSelectedRow();
-         
-      if (linha == -1) {
-        JOptionPane.showMessageDialog(null, "SELECIONE UM FUNCIONARIO PARA ATUALIZAR!", "Erro", JOptionPane.WARNING_MESSAGE);
-        return;
-    }
-    int codigo = (int) jtMecanicos.getValueAt(linha, 0);
-    
-    mecanicos.setVisible(true);
-    modeloMecanico = mecanicoController.getMecanicoPeloIdController(codigo);
-    
-    mecanicos.codigo().setText(String.valueOf(modeloMecanico.getId()));
-    mecanicos.nome().setText(modeloMecanico.getNome());
-    mecanicos.endereco().setText(modeloMecanico.getEndereco());
-    mecanicos.especialidade().setText(modeloMecanico.getEspecialidade());
-    mecanicos.telefone().setText(modeloMecanico.getTelefone());
-       
- }
-  
-  private void ApagarFuncionario(){
-      int linha = jtMecanicos.getSelectedRow();
-   
-    if (linha == -1) {
-        JOptionPane.showMessageDialog(null, "SELECIONE UM FUNCIONARIO PARA EXCLUIR!", "Erro", JOptionPane.ERROR_MESSAGE);
-        return;
-    }
-    int codigo = (int) jtMecanicos.getValueAt(linha, 0);
 
-    int opcaoApagar = JOptionPane.showConfirmDialog(this, "EXCLUIR O FUNCIONARIO?", "Confirmação", JOptionPane.YES_NO_OPTION);
-    if (opcaoApagar != JOptionPane.YES_OPTION) {
-        return;
-    }
-    
-     if (mecanicoController.ApagarMecanicoController(codigo)) {
-        this.CarregarMecanicos();
-    } else {
-        JOptionPane.showMessageDialog(this, "ERRO AO EXCLUIR FUNCIONARIO, o funcionario pode estar relacionado a uma operação", "Erro", JOptionPane.ERROR_MESSAGE);
-    }
-    
-}
-      
-  public void relatorio(){
-                                             
+    private void EnviarDadosParaFormulario() {
+        int linha = jtMecanicos.getSelectedRow();
 
-    try {
-        // Pegar a linha selecionada
-        int linha = jtMecanicos.getSelectedRow(); 
-        
-        // Verificar se alguma linha foi selecionada
         if (linha == -1) {
-            JOptionPane.showMessageDialog(null, "SELECIONE UM FUNCIONARIO PARA GERAR O RELATÓRIO!", "Erro", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, "SELECIONE UM FUNCIONARIO PARA ATUALIZAR!", "Erro", JOptionPane.WARNING_MESSAGE);
             return;
         }
-        
-        // Pegar o valor do ID na primeira coluna (coluna 0)
-      int codigo = (int) jtMecanicos.getValueAt(linha, 0);
-System.out.println("ID selecionado: " + codigo); // Coluna 0 contém o ID do funcionário
+        int codigo = (int) jtMecanicos.getValueAt(linha, 0);
 
-        try (Connection conn = ConnectionFactory.getConnection()) {
-            // Caminho para o arquivo .jrxml
-            String src = "src\\relatorios\\funcionarios.jrxml";
-            
-            // Compilar o relatório
-            JasperReport jr = JasperCompileManager.compileReport(src);
+        mecanicos.setVisible(true);
+        modeloMecanico = mecanicoController.getMecanicoPeloIdController(codigo);
 
-            // Criar um Map para os parâmetros do relatório
-          Map<String, Object> parametros = new HashMap<>();
-parametros.put("P_id", codigo); // 'selectedId' é o nome do parâmetro definido no relatório Jasper
+        mecanicos.codigo().setText(String.valueOf(modeloMecanico.getId()));
+        mecanicos.nome().setText(modeloMecanico.getNome());
+        mecanicos.endereco().setText(modeloMecanico.getEndereco());
+        mecanicos.especialidade().setText(modeloMecanico.getEspecialidade());
+        mecanicos.telefone().setText(modeloMecanico.getTelefone());
 
-            // Preencher o relatório com o parâmetro e a conexão
-            JasperPrint jp = JasperFillManager.fillReport(jr, parametros, conn);
-
-            // Exibir o relatório
-            JasperViewer.viewReport(jp, false);
-        }
-
-    } catch (SQLException | JRException e) {
-        JOptionPane.showMessageDialog(null, e.getMessage(), "Erro", JOptionPane.ERROR_MESSAGE);
     }
 
+    private void ApagarFuncionario() {
+        int linha = jtMecanicos.getSelectedRow();
 
-  }
-  
-    
-    
+        if (linha == -1) {
+            JOptionPane.showMessageDialog(null, "SELECIONE UM FUNCIONARIO PARA EXCLUIR!", "Erro", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+        int codigo = (int) jtMecanicos.getValueAt(linha, 0);
+
+        int opcaoApagar = JOptionPane.showConfirmDialog(this, "EXCLUIR O FUNCIONARIO?", "Confirmação", JOptionPane.YES_NO_OPTION);
+        if (opcaoApagar != JOptionPane.YES_OPTION) {
+            return;
+        }
+
+        if (mecanicoController.ApagarMecanicoController(codigo)) {
+            this.CarregarMecanicos();
+        } else {
+            JOptionPane.showMessageDialog(this, "ERRO AO EXCLUIR FUNCIONARIO, o funcionario pode estar relacionado a uma operação", "Erro", JOptionPane.ERROR_MESSAGE);
+        }
+
+    }
+
+    public void relatorio() {
+
+        try {
+            int linha = jtMecanicos.getSelectedRow();
+
+            if (linha == -1) {
+                JOptionPane.showMessageDialog(null, "SELECIONE UM FUNCIONARIO PARA GERAR O RELATÓRIO!", "Erro", JOptionPane.WARNING_MESSAGE);
+                return;
+            }
+            int codigo = (int) jtMecanicos.getValueAt(linha, 0);
+
+            try (Connection conn = ConnectionFactory.getConnection()) {
+                // Caminho para o arquivo .jrxml
+                String src = "src\\relatorios\\funcionarios.jrxml";
+
+                JasperReport jr = JasperCompileManager.compileReport(src);
+
+                // Criar um Map para os parâmetros do relatório
+                Map<String, Object> parametros = new HashMap<>();
+                parametros.put("P_id", codigo); // 'selectedId' é o nome do parâmetro definido no relatório Jasper
+
+                // Preencher o relatório com o parâmetro e a conexão
+                JasperPrint jp = JasperFillManager.fillReport(jr, parametros, conn);
+
+                // Exibir o relatório
+                JasperViewer.viewReport(jp, false);
+            }
+
+        } catch (SQLException | JRException e) {
+            JOptionPane.showMessageDialog(null, e.getMessage(), "Erro", JOptionPane.ERROR_MESSAGE);
+        }
+
+    }
+
     private void CarregarMecanicos() {
-        
+
         DefaultTableModel modelo = (DefaultTableModel) jtMecanicos.getModel();
         modelo.setNumRows(0);
         listaModeloMecanicos = mecanicoController.getListaMecanicoController();
         int cont = listaModeloMecanicos.size();
-        
+
         for (int i = 0; i < cont; i++) {
             modelo.addRow(new Object[]{
                 listaModeloMecanicos.get(i).getId(),
@@ -431,9 +420,8 @@ parametros.put("P_id", codigo); // 'selectedId' é o nome do parâmetro definido
                 listaModeloMecanicos.get(i).getTelefone(),
                 listaModeloMecanicos.get(i).getDataCriacao()
             });
-            
+
         }
-        
-        
+
     }
 }
