@@ -5,31 +5,37 @@
  */
 package visao;
 
+import Modelo.ModeloSessaoUsuario;
 import com.formdev.flatlaf.FlatDarkLaf;
 import com.formdev.flatlaf.FlatIntelliJLaf;
 import java.awt.BorderLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.text.SimpleDateFormat;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.Timer;
 import javax.swing.UIManager;
 import static sun.security.jgss.GSSUtil.login;
+
 /**
  *
  * @author Guilhrme casimiro
  */
 public class MenuPrincipal extends javax.swing.JFrame {
-    
-  
-   
+
+    ModeloSessaoUsuario modeloSessaoUsuario = new ModeloSessaoUsuario();
+
     public MenuPrincipal() {
         initComponents();
         setLocationRelativeTo(null);
+        Sessao();
         tema();
+        dataHora();
         setarCasas();
-     
-      
+
     }
 
-   
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -49,6 +55,12 @@ public class MenuPrincipal extends javax.swing.JFrame {
         jLabel18 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
         PainelReceptor = new javax.swing.JPanel();
+        lblNome = new javax.swing.JLabel();
+        lblNivel = new javax.swing.JLabel();
+        txtData = new javax.swing.JLabel();
+        txtHora = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
 
         jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/voltar.png"))); // NOI18N
         jButton7.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
@@ -188,19 +200,43 @@ public class MenuPrincipal extends javax.swing.JFrame {
                 .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(145, Short.MAX_VALUE))
+                .addContainerGap(148, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout PainelReceptorLayout = new javax.swing.GroupLayout(PainelReceptor);
         PainelReceptor.setLayout(PainelReceptorLayout);
         PainelReceptorLayout.setHorizontalGroup(
             PainelReceptorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 757, Short.MAX_VALUE)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
         PainelReceptorLayout.setVerticalGroup(
             PainelReceptorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 0, Short.MAX_VALUE)
         );
+
+        lblNome.setFont(new java.awt.Font("Yu Gothic UI Semilight", 1, 14)); // NOI18N
+        lblNome.setForeground(new java.awt.Color(255, 255, 255));
+        lblNome.setText("Nome");
+
+        lblNivel.setFont(new java.awt.Font("Yu Gothic UI Semilight", 1, 14)); // NOI18N
+        lblNivel.setForeground(new java.awt.Color(255, 255, 255));
+        lblNivel.setText("Nivel");
+
+        txtData.setFont(new java.awt.Font("Yu Gothic UI Semilight", 1, 14)); // NOI18N
+        txtData.setForeground(new java.awt.Color(255, 255, 255));
+        txtData.setText("Data");
+
+        txtHora.setFont(new java.awt.Font("Yu Gothic UI Semilight", 1, 14)); // NOI18N
+        txtHora.setForeground(new java.awt.Color(255, 255, 255));
+        txtHora.setText("Hora");
+
+        jLabel8.setFont(new java.awt.Font("Yu Gothic UI Semilight", 1, 14)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel8.setText("Nivel De Acesso :");
+
+        jLabel6.setFont(new java.awt.Font("Yu Gothic UI Semilight", 1, 14)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setText("Login Feito Por :");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -209,14 +245,38 @@ public class MenuPrincipal extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(PainelReceptor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel6)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(lblNome)
+                        .addGap(98, 98, 98)
+                        .addComponent(jLabel8)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(lblNivel, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
+                        .addComponent(txtData, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtHora, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(PainelReceptor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(9, 9, 9)))
+                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(PainelReceptor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtData)
+                    .addComponent(txtHora)
+                    .addComponent(jLabel6)
+                    .addComponent(lblNome)
+                    .addComponent(jLabel8)
+                    .addComponent(lblNivel))
+                .addGap(6, 6, 6))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -237,51 +297,49 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
-    PainelReceptor .removeAll();   
-    PainelConsultas painelConsultas = new PainelConsultas();
-    PainelReceptor.setLayout(new BorderLayout());
-    PainelReceptor.add(painelConsultas , BorderLayout.CENTER);
-    PainelReceptor.revalidate();
-    PainelReceptor.repaint();
+        PainelReceptor.removeAll();
+        PainelConsultas painelConsultas = new PainelConsultas();
+        PainelReceptor.setLayout(new BorderLayout());
+        PainelReceptor.add(painelConsultas, BorderLayout.CENTER);
+        PainelReceptor.revalidate();
+        PainelReceptor.repaint();
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
-    PainelReceptor .removeAll();   
-    PainelCadastros painelCadastros = new PainelCadastros();
-    PainelReceptor.setLayout(new BorderLayout());
-    PainelReceptor.add(painelCadastros, BorderLayout.CENTER);
-    PainelReceptor.revalidate();
-    PainelReceptor.repaint();
+        PainelReceptor.removeAll();
+        PainelCadastros painelCadastros = new PainelCadastros();
+        PainelReceptor.setLayout(new BorderLayout());
+        PainelReceptor.add(painelCadastros, BorderLayout.CENTER);
+        PainelReceptor.revalidate();
+        PainelReceptor.repaint();
     }//GEN-LAST:event_jButton1MouseClicked
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-    PainelReceptor .removeAll();   
-    PainelCadastros painelCadastros = new PainelCadastros();
-    PainelReceptor.setLayout(new BorderLayout());
-    PainelReceptor.add(painelCadastros , BorderLayout.CENTER);
-    PainelReceptor.revalidate();
-    PainelReceptor.repaint();
+        PainelReceptor.removeAll();
+        PainelCadastros painelCadastros = new PainelCadastros();
+        PainelReceptor.setLayout(new BorderLayout());
+        PainelReceptor.add(painelCadastros, BorderLayout.CENTER);
+        PainelReceptor.revalidate();
+        PainelReceptor.repaint();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-     PainelReceptor .removeAll();   
-    CriarOrdemServico criarOrdemServico = new CriarOrdemServico();
-    PainelReceptor.setLayout(new BorderLayout());
-    PainelReceptor.add(criarOrdemServico , BorderLayout.CENTER);
-    PainelReceptor.revalidate();
-    PainelReceptor.repaint();
-      
+        PainelReceptor.removeAll();
+        CriarOrdemServico criarOrdemServico = new CriarOrdemServico();
+        PainelReceptor.setLayout(new BorderLayout());
+        PainelReceptor.add(criarOrdemServico, BorderLayout.CENTER);
+        PainelReceptor.revalidate();
+        PainelReceptor.repaint();
+
     }//GEN-LAST:event_jButton4ActionPerformed
 
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
- 
-    
-    // Configurando a janela para exibição
-    
+
+        // Configurando a janela para exibição
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
@@ -306,9 +364,8 @@ public class MenuPrincipal extends javax.swing.JFrame {
                 new MenuPrincipal().setVisible(true);
             }
         });
-        
+
         // Criando uma instância de GraficoDeBarras
-    
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -323,45 +380,67 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel12;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel4;
+    private javax.swing.JLabel lblNivel;
+    private javax.swing.JLabel lblNome;
+    private javax.swing.JLabel txtData;
+    private javax.swing.JLabel txtHora;
     // End of variables declaration//GEN-END:variables
 
-    public JPanel PainelReceptor(){
-    return PainelReceptor;
-}
-
-
-
-public void tema(){
-        int tema = 2;
-                try{
-                 
-                 if(tema == 2){
-                 UIManager.setLookAndFeel(new FlatDarkLaf());
-                 } 
-                 else if(tema == 3){
-                 UIManager.setLookAndFeel(new FlatIntelliJLaf());
-                 }
-                 
-                 
-                }catch(Exception ex){
-                    JOptionPane.showMessageDialog(null,"ERRO");
-                }
+    public JPanel PainelReceptor() {
+        return PainelReceptor;
     }
 
+    public void tema() {
+        int tema = 2;
+        try {
 
-public void setarCasas(){
-    PainelReceptor .removeAll();   
-    PainelCasa painelCasa = new PainelCasa();
-    PainelReceptor.setLayout(new BorderLayout());
-    PainelReceptor.add(painelCasa, BorderLayout.CENTER);
-    PainelReceptor.revalidate();
-    PainelReceptor.repaint();
-}
+            if (tema == 2) {
+                UIManager.setLookAndFeel(new FlatDarkLaf());
+            } else if (tema == 3) {
+                UIManager.setLookAndFeel(new FlatIntelliJLaf());
+            }
 
- 
- 
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(null, "ERRO");
+        }
+    }
+
+    public void setarCasas() {
+        PainelReceptor.removeAll();
+        PainelCasa painelCasa = new PainelCasa();
+        PainelReceptor.setLayout(new BorderLayout());
+        PainelReceptor.add(painelCasa, BorderLayout.CENTER);
+        PainelReceptor.revalidate();
+        PainelReceptor.repaint();
+    }
+
+    public void dataHora() {
+        Timer timer = new Timer(1000, new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                java.util.Date agora = new java.util.Date();
+                SimpleDateFormat data = new SimpleDateFormat("dd/MM/yyyy");
+                SimpleDateFormat horas = new SimpleDateFormat("HH:mm:ss");
+                String hora = horas.format(agora);
+                String dataFormatada = data.format(agora);
+                txtData.setText(dataFormatada);
+                txtHora.setText(hora);
+            }
+        });
+        timer.start();
+    }
+
+    public void Sessao() {
+
+        lblNome.setText(modeloSessaoUsuario.nome);
+        lblNivel.setText(modeloSessaoUsuario.perfil);
+
+    }
+
 }

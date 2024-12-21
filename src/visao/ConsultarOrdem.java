@@ -99,8 +99,8 @@ public class ConsultarOrdem extends javax.swing.JPanel {
         });
 
         jButton8.setFont(new java.awt.Font("Yu Gothic UI Semilight", 1, 14)); // NOI18N
-        jButton8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/print.png"))); // NOI18N
-        jButton8.setText("Fatura");
+        jButton8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/business-report.png"))); // NOI18N
+        jButton8.setText("Relatorio");
         jButton8.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         jButton8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -119,7 +119,7 @@ public class ConsultarOrdem extends javax.swing.JPanel {
         });
 
         jButton7.setFont(new java.awt.Font("Yu Gothic UI Semilight", 1, 14)); // NOI18N
-        jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/print.png"))); // NOI18N
+        jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/file.png"))); // NOI18N
         jButton7.setText("Detalhes");
         jButton7.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         jButton7.addActionListener(new java.awt.event.ActionListener() {
@@ -252,6 +252,7 @@ public class ConsultarOrdem extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
+        jtOrdens.setFont(new java.awt.Font("Segoe UI Semilight", 1, 14)); // NOI18N
         jScrollPane2.setViewportView(jtOrdens);
         if (jtOrdens.getColumnModel().getColumnCount() > 0) {
             jtOrdens.getColumnModel().getColumn(0).setResizable(false);

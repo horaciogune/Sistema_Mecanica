@@ -220,6 +220,7 @@ public class ConsultarUsuarios extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
+        jtUsuarios.setFont(new java.awt.Font("Segoe UI Semilight", 1, 14)); // NOI18N
         jScrollPane2.setViewportView(jtUsuarios);
         if (jtUsuarios.getColumnModel().getColumnCount() > 0) {
             jtUsuarios.getColumnModel().getColumn(0).setResizable(false);

@@ -370,7 +370,7 @@ public class CadastrarUsuario extends javax.swing.JFrame {
             if (usuarioController.salvarUsuariocontroller(modeloUsuario) > 0) {
                 JOptionPane.showMessageDialog(this, "SUCESSO");
                 limparFormulario();
-                
+                dispose();
 
             } else {
                 JOptionPane.showMessageDialog(this, "ERRO", "Error", JOptionPane.ERROR_MESSAGE);
@@ -414,7 +414,7 @@ public class CadastrarUsuario extends javax.swing.JFrame {
             if (usuarioController.AtualizarUsuariocontroller(modeloUsuario)) {
                 JOptionPane.showMessageDialog(this, "ATUALIZADO COM SUCESSO");
                 limparFormulario();
-               
+                dispose();
 
             } else {
 

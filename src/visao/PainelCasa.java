@@ -81,6 +81,7 @@ public class PainelCasa extends javax.swing.JPanel {
         jScrollPane2.setViewportView(jFluxo);
         if (jFluxo.getColumnModel().getColumnCount() > 0) {
             jFluxo.getColumnModel().getColumn(0).setResizable(false);
+            jFluxo.getColumnModel().getColumn(0).setPreferredWidth(30);
             jFluxo.getColumnModel().getColumn(1).setResizable(false);
             jFluxo.getColumnModel().getColumn(2).setResizable(false);
             jFluxo.getColumnModel().getColumn(3).setResizable(false);
@@ -169,7 +170,7 @@ public class PainelCasa extends javax.swing.JPanel {
             .addGroup(cartao1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel10)
-                .addContainerGap(93, Short.MAX_VALUE))
+                .addContainerGap(105, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, cartao1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(lblClientes)
@@ -203,7 +204,7 @@ public class PainelCasa extends javax.swing.JPanel {
             .addGroup(cartao2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel11)
-                .addContainerGap(92, Short.MAX_VALUE))
+                .addContainerGap(104, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, cartao2Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(lblVeiculos)
@@ -237,7 +238,7 @@ public class PainelCasa extends javax.swing.JPanel {
             .addGroup(cartao3Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel12)
-                .addContainerGap(92, Short.MAX_VALUE))
+                .addContainerGap(104, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, cartao3Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(lblServicos)
@@ -272,7 +273,7 @@ public class PainelCasa extends javax.swing.JPanel {
             .addGroup(cartao4Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel13)
-                .addContainerGap(52, Short.MAX_VALUE))
+                .addContainerGap(64, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, cartao4Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(lblUsuario3)
@@ -290,7 +291,7 @@ public class PainelCasa extends javax.swing.JPanel {
 
         jCalendar1.setWeekdayForeground(new java.awt.Color(0, 102, 204));
 
-        jLabel1.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 14)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 18)); // NOI18N
         jLabel1.setText("Fluxo de Entradas e Saidas");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -308,7 +309,7 @@ public class PainelCasa extends javax.swing.JPanel {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(cartao3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(cartao4, javax.swing.GroupLayout.DEFAULT_SIZE, 155, Short.MAX_VALUE))
+                        .addComponent(cartao4, javax.swing.GroupLayout.DEFAULT_SIZE, 167, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -334,7 +335,7 @@ public class PainelCasa extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                     .addComponent(jCalendar1, javax.swing.GroupLayout.PREFERRED_SIZE, 245, Short.MAX_VALUE))
-                .addGap(61, 61, 61))
+                .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
 

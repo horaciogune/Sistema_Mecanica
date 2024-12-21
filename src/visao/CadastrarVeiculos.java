@@ -300,7 +300,7 @@ public class CadastrarVeiculos extends javax.swing.JFrame {
             if (controllerFluxo.salvarFluxoController(modeloFluxo)) {
                 JOptionPane.showMessageDialog(this, "Fluxo registrado com sucesso!");
             } else {
-                JOptionPane.showMessageDialog(this, "Erro ao registrar fluxo!", "Erro", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(this, "Erro ao registrar fluxo de Entrada !", "Erro", JOptionPane.ERROR_MESSAGE);
             }
 
             LimparaGormulario(); // Limpar formulário
