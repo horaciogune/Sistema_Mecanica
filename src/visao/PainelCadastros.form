@@ -254,7 +254,7 @@
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/Imagens/electric-car.png"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Veiculos"/>
+                <Property name="text" type="java.lang.String" value="Ve&#xed;culos"/>
               </Properties>
               <Events>
                 <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jButton3MouseClicked"/>
@@ -269,7 +269,7 @@
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/Imagens/engineer.png"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Funcionarios"/>
+                <Property name="text" type="java.lang.String" value="Funcion&#xe1;rios"/>
               </Properties>
               <Events>
                 <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jButton4MouseClicked"/>
@@ -284,7 +284,7 @@
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/Imagens/technical-support.png"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Servico"/>
+                <Property name="text" type="java.lang.String" value="Servi&#xe7;o"/>
               </Properties>
               <Events>
                 <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jButton6MouseClicked"/>

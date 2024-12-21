@@ -274,7 +274,7 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI Semilight" size="14" style="1"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="codigo cliente:"/>
+            <Property name="text" type="java.lang.String" value="c&#xf3;digo cliente:"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel5">
@@ -282,7 +282,7 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI Semilight" size="14" style="1"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Veiculo:"/>
+            <Property name="text" type="java.lang.String" value="Ve&#xed;culo:"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="txtVeiculo">
@@ -350,7 +350,7 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI Semilight" size="14" style="1"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Servico:"/>
+            <Property name="text" type="java.lang.String" value="Servi&#xe7;o:"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="txtServico">
@@ -367,7 +367,7 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI Semilight" size="14" style="1"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Observacoes:"/>
+            <Property name="text" type="java.lang.String" value="Observa&#xe7;&#xf5;es:"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="txtObservacoes">
@@ -384,7 +384,7 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI Semilight" size="14" style="1"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Pecas:"/>
+            <Property name="text" type="java.lang.String" value="Pe&#xe7;as:"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="txtPecas">
@@ -410,7 +410,7 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI Semilight" size="14" style="1"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Situacao:"/>
+            <Property name="text" type="java.lang.String" value="Situa&#xe7;&#xe3;o:"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel14">
@@ -481,7 +481,7 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI Semilight" size="14" style="1"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Mecanico"/>
+            <Property name="text" type="java.lang.String" value="Mec&#xe2;nico"/>
           </Properties>
         </Component>
       </SubComponents>

@@ -100,10 +100,10 @@ public class VerDetalhesOrdem extends javax.swing.JFrame {
         txtCodigoCliente.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
         jLabel3.setFont(new java.awt.Font("Segoe UI Semilight", 1, 14)); // NOI18N
-        jLabel3.setText("codigo cliente:");
+        jLabel3.setText("código cliente:");
 
         jLabel5.setFont(new java.awt.Font("Segoe UI Semilight", 1, 14)); // NOI18N
-        jLabel5.setText("Veiculo:");
+        jLabel5.setText("Veículo:");
 
         txtVeiculo.setEditable(false);
         txtVeiculo.setFont(new java.awt.Font("Segoe UI Semilight", 1, 14)); // NOI18N
@@ -131,21 +131,21 @@ public class VerDetalhesOrdem extends javax.swing.JFrame {
         jLabel9.setText("Cliente:");
 
         jLabel10.setFont(new java.awt.Font("Segoe UI Semilight", 1, 14)); // NOI18N
-        jLabel10.setText("Servico:");
+        jLabel10.setText("Serviço:");
 
         txtServico.setEditable(false);
         txtServico.setFont(new java.awt.Font("Segoe UI Semilight", 1, 14)); // NOI18N
         txtServico.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
         jLabel11.setFont(new java.awt.Font("Segoe UI Semilight", 1, 14)); // NOI18N
-        jLabel11.setText("Observacoes:");
+        jLabel11.setText("Observações:");
 
         txtObservacoes.setEditable(false);
         txtObservacoes.setFont(new java.awt.Font("Segoe UI Semilight", 1, 14)); // NOI18N
         txtObservacoes.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
         jLabel12.setFont(new java.awt.Font("Segoe UI Semilight", 1, 14)); // NOI18N
-        jLabel12.setText("Pecas:");
+        jLabel12.setText("Peças:");
 
         txtPecas.setEditable(false);
         txtPecas.setFont(new java.awt.Font("Segoe UI Semilight", 1, 14)); // NOI18N
@@ -156,7 +156,7 @@ public class VerDetalhesOrdem extends javax.swing.JFrame {
         txtStatus.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
         jLabel13.setFont(new java.awt.Font("Segoe UI Semilight", 1, 14)); // NOI18N
-        jLabel13.setText("Situacao:");
+        jLabel13.setText("Situação:");
 
         jLabel14.setFont(new java.awt.Font("Segoe UI Semilight", 1, 14)); // NOI18N
         jLabel14.setText("Valor A pagar:");
@@ -185,7 +185,7 @@ public class VerDetalhesOrdem extends javax.swing.JFrame {
         txtMecanico.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
         jLabel17.setFont(new java.awt.Font("Segoe UI Semilight", 1, 14)); // NOI18N
-        jLabel17.setText("Mecanico");
+        jLabel17.setText("Mecânico");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);

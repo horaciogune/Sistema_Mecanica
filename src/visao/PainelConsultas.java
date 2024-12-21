@@ -130,7 +130,7 @@ public class PainelConsultas extends javax.swing.JPanel {
 
         jButton3.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 14)); // NOI18N
         jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/electric-car.png"))); // NOI18N
-        jButton3.setText("Veiculos");
+        jButton3.setText("Veículos");
         jButton3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButton3MouseClicked(evt);
@@ -158,7 +158,8 @@ public class PainelConsultas extends javax.swing.JPanel {
 
         jButton6.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 14)); // NOI18N
         jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/technical-support.png"))); // NOI18N
-        jButton6.setText("Servicos");
+        jButton6.setText("Serviços");
+        jButton6.setActionCommand("Serviços");
         jButton6.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButton6MouseClicked(evt);

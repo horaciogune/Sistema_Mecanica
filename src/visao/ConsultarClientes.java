@@ -207,7 +207,7 @@ public class ConsultarClientes extends javax.swing.JPanel {
 
             },
             new String [] {
-                "ID CLIENTE", "NOME", "ENDERECO", "TELEFONE", "DOCUMENTO", "NUMERO", "DATA REGISTRO"
+                "ID CLIENTE", "NOME", "ENDEREÇO", "TELEFONE", "DOCUMENTO", "NÚMERO", "DATA REGISTRO"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -251,6 +251,8 @@ public class ConsultarClientes extends javax.swing.JPanel {
                         .addGap(58, 58, 58)
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))))
         );
+
+        jPanel2.getAccessibleContext().setAccessibleName("Ações");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);

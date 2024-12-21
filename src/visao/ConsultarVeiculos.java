@@ -201,7 +201,7 @@ private CadastrarVeiculos veiculos;
 
             },
             new String [] {
-                "ID", "MATRICULA", "MODELO", "PROPRIETARIO", "DATA REGISTRO"
+                "ID", "MATRÍCULA", "MODELO", "PROPRIETÁRIO", "DATA REGISTRO"
             }
         ) {
             boolean[] canEdit = new boolean [] {

@@ -48,11 +48,11 @@ public class CadastrarVeiculos extends javax.swing.JFrame {
 
         jLabel3.setFont(new java.awt.Font("Segoe UI Semilight", 0, 14)); // NOI18N
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel3.setText("Matricula:");
+        jLabel3.setText("Matrícula:");
 
         jLabel4.setFont(new java.awt.Font("Segoe UI Semilight", 0, 14)); // NOI18N
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel4.setText("Proprietario:");
+        jLabel4.setText("Proprietário:");
 
         jLabel5.setFont(new java.awt.Font("Segoe UI Semilight", 0, 14)); // NOI18N
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);

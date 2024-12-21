@@ -239,7 +239,7 @@
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/Imagens/electric-car.png"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Veiculos"/>
+            <Property name="text" type="java.lang.String" value="Ve&#xed;culos"/>
           </Properties>
           <Events>
             <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jButton3MouseClicked"/>
@@ -269,7 +269,8 @@
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/Imagens/technical-support.png"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Servicos"/>
+            <Property name="text" type="java.lang.String" value="Servi&#xe7;os"/>
+            <Property name="actionCommand" type="java.lang.String" value="Servi&#xe7;os"/>
           </Properties>
           <Events>
             <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jButton6MouseClicked"/>

@@ -51,7 +51,7 @@ public class CadastrarServico extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Segoe UI Semilight", 0, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(51, 51, 51));
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel3.setText("Descricao:");
+        jLabel3.setText("Descrição:");
 
         jLabel5.setFont(new java.awt.Font("Segoe UI Semilight", 0, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(51, 51, 51));
@@ -84,7 +84,7 @@ public class CadastrarServico extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("Segoe UI Semilight", 0, 14)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(51, 51, 51));
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel6.setText("Duracao:");
+        jLabel6.setText("Duração:");
 
         txtContacto1.setFont(new java.awt.Font("Segoe UI Semilight", 1, 14)); // NOI18N
         txtContacto1.setForeground(new java.awt.Color(51, 51, 51));
@@ -92,7 +92,7 @@ public class CadastrarServico extends javax.swing.JFrame {
         jLabel7.setFont(new java.awt.Font("Segoe UI Semilight", 0, 14)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(51, 51, 51));
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel7.setText("Pecas:");
+        jLabel7.setText("Peças:");
 
         txtContacto2.setFont(new java.awt.Font("Segoe UI Semilight", 1, 14)); // NOI18N
         txtContacto2.setForeground(new java.awt.Color(51, 51, 51));

@@ -191,7 +191,7 @@ public class PainelCasa extends javax.swing.JPanel {
 
         jLabel11.setFont(new java.awt.Font("Yu Gothic UI Semilight", 1, 14)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel11.setText("Veiculos");
+        jLabel11.setText("Veículos");
 
         lblVeiculos.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         lblVeiculos.setForeground(new java.awt.Color(255, 255, 255));
@@ -225,7 +225,7 @@ public class PainelCasa extends javax.swing.JPanel {
 
         jLabel12.setFont(new java.awt.Font("Yu Gothic UI Semilight", 1, 14)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel12.setText("Servicos");
+        jLabel12.setText("Serviços");
 
         lblServicos.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         lblServicos.setForeground(new java.awt.Color(255, 255, 255));
@@ -284,7 +284,7 @@ public class PainelCasa extends javax.swing.JPanel {
             .addGroup(cartao4Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel13)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
                 .addComponent(lblUsuario3)
                 .addContainerGap())
         );
@@ -292,7 +292,7 @@ public class PainelCasa extends javax.swing.JPanel {
         jCalendar1.setWeekdayForeground(new java.awt.Color(0, 102, 204));
 
         jLabel1.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 18)); // NOI18N
-        jLabel1.setText("Fluxo de Entradas e Saidas");
+        jLabel1.setText("Fluxo de Entrada e Saída");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -334,7 +334,7 @@ public class PainelCasa extends javax.swing.JPanel {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                    .addComponent(jCalendar1, javax.swing.GroupLayout.PREFERRED_SIZE, 245, Short.MAX_VALUE))
+                    .addComponent(jCalendar1, javax.swing.GroupLayout.DEFAULT_SIZE, 245, Short.MAX_VALUE))
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents

@@ -69,6 +69,9 @@
               </Border>
             </Property>
           </Properties>
+          <AccessibilityProperties>
+            <Property name="AccessibleContext.accessibleName" type="java.lang.String" value="A&#xe7;&#xf5;es"/>
+          </AccessibilityProperties>
 
           <Layout>
             <DimensionLayout dim="0">
@@ -336,10 +339,10 @@
                   <Table columnCount="7" rowCount="0">
                     <Column editable="false" title="ID CLIENTE" type="java.lang.Object"/>
                     <Column editable="false" title="NOME" type="java.lang.Object"/>
-                    <Column editable="false" title="ENDERECO" type="java.lang.Object"/>
+                    <Column editable="false" title="ENDERE&#xc7;O" type="java.lang.Object"/>
                     <Column editable="false" title="TELEFONE" type="java.lang.Object"/>
                     <Column editable="false" title="DOCUMENTO" type="java.lang.Object"/>
-                    <Column editable="false" title="NUMERO" type="java.lang.Object"/>
+                    <Column editable="false" title="N&#xda;MERO" type="java.lang.Object"/>
                     <Column editable="false" title="DATA REGISTRO" type="java.lang.Object"/>
                   </Table>
                 </Property>

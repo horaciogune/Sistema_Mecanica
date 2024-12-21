@@ -241,7 +241,7 @@ public class ConsultarOrdem extends javax.swing.JPanel {
 
             },
             new String [] {
-                "ID ORDEM", "DATA ABERTURA", "DATA SAIDA", "CLIENTE", "MATRICULA", "SERVICO", "PRECO TOTAL", "STATUS"
+                "ID ORDEM", "DATA ABERTURA", "DATA SAÍDA", "CLIENTE", "MATRÍCULA", "SERVIÇO", "PREÇO TOTAL", "STATUS"
             }
         ) {
             boolean[] canEdit = new boolean [] {

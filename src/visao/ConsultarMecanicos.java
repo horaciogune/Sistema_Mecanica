@@ -210,7 +210,7 @@ public class ConsultarMecanicos extends javax.swing.JPanel {
 
             },
             new String [] {
-                "ID FUNCIONARIO", "NOME", "ENDERECO", "TELEFONE", "ESPECIALIDADE", "DATA REGISTRO"
+                "ID FUNCIONARIO", "NOME", "ENDEREÇO", "TELEFONE", "ESPECIALIDADE", "DATA REGISTRO"
             }
         ) {
             boolean[] canEdit = new boolean [] {

@@ -150,7 +150,7 @@ public class CriarOrdemServico extends javax.swing.JPanel {
         dataSaida.setFont(new java.awt.Font("Yu Gothic UI Semilight", 1, 18)); // NOI18N
 
         jLabel10.setFont(new java.awt.Font("Segoe UI Semilight", 1, 14)); // NOI18N
-        jLabel10.setText("Data Saida:");
+        jLabel10.setText("Data Saída:");
 
         cboStatus.setBackground(new java.awt.Color(0, 102, 204));
         cboStatus.setFont(new java.awt.Font("Segoe UI Semilight", 1, 14)); // NOI18N
@@ -202,7 +202,7 @@ public class CriarOrdemServico extends javax.swing.JPanel {
         });
 
         jLabel8.setFont(new java.awt.Font("Segoe UI Semilight", 1, 14)); // NOI18N
-        jLabel8.setText("Veiculo :");
+        jLabel8.setText("Veículo :");
 
         txtVeiculo.setEditable(false);
         txtVeiculo.setBackground(new java.awt.Color(0, 102, 204));
@@ -298,7 +298,7 @@ public class CriarOrdemServico extends javax.swing.JPanel {
         jLabel3.setBackground(new java.awt.Color(255, 255, 255));
         jLabel3.setFont(new java.awt.Font("Segoe UI Semilight", 0, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("Numero:");
+        jLabel3.setText("Número:");
 
         txtIdCliente.setEditable(false);
         txtIdCliente.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
@@ -341,31 +341,31 @@ public class CriarOrdemServico extends javax.swing.JPanel {
                     .addComponent(jLabel3)
                     .addComponent(txtIdCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel4))
-                .addContainerGap(8, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         txtProblema.setColumns(20);
         txtProblema.setFont(new java.awt.Font("Segoe UI Semilight", 1, 14)); // NOI18N
         txtProblema.setRows(5);
-        txtProblema.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Descricao do Problema", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI Semilight", 1, 14))); // NOI18N
+        txtProblema.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Descrição do Problema", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI Semilight", 1, 14))); // NOI18N
         jScrollPane4.setViewportView(txtProblema);
 
         txtServico.setColumns(20);
         txtServico.setFont(new java.awt.Font("Segoe UI Semilight", 1, 14)); // NOI18N
         txtServico.setRows(5);
-        txtServico.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Servico a ser Realizado", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI Semilight", 1, 14))); // NOI18N
+        txtServico.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Serviço a ser Realizado", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI Semilight", 1, 14))); // NOI18N
         jScrollPane2.setViewportView(txtServico);
 
         txtObservacoes.setColumns(20);
         txtObservacoes.setFont(new java.awt.Font("Segoe UI Semilight", 1, 14)); // NOI18N
         txtObservacoes.setRows(5);
-        txtObservacoes.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Observacoes", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI Semilight", 1, 14))); // NOI18N
+        txtObservacoes.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Observações", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI Semilight", 1, 14))); // NOI18N
         jScrollPane3.setViewportView(txtObservacoes);
 
         txtpecas.setColumns(20);
         txtpecas.setFont(new java.awt.Font("Segoe UI Semilight", 1, 14)); // NOI18N
         txtpecas.setRows(5);
-        txtpecas.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Inclua pecas", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI Semilight", 1, 14))); // NOI18N
+        txtpecas.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Inclua peças", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI Semilight", 1, 14))); // NOI18N
         jScrollPane5.setViewportView(txtpecas);
         txtpecas.getAccessibleContext().setAccessibleName("Incluir pecas");
 

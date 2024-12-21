@@ -132,7 +132,7 @@ public class PainelCadastros extends javax.swing.JPanel {
 
         jButton3.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 14)); // NOI18N
         jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/electric-car.png"))); // NOI18N
-        jButton3.setText("Veiculos");
+        jButton3.setText("Veículos");
         jButton3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButton3MouseClicked(evt);
@@ -146,7 +146,7 @@ public class PainelCadastros extends javax.swing.JPanel {
 
         jButton4.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 14)); // NOI18N
         jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/engineer.png"))); // NOI18N
-        jButton4.setText("Funcionarios");
+        jButton4.setText("Funcionários");
         jButton4.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButton4MouseClicked(evt);
@@ -160,7 +160,7 @@ public class PainelCadastros extends javax.swing.JPanel {
 
         jButton6.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 14)); // NOI18N
         jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/technical-support.png"))); // NOI18N
-        jButton6.setText("Servico");
+        jButton6.setText("Serviço");
         jButton6.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButton6MouseClicked(evt);

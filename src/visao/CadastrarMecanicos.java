@@ -70,7 +70,7 @@ public class CadastrarMecanicos extends javax.swing.JFrame {
 
         jLabel6.setFont(new java.awt.Font("Segoe UI Semilight", 0, 14)); // NOI18N
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel6.setText("Endereco:");
+        jLabel6.setText("Endereço:");
 
         txtEndereco.setFont(new java.awt.Font("Segoe UI Semilight", 1, 14)); // NOI18N
 

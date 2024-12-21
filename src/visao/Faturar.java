@@ -55,7 +55,7 @@ public class Faturar extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Segoe UI Semilight", 1, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Finalizar Ordem de Servico");
+        jLabel1.setText("Finalizar Ordem de Serviço");
 
         javax.swing.GroupLayout painelBorderr11Layout = new javax.swing.GroupLayout(painelBorderr11);
         painelBorderr11.setLayout(painelBorderr11Layout);
@@ -79,7 +79,7 @@ public class Faturar extends javax.swing.JFrame {
         jLabel6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
 
         jLabel2.setFont(new java.awt.Font("Segoe UI Semilight", 1, 14)); // NOI18N
-        jLabel2.setText("Ordem de Servico ID ");
+        jLabel2.setText("Ordem de Serviço ID ");
 
         txtCodigoOrdem.setEditable(false);
         txtCodigoOrdem.setFont(new java.awt.Font("Segoe UI Semilight", 1, 16)); // NOI18N

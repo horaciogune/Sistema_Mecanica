@@ -388,11 +388,11 @@
                   <Table columnCount="8" rowCount="0">
                     <Column editable="false" title="ID ORDEM" type="java.lang.Object"/>
                     <Column editable="false" title="DATA ABERTURA" type="java.lang.Object"/>
-                    <Column editable="false" title="DATA SAIDA" type="java.lang.Object"/>
+                    <Column editable="false" title="DATA SA&#xcd;DA" type="java.lang.Object"/>
                     <Column editable="false" title="CLIENTE" type="java.lang.Object"/>
-                    <Column editable="false" title="MATRICULA" type="java.lang.Object"/>
-                    <Column editable="false" title="SERVICO" type="java.lang.Object"/>
-                    <Column editable="false" title="PRECO TOTAL" type="java.lang.Object"/>
+                    <Column editable="false" title="MATR&#xcd;CULA" type="java.lang.Object"/>
+                    <Column editable="false" title="SERVI&#xc7;O" type="java.lang.Object"/>
+                    <Column editable="false" title="PRE&#xc7;O TOTAL" type="java.lang.Object"/>
                     <Column editable="false" title="STATUS" type="java.lang.Object"/>
                   </Table>
                 </Property>

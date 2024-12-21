@@ -61,7 +61,7 @@ public class CadastrarPecas extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Segoe UI Semilight", 0, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(51, 51, 51));
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel4.setText("Preco Venda Unidade:");
+        jLabel4.setText("Preço Venda Unidade:");
 
         jLabel5.setFont(new java.awt.Font("Segoe UI Semilight", 0, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(51, 51, 51));
@@ -104,7 +104,7 @@ public class CadastrarPecas extends javax.swing.JFrame {
         jLabel7.setFont(new java.awt.Font("Segoe UI Semilight", 0, 14)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(51, 51, 51));
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel7.setText("Preco Compra Unidade:");
+        jLabel7.setText("Preço Compra Unidade:");
 
         txtPrecoCompraUnidade.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         txtPrecoCompraUnidade.addActionListener(new java.awt.event.ActionListener() {
@@ -118,7 +118,7 @@ public class CadastrarPecas extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Segoe UI Semilight", 0, 14)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel1.setText("Codigo Barras");
+        jLabel1.setText("Código Barras");
 
         jButton2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Adicionar.png"))); // NOI18N

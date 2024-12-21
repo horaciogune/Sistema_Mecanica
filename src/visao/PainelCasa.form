@@ -354,7 +354,7 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Veiculos"/>
+            <Property name="text" type="java.lang.String" value="Ve&#xed;culos"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="lblVeiculos">
@@ -416,7 +416,7 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Servicos"/>
+            <Property name="text" type="java.lang.String" value="Servi&#xe7;os"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="lblServicos">
@@ -465,7 +465,7 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="jLabel13" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="34" max="32767" attributes="0"/>
+                  <EmptySpace pref="24" max="32767" attributes="0"/>
                   <Component id="lblUsuario3" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
@@ -509,7 +509,7 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Yu Gothic UI Semibold" size="18" style="1"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Fluxo de Entradas e Saidas"/>
+        <Property name="text" type="java.lang.String" value="Fluxo de Entrada e Sa&#xed;da"/>
       </Properties>
     </Component>
   </SubComponents>
