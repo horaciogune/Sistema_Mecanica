@@ -24,7 +24,7 @@ public class ControllerFluxo {
     }
 
     // Método para excluir um fluxo pelo ID
-    public boolean excluirFluxoController(int id) {
-        return this.fluxoDao.excluirPorId(id);
+    public boolean excluirFluxoController() {
+        return this.fluxoDao.excluirTodos();
     }
 }

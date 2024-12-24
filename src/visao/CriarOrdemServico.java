@@ -11,6 +11,7 @@ import Modelo.ModeloOrdemServico;
 import Modelo.ModeloPecas;
 import Modelo.ModeloVeiculo;
 import com.toedter.calendar.JDateChooser;
+import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.text.SimpleDateFormat;
@@ -538,7 +539,12 @@ public class CriarOrdemServico extends javax.swing.JPanel {
     }//GEN-LAST:event_txtClienteIdActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-        // TODO add your handling code here:
+         this.removeAll();
+        PainelCasa painelCasa = new PainelCasa();
+        this.setLayout(new BorderLayout());
+        this.add(painelCasa, BorderLayout.CENTER);
+        this.revalidate();
+        this.repaint();
     }//GEN-LAST:event_jButton7ActionPerformed
 
 

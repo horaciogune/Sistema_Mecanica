@@ -1,4 +1,3 @@
-
 package Dao;
 
 import Conexao.Conexao_MySql;
@@ -73,20 +72,17 @@ public class FluxoDao extends Conexao_MySql {
         return lista;
     }
 
-    // Método para excluir um registro pelo ID
-    public boolean excluirPorId(int id) {
-        String sql = "DELETE FROM fluxo WHERE id = ?";
-        try {
-            PreparedStatement stmt = conectar().prepareStatement(sql);
-            stmt.setInt(1, id);
+    public boolean excluirTodos() {
+        String sql = "DELETE FROM fluxo";
+        try (PreparedStatement stmt = conectar().prepareStatement(sql)) {
             stmt.executeUpdate();
-            return true; // Sucesso
+            return true;
         } catch (SQLException e) {
-            System.err.println("Erro ao excluir fluxo: " + e.getMessage());
+            System.err.println("Erro ao excluir todos os dados da tabela fluxo: " + e.getMessage());
             return false;
         } finally {
             fecharConexao();
         }
     }
-}
 
+}
