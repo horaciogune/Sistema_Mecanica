@@ -67,7 +67,7 @@ public class UsuarioDao extends Conexao_MySql {
                     + ";"
             );
             if (getResultSet().next()) {
-                 modeloUsuario.setSenha(getResultSet().getString("senha"));
+                modeloUsuario.setSenha(getResultSet().getString("senha"));
                 return true;
             } else {
                 return false;
@@ -220,6 +220,49 @@ public class UsuarioDao extends Conexao_MySql {
         }
 
         return modeloUsuario;
+    }
+
+    public ArrayList<ModeloUsuario> PesquisarUsuarioDao(String nome) {
+        ArrayList<ModeloUsuario> listaUsuarioModelousuario = new ArrayList<>();
+
+        try {
+            this.conectar();
+            this.executarSQL(
+                    "SELECT "
+                    + "id, "
+                    + "nome, "
+                    + "userName, "
+                    + "email, "
+                    + "estado, "
+                    + "perfil, "
+                    + "senha, "
+                    + "data_criacao "
+                    + "FROM "
+                    + "usuarios "
+                    + "WHERE "
+                    + "nome LIKE '%" + nome + "%';"
+            );
+
+            while (this.getResultSet().next()) {
+                ModeloUsuario modeloUsuario = new ModeloUsuario();
+                modeloUsuario.setId(this.getResultSet().getInt(1));
+                modeloUsuario.setNome(this.getResultSet().getString(2));
+                modeloUsuario.setUsername(this.getResultSet().getString(3));
+                modeloUsuario.setEmail(this.getResultSet().getString(4));
+                modeloUsuario.setEstado(this.getResultSet().getString(5));
+                modeloUsuario.setPerfil(this.getResultSet().getString(6));
+                modeloUsuario.setSenha(this.getResultSet().getString(7));
+                modeloUsuario.setDataCriacao(this.getResultSet().getString(8));
+
+                listaUsuarioModelousuario.add(modeloUsuario);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            this.fecharConexao();
+        }
+
+        return listaUsuarioModelousuario;
     }
 
     public ArrayList<ModeloUsuario> getListaUsuarioDao() {

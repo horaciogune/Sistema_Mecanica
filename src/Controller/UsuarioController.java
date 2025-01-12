@@ -19,6 +19,10 @@ public class UsuarioController {
     public int salvarUsuariocontroller(ModeloUsuario modeloUsuario) {
         return this.usuarioDao.salvarUsuarioDao(modeloUsuario);
     }
+    
+    public ArrayList<ModeloUsuario> pesquisaModeloUsuariosController(String nome){
+        return this.usuarioDao.PesquisarUsuarioDao(nome);
+    }
 
     public boolean VerificarEexistenciaUsuarioController(ModeloUsuario modeloUsuario) {
         return this.usuarioDao.verificarExistenciaUsuarioDao(modeloUsuario);

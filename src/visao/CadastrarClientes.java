@@ -234,8 +234,10 @@ public class CadastrarClientes extends javax.swing.JFrame {
 
         txtCodigo.setEditable(false);
         txtCodigo.setFont(new java.awt.Font("Segoe UI Semilight", 1, 14)); // NOI18N
+        txtCodigo.setForeground(new java.awt.Color(255, 255, 255));
 
         txtNome.setFont(new java.awt.Font("Segoe UI Semilight", 1, 14)); // NOI18N
+        txtNome.setForeground(new java.awt.Color(255, 255, 255));
         txtNome.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtNomeActionPerformed(evt);
@@ -243,6 +245,7 @@ public class CadastrarClientes extends javax.swing.JFrame {
         });
 
         txtNumero.setFont(new java.awt.Font("Segoe UI Semilight", 1, 14)); // NOI18N
+        txtNumero.setForeground(new java.awt.Color(255, 255, 255));
 
         jButton1.setFont(new java.awt.Font("Segoe UI Semilight", 1, 14)); // NOI18N
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Adicionar.png"))); // NOI18N
@@ -253,7 +256,8 @@ public class CadastrarClientes extends javax.swing.JFrame {
             }
         });
 
-        cboDocumento.setFont(new java.awt.Font("Segoe UI Semilight", 0, 14)); // NOI18N
+        cboDocumento.setFont(new java.awt.Font("Segoe UI Semilight", 1, 14)); // NOI18N
+        cboDocumento.setForeground(new java.awt.Color(255, 255, 255));
         cboDocumento.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "--Selecione--", "Bilhete de Identidade", "Passa Porte", "Nuit", "Carta de Conducao" }));
         cboDocumento.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -266,12 +270,14 @@ public class CadastrarClientes extends javax.swing.JFrame {
         jLabel6.setText("Endereco:");
 
         txtEndereco.setFont(new java.awt.Font("Segoe UI Semilight", 1, 14)); // NOI18N
+        txtEndereco.setForeground(new java.awt.Color(255, 255, 255));
 
         jLabel7.setFont(new java.awt.Font("Segoe UI Semilight", 0, 14)); // NOI18N
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel7.setText("Telefone:");
 
         txtContato.setFont(new java.awt.Font("Segoe UI Semilight", 1, 14)); // NOI18N
+        txtContato.setForeground(new java.awt.Color(255, 255, 255));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -505,10 +511,7 @@ public class CadastrarClientes extends javax.swing.JFrame {
             modeloCliente.setDocumento(cboDocumento.getSelectedItem().toString());
             modeloCliente.setNumero(txtNumero.getText());
 
-            if (clienteController.VerificarExistenciaClienteController(modeloCliente)) {
-                JOptionPane.showMessageDialog(this, "NOME DO CLIENTE JA EXISTENTE, por favor, escolhe outro", "Duplicação de Dados", JOptionPane.WARNING_MESSAGE);
-                return;
-            }
+          
 
             if (modeloCliente.getDocumento().equals("--Selecione--")) {
                 JOptionPane.showMessageDialog(this, "ALGUM CAMPO OBRIGATORIO IGNORADO ", "Campo vazio", JOptionPane.WARNING_MESSAGE);

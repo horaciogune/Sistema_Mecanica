@@ -218,6 +218,7 @@ public class ConsultarClientes extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
+        jtClientes.setFont(new java.awt.Font("Segoe UI Semilight", 1, 14)); // NOI18N
         jScrollPane2.setViewportView(jtClientes);
         if (jtClientes.getColumnModel().getColumnCount() > 0) {
             jtClientes.getColumnModel().getColumn(0).setResizable(false);

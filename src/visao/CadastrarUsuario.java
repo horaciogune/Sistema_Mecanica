@@ -73,8 +73,10 @@ public class CadastrarUsuario extends javax.swing.JFrame {
 
         txtCodigo.setEditable(false);
         txtCodigo.setFont(new java.awt.Font("Segoe UI Semilight", 1, 14)); // NOI18N
+        txtCodigo.setForeground(new java.awt.Color(255, 255, 255));
 
         txtNome.setFont(new java.awt.Font("Segoe UI Semilight", 1, 14)); // NOI18N
+        txtNome.setForeground(new java.awt.Color(255, 255, 255));
         txtNome.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtNomeActionPerformed(evt);
@@ -82,8 +84,10 @@ public class CadastrarUsuario extends javax.swing.JFrame {
         });
 
         txtEmail.setFont(new java.awt.Font("Segoe UI Semilight", 1, 14)); // NOI18N
+        txtEmail.setForeground(new java.awt.Color(255, 255, 255));
 
-        cboPerfil.setFont(new java.awt.Font("Segoe UI Semilight", 0, 14)); // NOI18N
+        cboPerfil.setFont(new java.awt.Font("Segoe UI Semilight", 1, 14)); // NOI18N
+        cboPerfil.setForeground(new java.awt.Color(255, 255, 255));
         cboPerfil.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "--Selecione--", "Padrao", "Administrador(a)" }));
         cboPerfil.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -92,8 +96,10 @@ public class CadastrarUsuario extends javax.swing.JFrame {
         });
 
         txtSenha.setFont(new java.awt.Font("Segoe UI Semilight", 1, 14)); // NOI18N
+        txtSenha.setForeground(new java.awt.Color(255, 255, 255));
 
         txtUserName.setFont(new java.awt.Font("Segoe UI Semilight", 1, 14)); // NOI18N
+        txtUserName.setForeground(new java.awt.Color(255, 255, 255));
 
         jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -405,11 +411,7 @@ public class CadastrarUsuario extends javax.swing.JFrame {
                 return;
             }
 
-            // Verificar se o nome de usuário ou nome já existem no banco de dados
-            if (usuarioController.VerificarEexistenciaUsuarioController(modeloUsuario)) {
-                JOptionPane.showMessageDialog(this, "NOME DO USUARIO JA EXISTENTE. Por favor, escolha outro.", "Duplicação de dados", JOptionPane.WARNING_MESSAGE);
-                return;
-            }
+            
 
             if (usuarioController.AtualizarUsuariocontroller(modeloUsuario)) {
                 JOptionPane.showMessageDialog(this, "ATUALIZADO COM SUCESSO");

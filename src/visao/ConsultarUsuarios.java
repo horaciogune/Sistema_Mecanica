@@ -53,7 +53,7 @@ public class ConsultarUsuarios extends javax.swing.JPanel {
         jButton10 = new javax.swing.JButton();
         jButton11 = new javax.swing.JButton();
         painelBorderr15 = new utilitarios.PainelBorderr1();
-        jTextField2 = new javax.swing.JTextField();
+        txtPesquisar = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         jtUsuarios = new componentes.Tabela();
@@ -156,9 +156,20 @@ public class ConsultarUsuarios extends javax.swing.JPanel {
         painelBorderr15.setBackgroundColor(new java.awt.Color(0, 102, 204));
         painelBorderr15.setBorderColor(new java.awt.Color(255, 255, 255));
 
-        jTextField2.setBackground(new java.awt.Color(0, 102, 204));
-        jTextField2.setFont(new java.awt.Font("Segoe UI Semilight", 0, 14)); // NOI18N
-        jTextField2.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        txtPesquisar.setBackground(new java.awt.Color(0, 102, 204));
+        txtPesquisar.setFont(new java.awt.Font("Segoe UI Semilight", 0, 14)); // NOI18N
+        txtPesquisar.setForeground(new java.awt.Color(255, 255, 255));
+        txtPesquisar.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        txtPesquisar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtPesquisarActionPerformed(evt);
+            }
+        });
+        txtPesquisar.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtPesquisarKeyReleased(evt);
+            }
+        });
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/search.png"))); // NOI18N
 
@@ -169,13 +180,13 @@ public class ConsultarUsuarios extends javax.swing.JPanel {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelBorderr15Layout.createSequentialGroup()
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField2, javax.swing.GroupLayout.DEFAULT_SIZE, 171, Short.MAX_VALUE)
+                .addComponent(txtPesquisar, javax.swing.GroupLayout.DEFAULT_SIZE, 171, Short.MAX_VALUE)
                 .addGap(23, 23, 23))
         );
         painelBorderr15Layout.setVerticalGroup(
             painelBorderr15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelBorderr15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtPesquisar, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -313,6 +324,16 @@ public class ConsultarUsuarios extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton11ActionPerformed
 
+    private void txtPesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPesquisarActionPerformed
+        String nome = txtPesquisar.getText();
+        pesquisarTabelaUsuarios(nome);
+    }//GEN-LAST:event_txtPesquisarActionPerformed
+
+    private void txtPesquisarKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPesquisarKeyReleased
+        String nome = txtPesquisar.getText();
+        pesquisarTabelaUsuarios(nome);
+    }//GEN-LAST:event_txtPesquisarKeyReleased
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
@@ -326,10 +347,10 @@ public class ConsultarUsuarios extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTextField jTextField2;
     private componentes.Tabela jtUsuarios;
     private utilitarios.PainelBorderr1 painelBorderr14;
     private utilitarios.PainelBorderr1 painelBorderr15;
+    private javax.swing.JTextField txtPesquisar;
     // End of variables declaration//GEN-END:variables
 
     public void carregarUsuarios() {
@@ -350,6 +371,24 @@ public class ConsultarUsuarios extends javax.swing.JPanel {
             });
         }
 
+    }
+
+    public void pesquisarTabelaUsuarios(String nome) {
+        listaModeloUsuario = usuarioController.pesquisaModeloUsuariosController(nome);
+
+        DefaultTableModel model = (DefaultTableModel) jtUsuarios.getModel();
+        model.setRowCount(0);
+        for (ModeloUsuario usuario : listaModeloUsuario) {
+            model.addRow(new Object[]{
+                usuario.getId(),
+                usuario.getNome(),
+                usuario.getUsername(),
+                usuario.getEmail(),
+                usuario.getPerfil(),
+                usuario.getEstado(),
+                usuario.getDataCriacao()
+            });
+        }
     }
 
     private void EnviarDadosparaFormulario() {
